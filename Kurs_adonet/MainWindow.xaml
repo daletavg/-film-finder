@@ -1,0 +1,28 @@
+﻿<Window x:Class="Kurs_adonet.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kurs_adonet"
+        mc:Ignorable="d"
+        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:hamburgerMenu="clr-namespace:HamburgerMenu;assembly=HamburgerMenu"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <!--<hamburgerMenu:HamburgerMenu Background="Blue" MenuIconColor="White" SelectionIndicatorColor="White" MenuItemForeground="White" HorizontalAlignment="Left">
+            <hamburgerMenu:HamburgerMenuItem Text="Home" SelectionCommand="{Binding MyCommand}"/>
+            <hamburgerMenu:HamburgerMenuItem Text="Search"/>
+        </hamburgerMenu:HamburgerMenu>-->
+        <local:LoginControl VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LogControl"></local:LoginControl>
+        <local:RegistrControl VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden" x:Name="RegControl"></local:RegistrControl>
+    </Grid>
+</Window>

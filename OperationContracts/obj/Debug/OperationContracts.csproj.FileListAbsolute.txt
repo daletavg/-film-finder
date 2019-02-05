@@ -1,0 +1,6 @@
+C:\Users\akerz\Desktop\Kurs_adonet\OperationContracts\bin\Debug\OperationContracts.dll
+C:\Users\akerz\Desktop\Kurs_adonet\OperationContracts\bin\Debug\OperationContracts.pdb
+C:\Users\akerz\Desktop\Kurs_adonet\OperationContracts\obj\Debug\OperationContracts.csprojAssemblyReference.cache
+C:\Users\akerz\Desktop\Kurs_adonet\OperationContracts\obj\Debug\OperationContracts.csproj.CoreCompileInputs.cache
+C:\Users\akerz\Desktop\Kurs_adonet\OperationContracts\obj\Debug\OperationContracts.dll
+C:\Users\akerz\Desktop\Kurs_adonet\OperationContracts\obj\Debug\OperationContracts.pdb
