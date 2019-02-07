@@ -7,13 +7,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Kurs_adonet.LoginAndRegistrate;
 
 namespace Kurs_adonet
 {
-    class LoginAndRegistrateViewModel : INotifyPropertyChanged
+    class LoginViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        ILoginRegisterUser loginRegister = new LoginRegisterUserClient();
 
         public string Login { set; get; } = "";
         public string Password { set; get; } = "";
@@ -39,6 +41,7 @@ namespace Kurs_adonet
             if (passwordBox == null)
                 return;
             var password = passwordBox.Password;
+            bool a = loginRegister.CheckUserOnDB(Login, password);
         }
 
         bool CanExecuteLogin()

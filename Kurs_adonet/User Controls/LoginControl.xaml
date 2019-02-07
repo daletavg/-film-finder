@@ -45,7 +45,9 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <materialDesign:PackIcon Kind="Key" Grid.Column="0" />
-                    <PasswordBox Grid.Column="1" Margin="0,0,0,10" x:Name="passwordBox"  materialDesign:HintAssist.Hint="Пароль"/>
+                    <PasswordBox Grid.Column="1" Margin="0,0,0,10" x:Name="passwordBox"  materialDesign:HintAssist.Hint="Пароль">
+
+                    </PasswordBox>
                 </Grid>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">

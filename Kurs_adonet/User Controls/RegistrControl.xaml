@@ -25,7 +25,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <materialDesign:PackIcon Kind="Account"  Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Margin="0,0,0,10" Height="30" x:Name="loginBox" materialDesign:HintAssist.Hint="Логин"/>
+                    <TextBox Text="{Binding Name}" Grid.Column="1" Margin="0,0,0,10" Height="30" x:Name="loginBox" materialDesign:HintAssist.Hint="Логин"/>
                 </Grid>
             </StackPanel>
             <StackPanel>
@@ -51,13 +51,13 @@
             <StackPanel Margin="15,0,0,0">
                 <Label Content="Пол:"/>
                 <StackPanel Orientation="Horizontal">
-                    <RadioButton Content="Мужской"/>
-                    <RadioButton Content="Женский"/>
+                    <RadioButton IsChecked="{Binding Male, UpdateSourceTrigger=PropertyChanged}" Content="Мужской"/>
+                    <RadioButton IsChecked="{Binding Female, UpdateSourceTrigger=PropertyChanged}" Content="Женский"/>
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
                 <Button Click="ButtonBase_OnClick" Content="Отмена" Margin="3"/>
-                <Button Content="Регистрация" Margin="3"/>
+                <Button Content="Регистрация" Command="{Binding Registrate}"  CommandParameter="{Binding ElementName=passwordBox}" Margin="3"/>
             </StackPanel>
         </StackPanel>
     </Grid>

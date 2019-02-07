@@ -16,8 +16,10 @@ namespace Kurs_adonet
         private void App_OnStartup(object sender, StartupEventArgs e)
         {
             MainWindow main = new MainWindow();
-            LoginAndRegistrateViewModel loginAndRegistrate = new LoginAndRegistrateViewModel();
-            main.DataContext = loginAndRegistrate;
+            LoginViewModel loginAndRegistrate = new LoginViewModel();
+            RegistrateViewModel registrateViewModel = new RegistrateViewModel();
+            main.LogControl.DataContext = loginAndRegistrate;
+            main.RegControl.DataContext = registrateViewModel;
             main.Show();
         }
     }

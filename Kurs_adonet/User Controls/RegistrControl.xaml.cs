@@ -23,6 +23,7 @@ namespace Kurs_adonet
         public RegistrControl()
         {
             InitializeComponent();
+            
         }
         public event OpenRegisterWindow BackToLogin;
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)

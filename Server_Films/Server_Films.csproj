@@ -41,6 +41,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,9 +52,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actor.cs" />
+    <Compile Include="Film finder\Coment.cs" />
+    <Compile Include="Film finder\Film.cs" />
+    <Compile Include="Film finder\FilmFinderDB.cs" />
+    <Compile Include="Film finder\Genre.cs" />
     <Compile Include="LoginRegisterUser.cs" />
+    <Compile Include="Film finder\Mark.cs" />
+    <Compile Include="Film finder\Producer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Film finder\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
