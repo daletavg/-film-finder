@@ -33,3 +33,11 @@ C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\User Controls\LoginCont
 C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\User Controls\RegistrControl.g.cs
 C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\User Controls\LoginControl.baml
 C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\User Controls\RegistrControl.baml
+C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\User Controls\FilmCardControl.g.cs
+C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\User Controls\FilmCardControl.baml
+C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\User Controls\FilmsControl.g.cs
+C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\User Controls\FilmsControl.baml
+C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\User Controls\AddFilm.g.cs
+C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\User Controls\AddFilm.baml
+C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\FilmFinder.g.cs
+C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\FilmFinder.baml

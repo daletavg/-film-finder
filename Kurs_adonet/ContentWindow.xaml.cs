@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MaterialDesignThemes.Wpf;
 
 namespace Kurs_adonet
 {
@@ -20,11 +21,12 @@ namespace Kurs_adonet
     public partial class ContentWindow : Window
     {
         bool isFirstStart = true;
-        List<string> menuList = new List<string> { "Все фильмы", "Мои фильмы", "Настройки", "О проекте" };
+        List<string> menuList = new List<string> { "Все фильмы", "Мои фильмы", "Настройки","Чат", "О проекте" };
         public ContentWindow()
         {
             InitializeComponent();
             DemoItemsListBox.SelectedIndex = 0;
+            CheckVisibilityControls();
         }
 
         private void DemoItemsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -33,8 +35,25 @@ namespace Kurs_adonet
             {
                 PageName.Content = menuList[DemoItemsListBox.SelectedIndex];
                 BackButton.IsChecked = false;
+                CheckVisibilityControls();
+
             }
             isFirstStart = false;
+           
         }
+
+        void CheckVisibilityControls()
+        {
+            switch (DemoItemsListBox.SelectedIndex)
+            {
+                case 0:
+                    this.AllFilms.Visibility = Visibility.Visible;
+                    break;
+                default:
+                    this.AllFilms.Visibility = Visibility.Hidden;
+                    break;
+            }
+        }
+        
     }
 }

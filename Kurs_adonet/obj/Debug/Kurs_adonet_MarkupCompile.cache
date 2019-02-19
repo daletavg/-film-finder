@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\App.xaml
-5747042087
+9-1922077493
 
-141354702328
+21-719844471
 22158781597
-ContentWindow.xaml;User Controls\LoginControl.xaml;MainWindow.xaml;User Controls\RegistrControl.xaml;TestTable.xaml;
+FilmFinder.xaml;User Controls\AddFilm.xaml;ContentWindow.xaml;User Controls\FilmsControl.xaml;User Controls\FilmCardControl.xaml;User Controls\LoginControl.xaml;MainWindow.xaml;User Controls\RegistrControl.xaml;TestTable.xaml;
 
 False
 

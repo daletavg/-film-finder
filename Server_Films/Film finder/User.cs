@@ -12,7 +12,9 @@ namespace Server_Films
         public User()
         {
             Coments = new HashSet<Coment>();
+            FavoritLists = new HashSet<FavoritList>();
             Marks = new HashSet<Mark>();
+            WaitingLists = new HashSet<WaitingList>();
         }
 
         public int Id { get; set; }
@@ -31,6 +33,12 @@ namespace Server_Films
         public virtual ICollection<Coment> Coments { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FavoritList> FavoritLists { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Mark> Marks { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<WaitingList> WaitingLists { get; set; }
     }
 }

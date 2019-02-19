@@ -14,9 +14,11 @@ namespace Server_Films
         {
             Actors = new HashSet<Actor>();
             Coments = new HashSet<Coment>();
+            FavoritLists = new HashSet<FavoritList>();
             Genres = new HashSet<Genre>();
             Marks = new HashSet<Mark>();
             Producers = new HashSet<Producer>();
+            WaitingLists = new HashSet<WaitingList>();
         }
 
         public int Id { get; set; }
@@ -27,11 +29,16 @@ namespace Server_Films
 
         public byte[] Image { get; set; }
 
+        public string ReleaseDate { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Actor> Actors { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Coment> Coments { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FavoritList> FavoritLists { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Genre> Genres { get; set; }
@@ -41,5 +48,8 @@ namespace Server_Films
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Producer> Producers { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<WaitingList> WaitingLists { get; set; }
     }
 }

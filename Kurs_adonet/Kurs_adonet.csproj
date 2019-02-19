@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Untitled-1.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -73,6 +76,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="View Models\AddFilmViewModel.cs" />
+    <Compile Include="FilmFinder.xaml.cs">
+      <DependentUpon>FilmFinder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\AddFilm.xaml.cs">
+      <DependentUpon>AddFilm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\LoginAndRegistrate\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -80,6 +90,14 @@
     </Compile>
     <Compile Include="ContentWindow.xaml.cs">
       <DependentUpon>ContentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View Models\FilmsViewModel.cs" />
+    <Compile Include="View Models\FilmCardController.cs" />
+    <Compile Include="User Controls\FilmsControl.xaml.cs">
+      <DependentUpon>FilmsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\FilmCardControl.xaml.cs">
+      <DependentUpon>FilmCardControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="View Models\DelegateCommand.cs" />
     <Compile Include="View Models\LoginViewModel.cs" />
@@ -94,7 +112,23 @@
     <Compile Include="TestTable.xaml.cs">
       <DependentUpon>TestTable.xaml</DependentUpon>
     </Compile>
+    <Page Include="FilmFinder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User Controls\AddFilm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ContentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User Controls\FilmsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User Controls\FilmCardControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -157,7 +191,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Untitled-1.ico" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="usericon.png" />
   </ItemGroup>

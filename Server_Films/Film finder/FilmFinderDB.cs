@@ -14,11 +14,14 @@ namespace Server_Films
 
         public virtual DbSet<Actor> Actors { get; set; }
         public virtual DbSet<Coment> Coments { get; set; }
+        public virtual DbSet<FavoritList> FavoritLists { get; set; }
         public virtual DbSet<Film> Films { get; set; }
         public virtual DbSet<Genre> Genres { get; set; }
         public virtual DbSet<Mark> Marks { get; set; }
+        public virtual DbSet<Priority> Priorities { get; set; }
         public virtual DbSet<Producer> Producers { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<WaitingList> WaitingLists { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

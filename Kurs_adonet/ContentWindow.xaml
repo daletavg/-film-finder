@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kurs_adonet"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="ContentWindow" Height="450" Width="852.282">
+        Title="ContentWindow" MinHeight="700"  MinWidth="750" Width="939">
     <Grid>
         <materialDesign:DialogHost Identifier="RootDialog" SnackbarMessageQueue="{Binding ElementName=MainSnackbar, Path=MessageQueue}">
             <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
@@ -41,16 +42,24 @@
                             <!--<DataTemplate DataType="domain:DemoItem">
                                     <TextBlock Text="{Binding Name}" Margin="32 0 32 0" />
                                 </DataTemplate>-->
-                            <StackPanel >
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="CheckboxMultipleBlank" />
                                 <Label Content="Все фильмы"/>
                             </StackPanel>
-                            <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="AccountBoxOutline" />
                                 <Label Content="Мои фильмы"/>
                             </StackPanel>
-                            <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Settings" />
                                 <Label Content="Настройки"/>
                             </StackPanel>
-                            <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Wechat" />
+                                <Label Content="Чат"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Information" />
                                 <Label Content="О проекте"/>
                             </StackPanel>
 
@@ -63,42 +72,22 @@
                         <DockPanel>
                             <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" IsChecked="False"
                                         x:Name="MenuToggleButton"/>
-                            <!--<materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
-                                <StackPanel>
-                                    -->
-                            <!--<Button Content="Hello World" Click="MenuPopupButton_OnClick"/>
-                                    <Button Content="Nice Popup" Click="MenuPopupButton_OnClick"/>-->
-                            <!--
-                                    <Button Content="Can't Touch This" IsEnabled="False" />
-                                    <Separator/>
-                                    -->
-                            <!--<Button Content="Goodbye" Click="MenuPopupButton_OnClick"/>-->
-                            <!--
-                                </StackPanel>
-                            </materialDesign:PopupBox>-->
-                            <Label Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" x:Name="PageName">Тест</Label>
+                            <Label Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" x:Name="PageName">Все фильмы</Label>
                         </DockPanel>
                     </materialDesign:ColorZone>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
 
-                        <ScrollViewer Grid.Row="1" 
-                                  HorizontalScrollBarVisibility="{Binding ElementName=DemoItemsListBox, Path=SelectedItem.HorizontalScrollBarVisibilityRequirement}"
-                                  VerticalScrollBarVisibility="{Binding ElementName=DemoItemsListBox, Path=SelectedItem.VerticalScrollBarVisibilityRequirement}" 
-                                  Padding="{Binding ElementName=DemoItemsListBox, Path=SelectedItem.MarginRequirement}">
-                            <ContentControl Content="{Binding ElementName=DemoItemsListBox, Path=SelectedItem.Content}" />
-                           
-                        </ScrollViewer>
+                    <Grid Name="ContentGrid">
 
-                        <materialDesign:Snackbar MessageQueue="{materialDesign:MessageQueue}" x:Name="MainSnackbar"
-                                            Grid.Row="1" />
+                        <local:FilmsControl Visibility="Hidden" x:Name="AllFilms"/>
+                       
+
+                       
                     </Grid>
+                    <!---->
                 </DockPanel>
             </materialDesign:DrawerHost>
         </materialDesign:DialogHost>
-        
+        <Image HorizontalAlignment="Left" Height="100" Margin="-110,91,0,0" VerticalAlignment="Top" Width="100"/>
+
     </Grid>
 </Window>

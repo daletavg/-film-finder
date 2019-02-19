@@ -18,9 +18,13 @@ namespace Kurs_adonet
             MainWindow main = new MainWindow();
             LoginViewModel loginAndRegistrate = new LoginViewModel();
             RegistrateViewModel registrateViewModel = new RegistrateViewModel();
+            AddFilmViewModel addFilmViewModel = new AddFilmViewModel();
+
+            main.FilmFinder.AllFilms.NewFilm.DataContext = addFilmViewModel;
             main.LogControl.DataContext = loginAndRegistrate;
             main.RegControl.DataContext = registrateViewModel;
             main.Show();
+
         }
     }
 }

@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Kurs_adonet.FilmsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Kurs_adonet"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" Width="761.328">
+    <Grid>
+        <ScrollViewer  VerticalAlignment="Center" HorizontalAlignment="Center" Width="720" >
+            <Grid>
+                <WrapPanel Width="761">
+                    <local:FilmCardControl/>
+                    <local:FilmCardControl/>
+                    <local:FilmCardControl/>
+                    <local:FilmCardControl/>
+                    <local:FilmCardControl/>
+                    <local:FilmCardControl/>
+                    <local:FilmCardControl/>
+                    <local:FilmCardControl/>
+                    <local:FilmCardControl/>
+                    <local:FilmCardControl/>
+                    <local:FilmCardControl/>
+                    <local:FilmCardControl/>
+                    <local:FilmCardControl/>
+                    <local:FilmCardControl/>
+                    <local:FilmCardControl/>
+                    <local:FilmCardControl/>
+                    <local:FilmCardControl/>
+                </WrapPanel>
+            </Grid>
+        </ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="325*"/>
+                <RowDefinition Height="94*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="91*"/>
+                <ColumnDefinition Width="20*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Grid.Row="1" 
+                Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" 
+                Style="{StaticResource MaterialDesignFloatingActionDarkButton}" 
+                ToolTip="MaterialDesignFloatingActionDarkButton"   >
+                <Button.CommandParameter>
+                    <local:AddFilm x:Name="NewFilm"/>
+                </Button.CommandParameter>
+                <materialDesign:PackIcon Width="40" Height="40" Kind="Plus" />
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

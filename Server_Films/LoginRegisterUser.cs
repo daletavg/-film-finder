@@ -13,7 +13,8 @@ namespace Server_Films
         {
             using (var db = new FilmFinderDB())
             {
-                var checkUser = db.Users.All(i => i.Name == login && i.Password == password);
+                GetHeshMd5 getHesh = new GetHeshMd5();
+                var checkUser = db.Users.All(i => i.Name == login && i.Password == getHesh.GetHesh(password));
                 return checkUser;
             }
             
@@ -33,8 +34,9 @@ namespace Server_Films
                         tmpGender = true;
                         break;
                 }
-
-                db.Users.Add(new User() {Name = login, Password = password, Gender = tmpGender});
+                GetHeshMd5 getHesh = new GetHeshMd5();
+                
+                db.Users.Add(new User() {Name = login, Password = getHesh.GetHesh(password), Gender = tmpGender});
                 db.SaveChanges();
             }
         }

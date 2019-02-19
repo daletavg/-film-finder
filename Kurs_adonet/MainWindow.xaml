@@ -15,14 +15,11 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" MinHeight="700"  MinWidth="750" Width="939">
     <Grid>
-        <!--<hamburgerMenu:HamburgerMenu Background="Blue" MenuIconColor="White" SelectionIndicatorColor="White" MenuItemForeground="White" HorizontalAlignment="Left">
-            <hamburgerMenu:HamburgerMenuItem Text="Home" SelectionCommand="{Binding MyCommand}"/>
-            <hamburgerMenu:HamburgerMenuItem Text="Search"/>
-        </hamburgerMenu:HamburgerMenu>-->
-        <local:LoginControl VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="LogControl"></local:LoginControl>
+
+        <local:LoginControl VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden" x:Name="LogControl"></local:LoginControl>
         <local:RegistrControl VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden" x:Name="RegControl"></local:RegistrControl>
+        <local:FilmFinder x:Name="FilmFinder"/>
     </Grid>
 </Window>
