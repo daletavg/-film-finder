@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
-using Kurs_adonet.LoginAndRegistrate;
+using Kurs_adonet.FilmsFinder;
 
 namespace Kurs_adonet
 {

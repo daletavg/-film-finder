@@ -13,7 +13,7 @@ namespace Server_Films
     {
         static void Main(string[] args)
         {
-            ServiceHost serviceHost = new ServiceHost(typeof(LoginRegisterUser));
+            ServiceHost serviceHost = new ServiceHost(typeof(FilmsFinderServer));
             serviceHost.Open();
             Console.WriteLine("Для завершения нажмите <ENTER>\n");
             Console.ReadLine();

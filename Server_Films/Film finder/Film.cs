@@ -12,12 +12,12 @@ namespace Server_Films
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Film()
         {
-            Actors = new HashSet<Actor>();
+            ActorToFilms = new HashSet<ActorToFilm>();
             Coments = new HashSet<Coment>();
             FavoritLists = new HashSet<FavoritList>();
-            Genres = new HashSet<Genre>();
+            GenreToFilms = new HashSet<GenreToFilm>();
             Marks = new HashSet<Mark>();
-            Producers = new HashSet<Producer>();
+            ProdusserToFilms = new HashSet<ProdusserToFilm>();
             WaitingLists = new HashSet<WaitingList>();
         }
 
@@ -32,7 +32,7 @@ namespace Server_Films
         public string ReleaseDate { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Actor> Actors { get; set; }
+        public virtual ICollection<ActorToFilm> ActorToFilms { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Coment> Coments { get; set; }
@@ -41,13 +41,13 @@ namespace Server_Films
         public virtual ICollection<FavoritList> FavoritLists { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Genre> Genres { get; set; }
+        public virtual ICollection<GenreToFilm> GenreToFilms { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Mark> Marks { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Producer> Producers { get; set; }
+        public virtual ICollection<ProdusserToFilm> ProdusserToFilms { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WaitingList> WaitingLists { get; set; }

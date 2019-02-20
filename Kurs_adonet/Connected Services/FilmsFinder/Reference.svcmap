@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="509e66d4-f656-4ae4-b8cc-e384840b2aa1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1cd5c98d-7e04-4d59-b798-e2c7464e2eec" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,9 +22,11 @@
     <MetadataSource Address="http://localhost:8787/FilmFinder/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="7d68b5c0-daf4-4808-807b-d47486979786" SourceId="1" SourceUrl="http://localhost:8787/FilmFinder/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="c04e1e15-c954-408c-9b58-8b531e181a27" SourceId="1" SourceUrl="http://localhost:8787/FilmFinder/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="c3c8355a-03d2-4c28-af5a-051f29fc7511" SourceId="1" SourceUrl="http://localhost:8787/FilmFinder/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="912ef6c9-a474-4872-85a9-b56f8324aaa4" SourceId="1" SourceUrl="http://localhost:8787/FilmFinder/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="e136cb9e-be40-4d6e-8d22-1d34063822c4" SourceId="1" SourceUrl="http://localhost:8787/FilmFinder/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="61ab8aba-8304-4a66-8fbd-c1f3fcd8113c" SourceId="1" SourceUrl="http://localhost:8787/FilmFinder/mex" />
+    <MetadataFile FileName="OperationContracts.xsd" MetadataType="Schema" ID="787c4cfb-4827-46b9-a030-8c386279495f" SourceId="1" SourceUrl="http://localhost:8787/FilmFinder/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="46ce284d-4485-4120-8128-7a63f3cfb0c3" SourceId="1" SourceUrl="http://localhost:8787/FilmFinder/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

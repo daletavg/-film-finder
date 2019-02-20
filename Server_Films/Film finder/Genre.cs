@@ -9,12 +9,17 @@ namespace Server_Films
     [Table("Genre")]
     public partial class Genre
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Genre()
+        {
+            GenreToFilms = new HashSet<GenreToFilm>();
+        }
+
         public int Id { get; set; }
 
         public string Genr { get; set; }
 
-        public int? FilmId { get; set; }
-
-        public virtual Film Film { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GenreToFilm> GenreToFilms { get; set; }
     }
 }

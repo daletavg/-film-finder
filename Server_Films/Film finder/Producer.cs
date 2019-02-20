@@ -9,14 +9,18 @@ namespace Server_Films
     [Table("Producer")]
     public partial class Producer
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Producer()
+        {
+            ProdusserToFilms = new HashSet<ProdusserToFilm>();
+        }
+
         public int Id { get; set; }
 
-        public int Name { get; set; }
+        [Required]
+        public string Name { get; set; }
 
-        public int Surname { get; set; }
-
-        public int? FilmId { get; set; }
-
-        public virtual Film Film { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProdusserToFilm> ProdusserToFilms { get; set; }
     }
 }

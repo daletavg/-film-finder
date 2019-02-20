@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MaterialDesignThemes.Wpf;
+using Microsoft.Win32;
 
 namespace Kurs_adonet
 {
@@ -23,6 +26,38 @@ namespace Kurs_adonet
         public AddFilm()
         {
             InitializeComponent();
+           
+        }
+
+        private void AddImage(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog()==true)
+                {
+                    //Get the path of specified file
+                    var filePath = openFileDialog.FileName;
+
+                    //Read the contents of the file into a stream
+                    var fileStream = openFileDialog.OpenFile();
+                    ImageSource image = new BitmapImage(new Uri(filePath, UriKind.Absolute));
+                    FilmPoster.Source = image;
+                    FilmPoster.Stretch = Stretch.Uniform;
+                    PathToImage.Text = filePath;
+                }
+            
+        }
+
+        private void AcceptClick(object sender, RoutedEventArgs e)
+        {
+            var r = DialogHost.CloseDialogCommand;
+            r.Execute(null, null);
+
         }
     }
 }
