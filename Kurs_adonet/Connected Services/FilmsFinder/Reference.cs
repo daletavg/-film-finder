@@ -82,17 +82,23 @@ namespace Kurs_adonet.FilmsFinder {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/AddNewFilm", ReplyAction="http://tempuri.org/IAddLoadFilm/AddNewFilmResponse")]
         System.Threading.Tasks.Task AddNewFilmAsync(OperationContracts.FilmContent content);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/GetAllFilms", ReplyAction="http://tempuri.org/IAddLoadFilm/GetAllFilmsResponse")]
-        OperationContracts.FilmContent GetAllFilms();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/GetFilm", ReplyAction="http://tempuri.org/IAddLoadFilm/GetFilmResponse")]
+        OperationContracts.FilmContent GetFilm(int index);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/GetAllFilms", ReplyAction="http://tempuri.org/IAddLoadFilm/GetAllFilmsResponse")]
-        System.Threading.Tasks.Task<OperationContracts.FilmContent> GetAllFilmsAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/GetFilm", ReplyAction="http://tempuri.org/IAddLoadFilm/GetFilmResponse")]
+        System.Threading.Tasks.Task<OperationContracts.FilmContent> GetFilmAsync(int index);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/GetSpecific", ReplyAction="http://tempuri.org/IAddLoadFilm/GetSpecificResponse")]
         OperationContracts.AllSpecificAddingFilm GetSpecific();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/GetSpecific", ReplyAction="http://tempuri.org/IAddLoadFilm/GetSpecificResponse")]
         System.Threading.Tasks.Task<OperationContracts.AllSpecificAddingFilm> GetSpecificAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/GetFilmsCount", ReplyAction="http://tempuri.org/IAddLoadFilm/GetFilmsCountResponse")]
+        int GetFilmsCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/GetFilmsCount", ReplyAction="http://tempuri.org/IAddLoadFilm/GetFilmsCountResponse")]
+        System.Threading.Tasks.Task<int> GetFilmsCountAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -130,12 +136,12 @@ namespace Kurs_adonet.FilmsFinder {
             return base.Channel.AddNewFilmAsync(content);
         }
         
-        public OperationContracts.FilmContent GetAllFilms() {
-            return base.Channel.GetAllFilms();
+        public OperationContracts.FilmContent GetFilm(int index) {
+            return base.Channel.GetFilm(index);
         }
         
-        public System.Threading.Tasks.Task<OperationContracts.FilmContent> GetAllFilmsAsync() {
-            return base.Channel.GetAllFilmsAsync();
+        public System.Threading.Tasks.Task<OperationContracts.FilmContent> GetFilmAsync(int index) {
+            return base.Channel.GetFilmAsync(index);
         }
         
         public OperationContracts.AllSpecificAddingFilm GetSpecific() {
@@ -144,6 +150,14 @@ namespace Kurs_adonet.FilmsFinder {
         
         public System.Threading.Tasks.Task<OperationContracts.AllSpecificAddingFilm> GetSpecificAsync() {
             return base.Channel.GetSpecificAsync();
+        }
+        
+        public int GetFilmsCount() {
+            return base.Channel.GetFilmsCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetFilmsCountAsync() {
+            return base.Channel.GetFilmsCountAsync();
         }
     }
 }

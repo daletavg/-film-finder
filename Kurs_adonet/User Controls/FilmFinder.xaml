@@ -29,7 +29,7 @@
                             <StackPanel Orientation="Horizontal">
                                 <Ellipse Height="60" Width="60" HorizontalAlignment="Left" Margin="5">
                                     <Ellipse.Fill>
-                                        <ImageBrush ImageSource="usericon.png"/>
+                                        <ImageBrush />
                                     </Ellipse.Fill>
                                 </Ellipse>
                                 <Label Content="TestName" VerticalAlignment="Center" Margin="5" FontWeight="Bold" FontSize="16"/>

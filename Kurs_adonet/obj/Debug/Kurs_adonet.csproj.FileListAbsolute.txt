@@ -39,7 +39,7 @@ C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\User Controls\FilmsCont
 C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\User Controls\FilmsControl.baml
 C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\User Controls\AddFilm.g.cs
 C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\User Controls\AddFilm.baml
-C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\FilmFinder.g.cs
-C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\FilmFinder.baml
 C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\bin\Debug\OperationContracts.dll
 C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\bin\Debug\OperationContracts.pdb
+C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\User Controls\FilmFinder.g.cs
+C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\User Controls\FilmFinder.baml

@@ -10,10 +10,12 @@ namespace OperationContracts
         [OperationContract]
         void AddNewFilm(FilmContent content);
         [OperationContract]
-        FilmContent GetAllFilms();
+        FilmContent GetFilm(int index);
 
         [OperationContract]
         AllSpecificAddingFilm GetSpecific();
 
+        [OperationContract]
+        int GetFilmsCount();
     }
 }

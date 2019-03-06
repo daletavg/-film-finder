@@ -9,6 +9,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Margin="5">
         <materialDesign:Card Width="220">
+            
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="140" />
@@ -31,19 +32,20 @@
                 </ToggleButton>
 
                 <StackPanel Grid.Row="1" Margin="8 24 8 4">
-                    <TextBlock Style="{StaticResource MaterialDesignSubheadingTextBlock}" Margin="0">
-                                            E.T. the Extra-Terrestrial
+                    <TextBlock Style="{StaticResource MaterialDesignSubheadingTextBlock}" Margin="0" Text="{Binding FilmName}">
+                                          
                     </TextBlock>
                     <Viewbox Margin="0 4 0 8" Height="16" HorizontalAlignment="Left">
-                        <materialDesign:RatingBar Value="3" Orientation="Horizontal" Foreground="Gold" Margin="0" />
+                        <materialDesign:RatingBar Value="0" Orientation="Horizontal" Foreground="Gold" Margin="0" />
                     </Viewbox>
-                    <TextBlock Style="{StaticResource MaterialDesignBody1TextBlock}" TextWrapping="Wrap" VerticalAlignment="Center">
-                                          Afn Earth, the being is discovered and befriended by a young boy named Elliott.
+                    <Label>Описание:</Label>
+                    <TextBlock Style="{StaticResource MaterialDesignBody1TextBlock}" TextWrapping="Wrap" VerticalAlignment="Center"  Height="70" Text="{Binding DescriptionFilm,Mode=TwoWay}">
+                                          
                     </TextBlock>
                 </StackPanel>
                 <Separator Grid.Row="2" Style="{StaticResource MaterialDesignDarkSeparator}"  Margin="8 0 8 0" />
                 <TextBlock Grid.Row="3" Margin="8 4 8 4" Style="{StaticResource MaterialDesignBody2TextBlock}">
-                                         Tonight's availability
+                                         Дата выхода:
                 </TextBlock>
                 <Grid Grid.Row="4">
                     <Grid.ColumnDefinitions>
@@ -51,36 +53,11 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <materialDesign:PackIcon Grid.Column="0" Kind="Clock" VerticalAlignment="Center" Margin="8 4 4 4" />
-                    <ListBox Grid.Column="1" Style="{StaticResource MaterialDesignToolToggleFlatListBox}" SelectedIndex="0" Margin="4 8 8 4">
-                        <ListBox.Resources>
-                            <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource MaterialDesignToolToggleListBoxItem}">
-                                <Setter Property="Padding" Value="4 6 4 6" />
-                            </Style>
-                        </ListBox.Resources>
-                        <ListBox.ToolTip>
-                            <StackPanel>
-                                <TextBlock
-                                                     Text="MaterialDesignFlatToggleListBox" />
-                                <TextBlock
-                                                     Text="Exclusive selection" />
-                                <TextBlock
-                                                     Text="ListBoxAssist.IsToggle allows more natural toggle behaviour" />
-                            </StackPanel>
-                        </ListBox.ToolTip>
-                        <ListBoxItem>
-                            <TextBlock Text="18:00" />
-                        </ListBoxItem>
-                        <ListBoxItem>
-                            <TextBlock Text="19:00" />
-                        </ListBoxItem>
-                        <ListBoxItem>
-                            <TextBlock Text="22:00" />
-                        </ListBoxItem>
-                    </ListBox>
+                    <TextBlock Grid.Column="1" Text="{Binding Path=Date,Mode=TwoWay}"></TextBlock>
                 </Grid>
                 <StackPanel Grid.Row="5">
                     <Button Style="{StaticResource MaterialDesignFlatButton}" HorizontalAlignment="Left" Margin="8 4 8 8">
-                        RESERVE
+                        ПРОСМОТР
                     </Button>
                 </StackPanel>
             </Grid>

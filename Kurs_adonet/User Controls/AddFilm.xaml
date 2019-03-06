@@ -6,9 +6,12 @@
              xmlns:local="clr-namespace:Kurs_adonet"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
-             mc:Ignorable="d" Width="650" Background="White" Height="580">
+             mc:Ignorable="d" Width="650" Background="White" Height="604">
     <StackPanel Margin="30">
-        <Label FontWeight="Bold" FontFamily="Arial" FontSize="20">Новый фильм</Label>
+        
+            <Label FontWeight="Bold" FontFamily="Arial" FontSize="20">Новый фильм</Label>
+            <Label HorizontalAlignment="Right"  Foreground="Red"> Неверно заполнена форма</Label>
+
         <Grid Height="480" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="313*"/>

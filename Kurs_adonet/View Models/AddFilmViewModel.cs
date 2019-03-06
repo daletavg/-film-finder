@@ -10,6 +10,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Kurs_adonet.FilmsFinder;
+using OperationContracts;
+using IAddLoadFilm = Kurs_adonet.FilmsFinder.IAddLoadFilm;
 
 //using Kurs_adonet.LoginAndRegistrate;
 
@@ -55,24 +57,43 @@ namespace Kurs_adonet
             get { return new CollectionView(_listGenre); }
         }
 
+        public string DescriptionFilm { set; get; }
+
+        private List<string> _produssersAtFilm=new List<string>();
+
         private string _allProdussers;
         public string AllProdussers
         {
-            set { _allProdussers = value; OnPropertyChanged(nameof(AllProdussers)); }
+            set
+            {
+                _allProdussers = value;
+                _produssersAtFilm.Add(value);
+                OnPropertyChanged(nameof(AllProdussers));
+            }
             get { return _allProdussers; }
         }
-
+        private List<string> _actorsAtFilm = new List<string>();
         private string _allActors;
         public string AllActors
         {
-            set { _allActors = value; OnPropertyChanged(nameof(AllActors)); }
+            set
+            {
+                _allActors = value;
+                _actorsAtFilm.Add(value);
+                OnPropertyChanged(nameof(AllActors));
+            }
             get { return _allActors; }
         }
-
+        private List<string> _genersAtFilm = new List<string>();
         private string _allGeners;
         public string AllGeners
         {
-            set { _allGeners = value; OnPropertyChanged(nameof(AllGeners)); }
+            set
+            {
+                _allGeners = value;
+                _genersAtFilm.Add(value);
+                OnPropertyChanged(nameof(AllGeners));
+            }
             get { return _allGeners; }
         }
 
@@ -89,10 +110,10 @@ namespace Kurs_adonet
 
         public AddFilmViewModel()
         {
-            //var tmp = add.GetSpecific();
-           // _listProdusser = new ObservableCollection<string>(tmp.Produsers);
-           // _listActor = new ObservableCollection<string>(tmp.Actors);
-           // _listGenre = new ObservableCollection<string>(tmp.Geners);
+           var tmp = addNewFilm.GetSpecific();
+           _listProdusser = new ObservableCollection<string>(tmp.Produsers);
+           _listActor = new ObservableCollection<string>(tmp.Actors);
+           _listGenre = new ObservableCollection<string>(tmp.Geners);
 
         }
 
@@ -177,21 +198,41 @@ namespace Kurs_adonet
 
         private void AddNewFilm()
         {
+            
+            
+            
+            FilmContent content = new FilmContent();
+            content.Image = GetByteImage();
+            content.Actors = _actorsAtFilm.ToArray();
+            content.Description = DescriptionFilm;
+            content.Geners = _genersAtFilm.ToArray();
+            content.Name = FilmName;
+            content.Produsers = _produssersAtFilm.ToArray();
+            content.ReleaseDate = Date.ToString();
+            addNewFilm.AddNewFilm(content);
+        }
+
+        string GetByteImage()
+        {
             BitmapConverter convert = new BitmapConverter();
-            if (PathToimage==null)
-            {
-                
-            }
+            if (PathToimage == null) { }
             else if (PathToimage.Contains(".png"))
             {
-                var tmp1 = convert.ImageSourceToBytes(new PngBitmapEncoder(), PosterFilm);
-                var tmp2 = convert.LoadImage(tmp1);
+                var tmp =convert.ImageSourceToBytes(new PngBitmapEncoder(), PosterFilm);
+                var tmp2 = System.Text.Encoding.UTF8.GetString(tmp);
+                var m = convert.LoadImage(Encoding.UTF8.GetBytes(tmp2));
+                return tmp2;
             }
             else if (PathToimage.Contains(".jpg"))
             {
-                var tmp1 = convert.ImageSourceToBytes(new JpegBitmapEncoder(), PosterFilm);
-                var tmp2 = convert.LoadImage(tmp1);
+                var tmp = convert.ImageSourceToBytes(new JpegBitmapEncoder(), PosterFilm);
+                var tmp2 = System.Text.Encoding.UTF8.GetString(tmp);
+                return tmp2;
             }
+
+            return null;
         }
+
+
     }
 }

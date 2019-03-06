@@ -84,7 +84,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="View Models\AddFilmViewModel.cs" />
-    <Compile Include="FilmFinder.xaml.cs">
+    <Compile Include="User Controls\FilmFinder.xaml.cs">
       <DependentUpon>FilmFinder.xaml</DependentUpon>
     </Compile>
     <Compile Include="User Controls\AddFilm.xaml.cs">
@@ -94,7 +94,7 @@
       <DependentUpon>ContentWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View Models\FilmsViewModel.cs" />
-    <Compile Include="View Models\FilmCardController.cs" />
+    <Compile Include="View Models\FilmCardViewModel.cs" />
     <Compile Include="User Controls\FilmsControl.xaml.cs">
       <DependentUpon>FilmsControl.xaml</DependentUpon>
     </Compile>
@@ -114,7 +114,7 @@
     <Compile Include="TestTable.xaml.cs">
       <DependentUpon>TestTable.xaml</DependentUpon>
     </Compile>
-    <Page Include="FilmFinder.xaml">
+    <Page Include="User Controls\FilmFinder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

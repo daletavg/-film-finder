@@ -44,15 +44,17 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetAllFilms">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetAllFilmsResponse">
+  <xs:element name="GetFilm">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="GetAllFilmsResult" nillable="true" type="q2:FilmContent" />
+        <xs:element minOccurs="0" name="index" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilmResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="GetFilmResult" nillable="true" type="q2:FilmContent" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -65,6 +67,18 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="GetSpecificResult" nillable="true" type="q3:AllSpecificAddingFilm" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilmsCount">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilmsCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetFilmsCountResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

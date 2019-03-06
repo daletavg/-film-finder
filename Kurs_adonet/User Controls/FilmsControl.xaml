@@ -8,27 +8,20 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" Width="761.328">
     <Grid>
+        
         <ScrollViewer  VerticalAlignment="Center" HorizontalAlignment="Center" Width="720" >
             <Grid>
-                <WrapPanel Width="761">
-                    <local:FilmCardControl/>
-                    <local:FilmCardControl/>
-                    <local:FilmCardControl/>
-                    <local:FilmCardControl/>
-                    <local:FilmCardControl/>
-                    <local:FilmCardControl/>
-                    <local:FilmCardControl/>
-                    <local:FilmCardControl/>
-                    <local:FilmCardControl/>
-                    <local:FilmCardControl/>
-                    <local:FilmCardControl/>
-                    <local:FilmCardControl/>
-                    <local:FilmCardControl/>
-                    <local:FilmCardControl/>
-                    <local:FilmCardControl/>
-                    <local:FilmCardControl/>
-                    <local:FilmCardControl/>
-                </WrapPanel>
+                <ItemsControl ItemsSource="{Binding FilmCards}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel Width="761">
+
+                                <local:FilmCardControl/>
+
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </Grid>
         </ScrollViewer>
         <Grid>

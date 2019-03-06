@@ -306,7 +306,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="addnew_GetAllFilms_Input_policy">
+  <wsp:Policy wsu:Id="addnew_GetFilm_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -325,7 +325,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="addnew_GetAllFilms_output_policy">
+  <wsp:Policy wsu:Id="addnew_GetFilm_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -382,6 +382,44 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="addnew_GetFilmsCount_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="addnew_GetFilmsCount_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import namespace="http://tempuri.org/" />
@@ -408,17 +446,23 @@
   <wsdl:message name="IAddLoadFilm_AddNewFilm_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddNewFilmResponse" />
   </wsdl:message>
-  <wsdl:message name="IAddLoadFilm_GetAllFilms_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllFilms" />
+  <wsdl:message name="IAddLoadFilm_GetFilm_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilm" />
   </wsdl:message>
-  <wsdl:message name="IAddLoadFilm_GetAllFilms_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllFilmsResponse" />
+  <wsdl:message name="IAddLoadFilm_GetFilm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilmResponse" />
   </wsdl:message>
   <wsdl:message name="IAddLoadFilm_GetSpecific_InputMessage">
     <wsdl:part name="parameters" element="tns:GetSpecific" />
   </wsdl:message>
   <wsdl:message name="IAddLoadFilm_GetSpecific_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSpecificResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAddLoadFilm_GetFilmsCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilmsCount" />
+  </wsdl:message>
+  <wsdl:message name="IAddLoadFilm_GetFilmsCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilmsCountResponse" />
   </wsdl:message>
   <wsdl:portType name="ILoginRegisterUser">
     <wsdl:operation name="CheckUserOnDB">
@@ -435,13 +479,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IAddLoadFilm/AddNewFilm" message="tns:IAddLoadFilm_AddNewFilm_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAddLoadFilm/AddNewFilmResponse" message="tns:IAddLoadFilm_AddNewFilm_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetAllFilms">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAddLoadFilm/GetAllFilms" message="tns:IAddLoadFilm_GetAllFilms_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAddLoadFilm/GetAllFilmsResponse" message="tns:IAddLoadFilm_GetAllFilms_OutputMessage" />
+    <wsdl:operation name="GetFilm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAddLoadFilm/GetFilm" message="tns:IAddLoadFilm_GetFilm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAddLoadFilm/GetFilmResponse" message="tns:IAddLoadFilm_GetFilm_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetSpecific">
       <wsdl:input wsaw:Action="http://tempuri.org/IAddLoadFilm/GetSpecific" message="tns:IAddLoadFilm_GetSpecific_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAddLoadFilm/GetSpecificResponse" message="tns:IAddLoadFilm_GetSpecific_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilmsCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAddLoadFilm/GetFilmsCount" message="tns:IAddLoadFilm_GetFilmsCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAddLoadFilm/GetFilmsCountResponse" message="tns:IAddLoadFilm_GetFilmsCount_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ws" type="tns:ILoginRegisterUser">
@@ -484,14 +532,14 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAllFilms">
-      <soap12:operation soapAction="http://tempuri.org/IAddLoadFilm/GetAllFilms" style="document" />
+    <wsdl:operation name="GetFilm">
+      <soap12:operation soapAction="http://tempuri.org/IAddLoadFilm/GetFilm" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#addnew_GetAllFilms_Input_policy" />
+        <wsp:PolicyReference URI="#addnew_GetFilm_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#addnew_GetAllFilms_output_policy" />
+        <wsp:PolicyReference URI="#addnew_GetFilm_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -503,6 +551,17 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#addnew_GetSpecific_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilmsCount">
+      <soap12:operation soapAction="http://tempuri.org/IAddLoadFilm/GetFilmsCount" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#addnew_GetFilmsCount_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#addnew_GetFilmsCount_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
