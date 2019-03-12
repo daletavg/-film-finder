@@ -15,11 +15,11 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWindow" MinHeight="700"  MinWidth="750" Width="939">
+        Title="Film Finder" MinHeight="700"  MinWidth="750" Width="939">
     <Grid>
-
-        <local:LoginControl VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden" x:Name="LogControl"></local:LoginControl>
+        <Frame Name="MyFrame" ></Frame>
+        <local:LoginControl VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden"  x:Name="LogControl"></local:LoginControl>
         <local:RegistrControl VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden" x:Name="RegControl"></local:RegistrControl>
-        <local:FilmFinder x:Name="FilmFinder"/>
+        <!--<local:FilmFinder x:Name="FilmFinder"/>-->
     </Grid>
 </Window>

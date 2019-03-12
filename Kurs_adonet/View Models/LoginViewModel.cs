@@ -2,18 +2,32 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Kurs_adonet.FilmsFinder;
+using OperationContracts;
+using ILoginRegisterUser = Kurs_adonet.FilmsFinder.ILoginRegisterUser;
 
 namespace Kurs_adonet
 {
     class LoginViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private string _errorMessage;
+        public string ErrorMessage
+        {
+            set { _errorMessage = value;OnPropertyChanged(nameof(ErrorMessage)); }
+            get { return _errorMessage; }
+        }
 
         ILoginRegisterUser loginRegister = new LoginRegisterUserClient();
 
@@ -26,6 +40,7 @@ namespace Kurs_adonet
         {
             get
             {
+                
                 if (_loginCommand == null)
                 {
                     _loginCommand = new DelegateCommand(param=>LoginOnApp(param),param=>CanExecuteLogin());
@@ -41,7 +56,9 @@ namespace Kurs_adonet
             if (passwordBox == null)
                 return;
             var password = passwordBox.Password;
-            bool a = loginRegister.CheckUserOnDB(Login, password);
+            UResult result = (UResult)loginRegister.CheckUserOnDB(Login, password);
+            
+
         }
 
         bool CanExecuteLogin()

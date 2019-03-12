@@ -12,7 +12,7 @@ namespace OperationContracts
     {
 
         [OperationContract]
-        bool CheckUserOnDB(string login, string password);
+        int CheckUserOnDB(string login, string password);
         [OperationContract]
         void AddNewUserOnDB(string login, int age, string password, int gender, byte[] usrImage);
     }

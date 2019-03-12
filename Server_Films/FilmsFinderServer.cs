@@ -9,15 +9,10 @@ namespace Server_Films
 {
     public class FilmsFinderServer:ILoginRegisterUser, IAddLoadFilm
     {
-        public bool CheckUserOnDB(string login, string password)
+        public int CheckUserOnDB(string login, string password)
         {
-            using (var db = new FilmFinderDB())
-            {
-                GetHeshMd5 getHesh = new GetHeshMd5();
-                var checkUser = db.Users.All(i => i.Name == login && i.Password == getHesh.GetHesh(password));
-                return checkUser;
-            }
-            
+            return (int) new CheckUserOnApp().CheckUser(login, password);
+
         }
 
         public void AddNewUserOnDB(string login, int age, string password, int gender, byte[] usrImage)

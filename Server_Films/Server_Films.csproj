@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckUserOnApp.cs" />
     <Compile Include="Film finder\Actor.cs" />
     <Compile Include="Film finder\ActorToFilm.cs" />
     <Compile Include="Film finder\Coment.cs" />

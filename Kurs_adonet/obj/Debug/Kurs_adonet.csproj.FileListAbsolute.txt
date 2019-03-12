@@ -25,10 +25,6 @@ C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\Kurs_adonet.exe
 C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\Kurs_adonet.pdb
 C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\bin\Debug\HamburgerMenu.dll
-C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\TestTable.g.cs
-C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\TestTable.baml
-C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\ContentWindow.g.cs
-C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\ContentWindow.baml
 C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\User Controls\LoginControl.g.cs
 C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\User Controls\RegistrControl.g.cs
 C:\Users\akerz\Desktop\Kurs_adonet\Kurs_adonet\obj\Debug\User Controls\LoginControl.baml

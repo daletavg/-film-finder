@@ -16,10 +16,10 @@ namespace Kurs_adonet.FilmsFinder {
     public interface ILoginRegisterUser {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginRegisterUser/CheckUserOnDB", ReplyAction="http://tempuri.org/ILoginRegisterUser/CheckUserOnDBResponse")]
-        bool CheckUserOnDB(string login, string password);
+        int CheckUserOnDB(string login, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginRegisterUser/CheckUserOnDB", ReplyAction="http://tempuri.org/ILoginRegisterUser/CheckUserOnDBResponse")]
-        System.Threading.Tasks.Task<bool> CheckUserOnDBAsync(string login, string password);
+        System.Threading.Tasks.Task<int> CheckUserOnDBAsync(string login, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginRegisterUser/AddNewUserOnDB", ReplyAction="http://tempuri.org/ILoginRegisterUser/AddNewUserOnDBResponse")]
         void AddNewUserOnDB(string login, int age, string password, int gender, byte[] usrImage);
@@ -55,11 +55,11 @@ namespace Kurs_adonet.FilmsFinder {
                 base(binding, remoteAddress) {
         }
         
-        public bool CheckUserOnDB(string login, string password) {
+        public int CheckUserOnDB(string login, string password) {
             return base.Channel.CheckUserOnDB(login, password);
         }
         
-        public System.Threading.Tasks.Task<bool> CheckUserOnDBAsync(string login, string password) {
+        public System.Threading.Tasks.Task<int> CheckUserOnDBAsync(string login, string password) {
             return base.Channel.CheckUserOnDBAsync(login, password);
         }
         

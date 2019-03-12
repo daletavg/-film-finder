@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AllSpecificAddingFilm.cs" />
+    <Compile Include="UResult.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="FilmContent.cs" />
     <Compile Include="IAddLoadFilm.cs" />

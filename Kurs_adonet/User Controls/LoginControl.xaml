@@ -31,21 +31,22 @@
         </Grid.ColumnDefinitions>-->
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="300">
             <StackPanel>
+                <TextBlock Foreground="Red" Text="{Binding ErrorMessage}"/>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="18"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <materialDesign:PackIcon Kind="Account"  Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Margin="0,0,0,10" Height="30" x:Name="loginBox" Text="{Binding Login}" materialDesign:HintAssist.Hint="Логин"/>
+                    <TextBox Grid.Column="1" Margin="0,0,0,10" Height="30" x:Name="loginBox" Text="{Binding Login}" materialDesign:HintAssist.Hint="Логин" />
                 </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="18"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <materialDesign:PackIcon Kind="Key" Grid.Column="0" />
-                    <PasswordBox Grid.Column="1" Margin="0,0,0,10" x:Name="passwordBox"  materialDesign:HintAssist.Hint="Пароль">
+                    <materialDesign:PackIcon Kind="Key" Grid.Column="0" Foreground="{Binding AccountValidation.Password}" />
+                    <PasswordBox Grid.Column="1" Margin="0,0,0,10" x:Name="passwordBox"  materialDesign:HintAssist.Hint="Пароль" Foreground="{Binding AccountValidation.Password}">
 
                     </PasswordBox>
                 </Grid>

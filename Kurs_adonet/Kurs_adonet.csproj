@@ -83,15 +83,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="AccountValidation.cs" />
     <Compile Include="View Models\AddFilmViewModel.cs" />
     <Compile Include="User Controls\FilmFinder.xaml.cs">
       <DependentUpon>FilmFinder.xaml</DependentUpon>
     </Compile>
     <Compile Include="User Controls\AddFilm.xaml.cs">
       <DependentUpon>AddFilm.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ContentWindow.xaml.cs">
-      <DependentUpon>ContentWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View Models\FilmsViewModel.cs" />
     <Compile Include="View Models\FilmCardViewModel.cs" />
@@ -111,18 +109,11 @@
     <Compile Include="User Controls\RegistrControl.xaml.cs">
       <DependentUpon>RegistrControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TestTable.xaml.cs">
-      <DependentUpon>TestTable.xaml</DependentUpon>
-    </Compile>
     <Page Include="User Controls\FilmFinder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="User Controls\AddFilm.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ContentWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -151,10 +142,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="User Controls\RegistrControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TestTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
