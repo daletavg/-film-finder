@@ -17,9 +17,9 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="Film Finder" MinHeight="700"  MinWidth="750" Width="939">
     <Grid>
-        <Frame Name="MyFrame" ></Frame>
+        <!--<Frame Name="MyFrame" ></Frame>-->
         <local:LoginControl VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden"  x:Name="LogControl"></local:LoginControl>
         <local:RegistrControl VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden" x:Name="RegControl"></local:RegistrControl>
-        <!--<local:FilmFinder x:Name="FilmFinder"/>-->
+        <local:FilmFinder x:Name="FilmFinder"/>
     </Grid>
 </Window>

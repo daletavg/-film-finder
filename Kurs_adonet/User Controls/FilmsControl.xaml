@@ -11,17 +11,26 @@
         
         <ScrollViewer  VerticalAlignment="Center" HorizontalAlignment="Center" Width="720" >
             <Grid>
-                <ItemsControl ItemsSource="{Binding FilmCards}">
+                <WrapPanel Width="760">
+                    <ItemsControl ItemsSource="{Binding FilmCards}"  Width="760">
+
                     <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <WrapPanel Width="761">
+                        <DataTemplate > 
+                            
+                                
+                                    <local:FilmCardControl/>
+                               
+                            
 
-                                <local:FilmCardControl/>
-
-                            </WrapPanel>
-                        </DataTemplate>
+                       </DataTemplate>
                     </ItemsControl.ItemTemplate>
-                </ItemsControl>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </WrapPanel>
             </Grid>
         </ScrollViewer>
         <Grid>

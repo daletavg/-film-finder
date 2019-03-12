@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -202,7 +203,7 @@ namespace Kurs_adonet
             
             
             FilmContent content = new FilmContent();
-            content.Image = GetByteImage();
+            content.Image = Encoding.Default.GetString(File.ReadAllBytes(PathToimage));
             content.Actors = _actorsAtFilm.ToArray();
             content.Description = DescriptionFilm;
             content.Geners = _genersAtFilm.ToArray();
@@ -214,6 +215,8 @@ namespace Kurs_adonet
 
         string GetByteImage()
         {
+            var a = File.ReadAllBytes(PathToimage);
+            return System.Text.Encoding.UTF8.GetString(a);
             BitmapConverter convert = new BitmapConverter();
             if (PathToimage == null) { }
             else if (PathToimage.Contains(".png"))

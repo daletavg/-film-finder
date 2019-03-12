@@ -12,3 +12,16 @@ C:\Users\akerz\Desktop\Kurs_adonet\Server_Films\obj\Debug\Server_Films.csproj.Co
 C:\Users\akerz\Desktop\Kurs_adonet\Server_Films\obj\Debug\Server_Films.csproj.CopyComplete
 C:\Users\akerz\Desktop\Kurs_adonet\Server_Films\obj\Debug\Server_Films.exe
 C:\Users\akerz\Desktop\Kurs_adonet\Server_Films\obj\Debug\Server_Films.pdb
+C:\Users\Dubrov_v\Desktop\film-finder\Server_Films\bin\Debug\Server_Films.exe.config
+C:\Users\Dubrov_v\Desktop\film-finder\Server_Films\bin\Debug\Server_Films.exe
+C:\Users\Dubrov_v\Desktop\film-finder\Server_Films\bin\Debug\Server_Films.pdb
+C:\Users\Dubrov_v\Desktop\film-finder\Server_Films\bin\Debug\EntityFramework.dll
+C:\Users\Dubrov_v\Desktop\film-finder\Server_Films\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Dubrov_v\Desktop\film-finder\Server_Films\bin\Debug\OperationContracts.dll
+C:\Users\Dubrov_v\Desktop\film-finder\Server_Films\bin\Debug\OperationContracts.pdb
+C:\Users\Dubrov_v\Desktop\film-finder\Server_Films\bin\Debug\EntityFramework.xml
+C:\Users\Dubrov_v\Desktop\film-finder\Server_Films\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dubrov_v\Desktop\film-finder\Server_Films\obj\Debug\Server_Films.csprojResolveAssemblyReference.cache
+C:\Users\Dubrov_v\Desktop\film-finder\Server_Films\obj\Debug\Server_Films.csproj.CoreCompileInputs.cache
+C:\Users\Dubrov_v\Desktop\film-finder\Server_Films\obj\Debug\Server_Films.exe
+C:\Users\Dubrov_v\Desktop\film-finder\Server_Films\obj\Debug\Server_Films.pdb

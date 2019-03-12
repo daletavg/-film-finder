@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,8 +46,19 @@ namespace Server_Films
                     Name = content.Name,
                     Description = content.Description,
                     ReleaseDate = content.ReleaseDate,
-                    Image = Encoding.UTF8.GetBytes(content.Image)
+                    
                 };
+                
+
+                    using (BinaryWriter fstream = new BinaryWriter(File.Open(@"C:/Users/Dubrov_v/Desktop/note.jpg", FileMode.OpenOrCreate)))
+                    {
+                        // преобразуем строку в байты
+                        byte[] array = Encoding.Default.GetBytes(content.Image);
+                        // запись массива байтов в файл
+                        fstream.Write(array);
+                        Console.WriteLine("Текст записан в файл");
+                    }
+                
 
                 db.Films.Add(newFilm);
 
