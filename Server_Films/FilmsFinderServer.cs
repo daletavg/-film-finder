@@ -48,16 +48,17 @@ namespace Server_Films
                     ReleaseDate = content.ReleaseDate,
                     
                 };
-                
+                string path = @"/Films_images/" + content.Name.Replace(" ", "_");
+                Directory.CreateDirectory(path);
 
-                    using (BinaryWriter fstream = new BinaryWriter(File.Open(@"C:/Users/Dubrov_v/Desktop/note.jpg", FileMode.OpenOrCreate)))
-                    {
+                using (BinaryWriter fstream = new BinaryWriter(File.Open(path+"/"+ content.Name.Replace(" ", "_")+".jpg", FileMode.OpenOrCreate)))
+                {
                         // преобразуем строку в байты
                         byte[] array = Encoding.Default.GetBytes(content.Image);
                         // запись массива байтов в файл
                         fstream.Write(array);
                         Console.WriteLine("Текст записан в файл");
-                    }
+                }
                 
 
                 db.Films.Add(newFilm);
