@@ -14,6 +14,13 @@ namespace Kurs_adonet
 {
     class RegistrateViewModel:INotifyPropertyChanged
     {
+        public RegistrateViewModel(Action openRegistrate)
+        {
+            OpenLogin=new DelegateCommand(param=>openRegistrate(),null);
+        }
+
+        public ICommand OpenLogin { set; get; }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]

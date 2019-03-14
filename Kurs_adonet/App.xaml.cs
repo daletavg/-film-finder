@@ -17,14 +17,17 @@ namespace Kurs_adonet
         {
             MainWindow main = new MainWindow();
 
+            MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
+            
+            LoginViewModel loginAndRegistrate = new LoginViewModel(mainWindowViewModel.OpenRegistrateControl);
+            RegistrateViewModel registrateViewModel = new RegistrateViewModel(mainWindowViewModel.OpenLoginControl);
 
-            LoginViewModel loginAndRegistrate = new LoginViewModel();
-            RegistrateViewModel registrateViewModel = new RegistrateViewModel();
+            RegistrControl registrControl = new RegistrControl();
+            LoginControl loginControl = new LoginControl();
+            FilmFinder filmFinderControl = new FilmFinder();
 
-            //RegistrControl registr = new RegistrControl();
-            //LoginControl loginControl = new LoginControl();
-            //loginControl.DataContext = loginAndRegistrate;
-            //registr.DataContext = registrateViewModel;
+            loginControl.DataContext = loginAndRegistrate;
+            registrControl.DataContext = registrateViewModel;
 
             //main.MyFrame.Navigate(loginControl);
             
@@ -49,10 +52,20 @@ namespace Kurs_adonet
 
             filmsViewModel.FilmCards = new ObservableCollection<FilmCardViewModel>(filmCardViewModels);
 
-            main.FilmFinder.AllFilms.NewFilm.DataContext = addFilmViewModel;
-            main.FilmFinder.AllFilms.DataContext = filmsViewModel;
-            main.LogControl.DataContext = loginAndRegistrate;
-            main.RegControl.DataContext = registrateViewModel;
+            filmFinderControl.AllFilms.NewFilm.DataContext = addFilmViewModel;
+            filmFinderControl.AllFilms.DataContext = filmsViewModel;
+            loginControl.DataContext = loginAndRegistrate;
+            registrControl.DataContext = registrateViewModel;
+
+            List<object> usersControl = new List<object>();
+            usersControl.Add(registrControl);
+            usersControl.Add(loginControl);
+            usersControl.Add(filmFinderControl);
+
+
+            mainWindowViewModel.AddControls(usersControl);
+            
+            main.DataContext = mainWindowViewModel;
             main.Show();
 
         }

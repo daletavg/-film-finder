@@ -84,6 +84,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="AccountValidation.cs" />
+    <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="View Models\AddFilmViewModel.cs" />
     <Compile Include="User Controls\FilmFinder.xaml.cs">
       <DependentUpon>FilmFinder.xaml</DependentUpon>

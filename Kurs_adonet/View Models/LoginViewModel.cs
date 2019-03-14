@@ -16,6 +16,11 @@ namespace Kurs_adonet
 {
     class LoginViewModel : INotifyPropertyChanged
     {
+        public LoginViewModel(Action openRegistrate)
+        {
+          OpenRegistrate = new DelegateCommand(param=>openRegistrate(),null);
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)
         {
@@ -66,6 +71,10 @@ namespace Kurs_adonet
             return true;
 
         }
-        
+
+   
+
+        public ICommand OpenRegistrate { set; get; }
+
     }
 }

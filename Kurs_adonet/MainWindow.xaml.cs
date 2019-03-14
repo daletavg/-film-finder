@@ -23,19 +23,19 @@ namespace Kurs_adonet
         public MainWindow()
         {
             InitializeComponent();
-            LogControl.Registration += OpenRegistr;
-            RegControl.BackToLogin += OpenLogin;
+            //LogControl.Registration += OpenRegistr;
+            //RegControl.BackToLogin += OpenLogin;
         }
 
         void OpenLogin()
         {
-            LogControl.Visibility = Visibility.Visible;
-            RegControl.Visibility = Visibility.Hidden;
+            //LogControl.Visibility = Visibility.Visible;
+            //RegControl.Visibility = Visibility.Hidden;
         }
         void OpenRegistr()
         {
-            LogControl.Visibility = Visibility.Hidden;
-            RegControl.Visibility = Visibility.Visible;
+            //LogControl.Visibility = Visibility.Hidden;
+            //RegControl.Visibility = Visibility.Visible;
         }
     }
 }
