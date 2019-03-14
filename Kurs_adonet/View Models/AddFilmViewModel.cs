@@ -204,6 +204,7 @@ namespace Kurs_adonet
             
             FilmContent content = new FilmContent();
             content.Image = Encoding.Default.GetString(File.ReadAllBytes(PathToimage));
+            content.ImageName = PathToimage.Remove(0, PathToimage.LastIndexOf("\\")+1);
             content.Actors = _actorsAtFilm.ToArray();
             content.Description = DescriptionFilm;
             content.Geners = _genersAtFilm.ToArray();
@@ -213,28 +214,7 @@ namespace Kurs_adonet
             addNewFilm.AddNewFilm(content);
         }
 
-        string GetByteImage()
-        {
-            var a = File.ReadAllBytes(PathToimage);
-            return System.Text.Encoding.UTF8.GetString(a);
-            BitmapConverter convert = new BitmapConverter();
-            if (PathToimage == null) { }
-            else if (PathToimage.Contains(".png"))
-            {
-                var tmp =convert.ImageSourceToBytes(new PngBitmapEncoder(), PosterFilm);
-                var tmp2 = System.Text.Encoding.UTF8.GetString(tmp);
-                var m = convert.LoadImage(Encoding.UTF8.GetBytes(tmp2));
-                return tmp2;
-            }
-            else if (PathToimage.Contains(".jpg"))
-            {
-                var tmp = convert.ImageSourceToBytes(new JpegBitmapEncoder(), PosterFilm);
-                var tmp2 = System.Text.Encoding.UTF8.GetString(tmp);
-                return tmp2;
-            }
-
-            return null;
-        }
+        
 
 
     }

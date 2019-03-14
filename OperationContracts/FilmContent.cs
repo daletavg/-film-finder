@@ -18,6 +18,8 @@ namespace OperationContracts
         [DataMember]
         public string Image { get; set; }
         [DataMember]
+        public string ImageName { get; set; }
+        [DataMember]
         public string ReleaseDate { get; set; }
         [DataMember]
         public string[] Actors { set; get; }

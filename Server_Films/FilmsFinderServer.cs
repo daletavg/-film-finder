@@ -46,12 +46,13 @@ namespace Server_Films
                     Name = content.Name,
                     Description = content.Description,
                     ReleaseDate = content.ReleaseDate,
-                    
+                    Image = @"/Films_images/" + content.Name.Replace(" ", "_")+"/"+content.ImageName.Replace(" ","_")
                 };
+                
                 string path = @"/Films_images/" + content.Name.Replace(" ", "_");
                 Directory.CreateDirectory(path);
 
-                using (BinaryWriter fstream = new BinaryWriter(File.Open(path+"/"+ content.Name.Replace(" ", "_")+".jpg", FileMode.OpenOrCreate)))
+                using (BinaryWriter fstream = new BinaryWriter(File.Open(newFilm.Image, FileMode.OpenOrCreate)))
                 {
                         // преобразуем строку в байты
                         byte[] array = Encoding.Default.GetBytes(content.Image);
@@ -136,10 +137,7 @@ namespace Server_Films
                 var film = db.Films.ToArray()[index];
                 newFilm.Name = film.Name;
                 newFilm.Description = film.Description;
-                if (film.Image!=null)
-                {
-                    newFilm.Image = Encoding.UTF8.GetString(film.Image);
-                }
+                
                 
                 newFilm.ReleaseDate = film.ReleaseDate;
 
@@ -150,6 +148,8 @@ namespace Server_Films
                 {
                     newFilm.Actors[i] = actors[i].Actor.Name;
                 }
+
+                newFilm.Image = Encoding.Default.GetString(File.ReadAllBytes(film.Image));
 
                 var produssers = db.ProdusserToFilms.ToArray().Where(i => i.Film == film).ToArray();
                 newFilm.Produsers = new string[produssers.Length];

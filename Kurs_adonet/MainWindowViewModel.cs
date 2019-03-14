@@ -6,34 +6,39 @@ using System.Data.Entity;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Threading;
 using Kurs_adonet.Annotations;
 
 namespace Kurs_adonet
 {
     public class MainWindowViewModel:INotifyPropertyChanged
     {
-        private ObservableCollection<object> ListUsersControl { set; get; }
+
+       
+
+        private ObservableCollection<IUsingControl> ListUsersControl { set; get; }
+
+
 
         private object _openControl;
         public object OpenControl
         {
-            set { _openControl = value; OnPropertyChanged(nameof(OpenControl));}
+            set { _openControl = value;
+              
+                OnPropertyChanged(nameof(OpenControl)) ;}
             get { return _openControl; }
         }
 
-        public void AddControls(List<object> usersControl)
-        {
-            ListUsersControl = new ObservableCollection<object>(usersControl);
-            OpenControl = ListUsersControl[1];
-        }
+      
 
         public void OpenRegistrateControl()
         {
             foreach (var o in ListUsersControl)
             {
-                if (o is RegistrControl)
+                if (o.ThisControl==CurrentControl.RegistrateControl)
                 {
                     OpenControl = o;
                 }
@@ -43,7 +48,7 @@ namespace Kurs_adonet
         {
             foreach (var o in ListUsersControl)
             {
-                if (o is LoginControl)
+                if (o.ThisControl == CurrentControl.LoginControl)
                 {
                     OpenControl = o;
                 }
@@ -58,10 +63,11 @@ namespace Kurs_adonet
 
 
 
-
-
-
-
+        public void AddControls(List<IUsingControl> usersControl)
+        {
+            ListUsersControl = new ObservableCollection<IUsingControl>(usersControl);
+            OpenControl = ListUsersControl[2];
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

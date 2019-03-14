@@ -18,7 +18,7 @@ namespace Kurs_adonet
     /// <summary>
     /// Interaction logic for FilmFinder.xaml
     /// </summary>
-    public partial class FilmFinder : UserControl
+    public partial class FilmFinder : UserControl,IUsingControl
     {
         bool isFirstStart = true;
         List<string> menuList = new List<string> { "Все фильмы", "Мои фильмы", "Настройки", "Чат", "О проекте" };
@@ -53,6 +53,11 @@ namespace Kurs_adonet
                     this.AllFilms.Visibility = Visibility.Hidden;
                     break;
             }
+        }
+
+        public CurrentControl ThisControl
+        {
+            get { return CurrentControl.FilmFinderControl; }
         }
     }
 }

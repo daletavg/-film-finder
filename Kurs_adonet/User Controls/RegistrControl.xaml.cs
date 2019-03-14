@@ -18,7 +18,7 @@ namespace Kurs_adonet
     /// <summary>
     /// Interaction logic for RegistrControl.xaml
     /// </summary>
-    public partial class RegistrControl : UserControl
+    public partial class RegistrControl : UserControl,IUsingControl
     {
         public RegistrControl()
         {
@@ -29,6 +29,11 @@ namespace Kurs_adonet
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
             BackToLogin();
+        }
+
+        public CurrentControl ThisControl
+        {
+            get { return CurrentControl.RegistrateControl; }
         }
     }
 }

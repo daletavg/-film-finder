@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,10 +25,11 @@ namespace Kurs_adonet
         public MainWindow()
         {
             InitializeComponent();
+            
             //LogControl.Registration += OpenRegistr;
             //RegControl.BackToLogin += OpenLogin;
         }
-
+        
         void OpenLogin()
         {
             //LogControl.Visibility = Visibility.Visible;

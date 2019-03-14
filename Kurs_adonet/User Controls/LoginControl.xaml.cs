@@ -19,7 +19,7 @@ namespace Kurs_adonet
     /// <summary>
     /// Interaction logic for LoginControl.xaml
     /// </summary>
-    public partial class LoginControl : UserControl
+    public partial class LoginControl : UserControl,IUsingControl
     {
         public LoginControl()
         {
@@ -34,5 +34,9 @@ namespace Kurs_adonet
             Registration();
         }
 
+        public CurrentControl ThisControl
+        {
+            get { return CurrentControl.LoginControl; }
+        }
     }
 }

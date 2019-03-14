@@ -16,8 +16,10 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="Film Finder" MinHeight="700"  MinWidth="750" Width="939">
+    
     <Grid>
-        <ContentControl Content="{Binding Path=OpenControl,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></ContentControl>
+       
+        <ContentControl Opacity="{Binding Path=ChangeOpacity,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,NotifyOnSourceUpdated=True}" Name="MyContentControl" Content="{Binding Path=OpenControl,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></ContentControl>
         <!--<Frame Name="MyFrame" ></Frame>-->
         <!--<local:LoginControl VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden"  x:Name="LogControl"></local:LoginControl>
         <local:RegistrControl VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden" x:Name="RegControl"></local:RegistrControl>

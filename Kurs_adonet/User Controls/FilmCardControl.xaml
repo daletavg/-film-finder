@@ -19,7 +19,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <Image  Height="140"  Stretch="UniformToFill" />
+                <Image  Height="140"  Stretch="UniformToFill" Source="{Binding PosterFilm,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                 <ToggleButton Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 16 -20" Width="40" Height="40"
                     Style="{StaticResource MaterialDesignActionToggleButton}"
                     ToolTip="MaterialDesignActionLightToggleButton"> 
