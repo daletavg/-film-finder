@@ -9,9 +9,9 @@
              d:DesignHeight="450" Width="761.328">
     <Grid>
         
-        <ScrollViewer  VerticalAlignment="Center" HorizontalAlignment="Center" Width="720" >
+        <ScrollViewer Width="720" >
             <Grid>
-                <WrapPanel Width="760">
+                <WrapPanel>
                     <ItemsControl ItemsSource="{Binding FilmCards}"  Width="760">
 
                     <ItemsControl.ItemTemplate>
@@ -43,8 +43,11 @@
                 <ColumnDefinition Width="20*"/>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="1" Grid.Row="1" 
+                   
+    
                 Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" 
                 Style="{StaticResource MaterialDesignFloatingActionDarkButton}" 
+                   materialDesign:ShadowAssist.ShadowDepth="Depth3"
                 ToolTip="MaterialDesignFloatingActionDarkButton"   >
                 <Button.CommandParameter>
                     <local:AddFilm x:Name="NewFilm"/>

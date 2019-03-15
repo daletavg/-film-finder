@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Text;
 using System.Windows;
+using System.Windows.Interop;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Kurs_adonet.FilmsFinder;
+
 
 
 namespace Kurs_adonet
@@ -47,16 +51,22 @@ namespace Kurs_adonet
                 FilmCardViewModel card = new FilmCardViewModel() { FilmName = film.Name, Date = film.ReleaseDate, DescriptionFilm = film.Description };
                 if (film.Image != null)
                 {
-                    byte[] myByte = Encoding.Default.GetBytes(film.Image);
-                    using (MemoryStream ms = new MemoryStream(myByte, 0, myByte.Length))
+                    byte[] myByte = film.Image;
+                    using (MemoryStream ms = new MemoryStream(myByte))
                     {
-                        ms.Write(myByte, 0, myByte.Length);
-                        var imageSource = new BitmapImage();
-                        imageSource.BeginInit();
-                        imageSource.CacheOption = BitmapCacheOption.OnLoad;
-                        imageSource.StreamSource = ms;
-                        imageSource.EndInit();
-                        card.PosterFilm = imageSource;
+                        var bmp = Bitmap.FromStream(ms);
+
+
+
+                        
+                        ms.Seek(0, System.IO.SeekOrigin.Begin);
+
+                        var bitmap = new System.Windows.Media.Imaging.BitmapImage();
+                        bitmap.BeginInit();
+                        bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                        bitmap.StreamSource = ms;
+                        bitmap.EndInit();
+                        card.PosterFilm = bitmap;
                     }
                 }
                 filmCardViewModels.Add(card);

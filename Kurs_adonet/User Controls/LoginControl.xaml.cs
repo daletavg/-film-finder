@@ -38,5 +38,10 @@ namespace Kurs_adonet
         {
             get { return CurrentControl.LoginControl; }
         }
+
+        private void loginBox_Error(object sender, ValidationErrorEventArgs e)
+        {
+
+        }
     }
 }

@@ -38,7 +38,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <materialDesign:PackIcon Kind="Account"  Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Margin="0,0,0,10" Height="30" x:Name="loginBox" Text="{Binding Login}" materialDesign:HintAssist.Hint="Логин" />
+                    <TextBox Validation.Error="loginBox_Error" Grid.Column="1" Margin="0,0,0,10" Height="30" x:Name="loginBox" Text="{Binding Login}" materialDesign:HintAssist.Hint="Логин" />
                 </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>

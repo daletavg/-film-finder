@@ -68,7 +68,7 @@ namespace Kurs_adonet
             set
             {
                 _allProdussers = value;
-                _produssersAtFilm.Add(value);
+                
                 OnPropertyChanged(nameof(AllProdussers));
             }
             get { return _allProdussers; }
@@ -80,7 +80,7 @@ namespace Kurs_adonet
             set
             {
                 _allActors = value;
-                _actorsAtFilm.Add(value);
+                
                 OnPropertyChanged(nameof(AllActors));
             }
             get { return _allActors; }
@@ -92,7 +92,7 @@ namespace Kurs_adonet
             set
             {
                 _allGeners = value;
-                _genersAtFilm.Add(value);
+                
                 OnPropertyChanged(nameof(AllGeners));
             }
             get { return _allGeners; }
@@ -136,7 +136,7 @@ namespace Kurs_adonet
         private void AddProdusserToLable()
         {
             AllProdussers += ProdusserText + " ";
-            
+            _produssersAtFilm.Add(ProdusserText);
         }
 
 
@@ -159,6 +159,7 @@ namespace Kurs_adonet
         private void AddActorToLable()
         {
             AllActors += ActorText + " ";
+            _actorsAtFilm.Add(ActorText);
         }
 
 
@@ -180,6 +181,7 @@ namespace Kurs_adonet
         private void AddGenerToLable()
         {
             AllGeners += GenerText + " ";
+            _genersAtFilm.Add(GenerText);
         }
 
         private DelegateCommand _newFilm;
@@ -203,7 +205,7 @@ namespace Kurs_adonet
             
             
             FilmContent content = new FilmContent();
-            content.Image = Encoding.Default.GetString(File.ReadAllBytes(PathToimage));
+            content.Image = File.ReadAllBytes(PathToimage);
             content.ImageName = PathToimage.Remove(0, PathToimage.LastIndexOf("\\")+1);
             content.Actors = _actorsAtFilm.ToArray();
             content.Description = DescriptionFilm;

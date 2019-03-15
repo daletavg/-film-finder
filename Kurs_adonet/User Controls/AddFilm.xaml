@@ -6,17 +6,17 @@
              xmlns:local="clr-namespace:Kurs_adonet"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
-             mc:Ignorable="d" Width="650" Background="White" Height="604">
+             mc:Ignorable="d" Width="650" Background="White" Height="700">
     <StackPanel Margin="30">
-        
-            <Label FontWeight="Bold" FontFamily="Arial" FontSize="20">Новый фильм</Label>
-            <Label HorizontalAlignment="Right"  Foreground="Red"> Неверно заполнена форма</Label>
 
-        <Grid Height="480" >
+        <Label FontWeight="Bold" FontFamily="Arial" FontSize="20">Новый фильм</Label>
+        <Label HorizontalAlignment="Right"  Foreground="Red">Неверно заполнена форма</Label>
+
+        <Grid Height="583" Margin="10,0,0,0" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="313*"/>
-                <RowDefinition Height="127*"/>
-                <RowDefinition Height="40*" />
+                <RowDefinition Height="404*"/>
+                <RowDefinition Height="135*"/>
+                <RowDefinition Height="44*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="241*"/>
@@ -126,9 +126,9 @@
 
             <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
                 <TextBox Height="0"  Text="{Binding PathToimage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Name="PathToImage" Visibility="Hidden"></TextBox>
-                <TextBox Text="{Binding DescriptionFilm, Mode=TwoWay}" Style="{StaticResource MaterialDesignTextAreaTextBox}" VerticalAlignment="Top" Height="125" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" materialDesign:HintAssist.Hint="Описание фильма:" IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignTextAreaTextBoxEnabledComboBox}" Margin="40,0,40,0"  />
+                <TextBox Text="{Binding DescriptionFilm, Mode=TwoWay}" Style="{StaticResource MaterialDesignTextAreaTextBox}" VerticalAlignment="Top" Height="112" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" materialDesign:HintAssist.Hint="Описание фильма:" IsEnabled="{Binding IsChecked, ElementName=MaterialDesignTextAreaTextBoxEnabledComboBox}" Margin="40,0,40,0"  />
             </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Orientation="Horizontal" Width="230" Margin="204,0,156,0">
+            <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Orientation="Horizontal" Width="230" Margin="199,0,151,0">
                 <Button  Click="AcceptClick" Style="{StaticResource MaterialDesignFlatButton}"   IsDefault="True" Margin="0 8 8 0" Command="{Binding NewFilm}">
 
                     ДОБАВИТЬ

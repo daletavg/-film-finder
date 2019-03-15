@@ -42,9 +42,12 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,7 +56,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BitmapImage.cs" />
     <Compile Include="CheckUserOnApp.cs" />
+    <Compile Include="CreateNewFilm.cs" />
     <Compile Include="Film finder\Actor.cs" />
     <Compile Include="Film finder\ActorToFilm.cs" />
     <Compile Include="Film finder\Coment.cs" />
