@@ -9,11 +9,14 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using Kurs_adonet.Annotations;
 using Kurs_adonet.FilmsFinder;
+using OperationContracts;
+using ILoginRegisterUser = Kurs_adonet.FilmsFinder.ILoginRegisterUser;
 
 namespace Kurs_adonet
 {
     class RegistrateViewModel:INotifyPropertyChanged
     {
+        
         public RegistrateViewModel(Action openRegistrate)
         {
             OpenLogin=new DelegateCommand(param=>openRegistrate(),null);
@@ -28,7 +31,7 @@ namespace Kurs_adonet
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
+        public DateTime DateBirthday { set; get; }
         public string Name { set; get; } = "";
         public string Password { set; get; } = "";
         public string NewPassword { set; get; } = "";
@@ -92,7 +95,14 @@ namespace Kurs_adonet
             var password = passwordBox.Password;
 
             byte[] tmp = { };
-            _loginRegister.AddNewUserOnDB(Name, 0, password,Gender,tmp);
+            RegistrateCurrentUser user = new RegistrateCurrentUser();
+            user.Login = Name;
+            user.Password = password;
+            user.Gender = Gender;
+            user.UserImage = tmp;
+            user.DateBirthday = DateBirthday.ToString();
+            _loginRegister.AddNewUserOnDB(user);
+            OpenLogin.Execute(null);
         }
 
         public bool CanExecuteRegistrate()

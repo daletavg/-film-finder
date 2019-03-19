@@ -1,4 +1,4 @@
-namespace Server_Films
+namespace Server_Films.Film_finder
 {
     using System;
     using System.Collections.Generic;
@@ -31,6 +31,8 @@ namespace Server_Films
 
         public string ReleaseDate { get; set; }
 
+        public int? UserId { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ActorToFilm> ActorToFilms { get; set; }
 
@@ -39,6 +41,8 @@ namespace Server_Films
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FavoritList> FavoritLists { get; set; }
+
+        public virtual User User { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GenreToFilm> GenreToFilms { get; set; }

@@ -21,11 +21,18 @@ namespace Kurs_adonet.FilmsFinder {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginRegisterUser/CheckUserOnDB", ReplyAction="http://tempuri.org/ILoginRegisterUser/CheckUserOnDBResponse")]
         System.Threading.Tasks.Task<int> CheckUserOnDBAsync(string login, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginRegisterUser/AddNewUserOnDB", ReplyAction="http://tempuri.org/ILoginRegisterUser/AddNewUserOnDBResponse")]
-        void AddNewUserOnDB(string login, int age, string password, int gender, byte[] usrImage);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginRegisterUser/GetCurrentUser", ReplyAction="http://tempuri.org/ILoginRegisterUser/GetCurrentUserResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(OperationContracts.RegistrateCurrentUser))]
+        OperationContracts.CurrentUser GetCurrentUser();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginRegisterUser/GetCurrentUser", ReplyAction="http://tempuri.org/ILoginRegisterUser/GetCurrentUserResponse")]
+        System.Threading.Tasks.Task<OperationContracts.CurrentUser> GetCurrentUserAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginRegisterUser/AddNewUserOnDB", ReplyAction="http://tempuri.org/ILoginRegisterUser/AddNewUserOnDBResponse")]
-        System.Threading.Tasks.Task AddNewUserOnDBAsync(string login, int age, string password, int gender, byte[] usrImage);
+        void AddNewUserOnDB(OperationContracts.RegistrateCurrentUser registrate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginRegisterUser/AddNewUserOnDB", ReplyAction="http://tempuri.org/ILoginRegisterUser/AddNewUserOnDBResponse")]
+        System.Threading.Tasks.Task AddNewUserOnDBAsync(OperationContracts.RegistrateCurrentUser registrate);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -63,12 +70,20 @@ namespace Kurs_adonet.FilmsFinder {
             return base.Channel.CheckUserOnDBAsync(login, password);
         }
         
-        public void AddNewUserOnDB(string login, int age, string password, int gender, byte[] usrImage) {
-            base.Channel.AddNewUserOnDB(login, age, password, gender, usrImage);
+        public OperationContracts.CurrentUser GetCurrentUser() {
+            return base.Channel.GetCurrentUser();
         }
         
-        public System.Threading.Tasks.Task AddNewUserOnDBAsync(string login, int age, string password, int gender, byte[] usrImage) {
-            return base.Channel.AddNewUserOnDBAsync(login, age, password, gender, usrImage);
+        public System.Threading.Tasks.Task<OperationContracts.CurrentUser> GetCurrentUserAsync() {
+            return base.Channel.GetCurrentUserAsync();
+        }
+        
+        public void AddNewUserOnDB(OperationContracts.RegistrateCurrentUser registrate) {
+            base.Channel.AddNewUserOnDB(registrate);
+        }
+        
+        public System.Threading.Tasks.Task AddNewUserOnDBAsync(OperationContracts.RegistrateCurrentUser registrate) {
+            return base.Channel.AddNewUserOnDBAsync(registrate);
         }
     }
     

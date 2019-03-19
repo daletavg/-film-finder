@@ -1,4 +1,4 @@
-namespace Server_Films
+namespace Server_Films.Film_finder
 {
     using System;
     using System.Collections.Generic;
@@ -13,6 +13,7 @@ namespace Server_Films
         {
             Coments = new HashSet<Coment>();
             FavoritLists = new HashSet<FavoritList>();
+            Films = new HashSet<Film>();
             Marks = new HashSet<Mark>();
             WaitingLists = new HashSet<WaitingList>();
         }
@@ -21,7 +22,8 @@ namespace Server_Films
 
         public string Name { get; set; }
 
-        public int Age { get; set; }
+        [StringLength(250)]
+        public string DateBirthday { get; set; }
 
         public string Password { get; set; }
 
@@ -34,6 +36,9 @@ namespace Server_Films
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FavoritList> FavoritLists { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Film> Films { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Mark> Marks { get; set; }

@@ -7,23 +7,32 @@ using System.Threading.Tasks;
 using OperationContracts;
 using System.Drawing;
 using System.Drawing.Imaging;
+using Server_Films.Film_finder;
 
 namespace Server_Films
 {
     public class FilmsFinderServer:ILoginRegisterUser, IAddLoadFilm
     {
+        private CurrentUser _currentUser;
         public int CheckUserOnDB(string login, string password)
         {
-            return (int) new CheckUserOnApp().CheckUser(login, password);
+            var user = new CheckUserOnApp();
+            var userResult = user.CheckUser(login,password);
+            if (userResult==UResult.Access)
+            {
+                _currentUser = user.CurrentUser;
+            }
+
+            return (int)userResult;
 
         }
 
-        public void AddNewUserOnDB(string login, int age, string password, int gender, byte[] usrImage)
+        public void AddNewUserOnDB(RegistrateCurrentUser registrate)
         {
             using (var db = new FilmFinderDB())
             {
                 bool tmpGender = true;
-                switch (gender)
+                switch (registrate.Gender)
                 {
                     case 0:
                         tmpGender = false;
@@ -34,14 +43,14 @@ namespace Server_Films
                 }
                 GetHeshMd5 getHesh = new GetHeshMd5();
                 
-                db.Users.Add(new User() {Name = login, Password = getHesh.GetHesh(password), Gender = tmpGender});
+                db.Users.Add(new User() {Name = registrate.Login, Password = getHesh.GetHesh(registrate.Password), Gender = tmpGender});
                 db.SaveChanges();
             }
         }
 
         public void AddNewFilm(FilmContent content)
         {
-            CreateNewFilm createNewFilm = new CreateNewFilm(content);
+            CreateNewFilm createNewFilm = new CreateNewFilm(content,_currentUser);
             createNewFilm.Create();
         }
 
@@ -137,6 +146,11 @@ namespace Server_Films
 
             return tmp;
 
+        }
+
+        public CurrentUser GetCurrentUser()
+        {
+            return _currentUser;
         }
     }
 }

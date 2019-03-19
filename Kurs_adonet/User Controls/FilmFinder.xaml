@@ -78,7 +78,7 @@
                     <Grid Name="ContentGrid">
 
                         <local:FilmsControl Visibility="Hidden" x:Name="AllFilms"/>
-
+                        
 
 
                     </Grid>

@@ -120,3 +120,5 @@ C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.Properties.
 C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.csproj.GenerateResource.cache
 C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.csproj.CoreCompileInputs.cache
 C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.csproj.CopyComplete
+C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\LoadingControl.g.cs
+C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\LoadingControl.baml

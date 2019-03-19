@@ -85,7 +85,11 @@
     </Compile>
     <Compile Include="AccountValidation.cs" />
     <Compile Include="IUsingControl.cs" />
+    <Compile Include="LoadingControl.xaml.cs">
+      <DependentUpon>LoadingControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindowViewModel.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="View Models\AddFilmViewModel.cs" />
     <Compile Include="User Controls\FilmFinder.xaml.cs">
       <DependentUpon>FilmFinder.xaml</DependentUpon>
@@ -111,6 +115,10 @@
     <Compile Include="User Controls\RegistrControl.xaml.cs">
       <DependentUpon>RegistrControl.xaml</DependentUpon>
     </Compile>
+    <Page Include="LoadingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="User Controls\FilmFinder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -181,6 +189,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\OperationContracts.AllSpecificAddingFilm.datasource" />
+    <None Include="Properties\DataSources\OperationContracts.CurrentUser.datasource" />
     <None Include="Properties\DataSources\OperationContracts.FilmContent.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

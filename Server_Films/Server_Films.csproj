@@ -67,16 +67,17 @@
     <Compile Include="Film finder\FilmFinderDB.cs" />
     <Compile Include="Film finder\Genre.cs" />
     <Compile Include="Film finder\GenreToFilm.cs" />
-    <Compile Include="GetMD5Hash.cs" />
-    <Compile Include="FilmsFinderServer.cs" />
-    <Compile Include="Mark.cs" />
+    <Compile Include="Film finder\Mark.cs" />
     <Compile Include="Film finder\Priority.cs" />
     <Compile Include="Film finder\Producer.cs" />
     <Compile Include="Film finder\ProdusserToFilm.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Film finder\User.cs" />
     <Compile Include="Film finder\WaitingList.cs" />
+    <Compile Include="GetMD5Hash.cs" />
+    <Compile Include="FilmsFinderServer.cs" />
+    <Compile Include="Mark.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

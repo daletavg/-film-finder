@@ -13,7 +13,10 @@ namespace OperationContracts
 
         [OperationContract]
         int CheckUserOnDB(string login, string password);
+
         [OperationContract]
-        void AddNewUserOnDB(string login, int age, string password, int gender, byte[] usrImage);
+        CurrentUser GetCurrentUser();
+        [OperationContract]
+        void AddNewUserOnDB(RegistrateCurrentUser registrate);
     }
 }

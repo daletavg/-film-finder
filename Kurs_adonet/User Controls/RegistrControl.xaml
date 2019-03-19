@@ -48,6 +48,13 @@
                     <PasswordBox Grid.Column="1" Margin="0,0,0,10" Height="30" x:Name="currentPasswordBox" materialDesign:HintAssist.Hint="Подтверждение пароля"/>
                 </Grid>
             </StackPanel>
+            <StackPanel Margin="19,0,0,0">
+                
+                <DatePicker  SelectedDate="{Binding Path=DateBirthday ,Mode=TwoWay}" 
+                             Name="LocaleDatePicker"
+                           
+                             materialDesign:HintAssist.Hint="Дата рождения" />
+            </StackPanel>
             <StackPanel Margin="15,0,0,0">
                 <Label Content="Пол:"/>
                 <StackPanel Orientation="Horizontal">

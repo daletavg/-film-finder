@@ -16,9 +16,11 @@ namespace Kurs_adonet
 {
     class LoginViewModel : INotifyPropertyChanged
     {
-        public LoginViewModel(Action openRegistrate)
+        public Action _openFilmFinder;
+        public LoginViewModel(Action openRegistrate,Action openFilmFinder)
         {
-          OpenRegistrate = new DelegateCommand(param=>openRegistrate(),null);
+            OpenRegistrate = new DelegateCommand(param=>openRegistrate(),null);
+            _openFilmFinder = openFilmFinder;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -62,7 +64,18 @@ namespace Kurs_adonet
                 return;
             var password = passwordBox.Password;
             UResult result = (UResult)loginRegister.CheckUserOnDB(Login, password);
-            
+            if (result == UResult.Access)
+            {
+                _openFilmFinder();
+            }
+            else if(result == UResult.PasswordFailed)
+            {
+                ErrorMessage = "*Неправильный пароль";
+            }
+            else if (result == UResult.UserFailed)
+            {
+                ErrorMessage = "*Такого пользователя нет";
+            }
 
         }
 

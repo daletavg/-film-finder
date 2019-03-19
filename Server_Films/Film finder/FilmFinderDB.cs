@@ -1,4 +1,4 @@
-namespace Server_Films
+namespace Server_Films.Film_finder
 {
     using System;
     using System.Data.Entity;

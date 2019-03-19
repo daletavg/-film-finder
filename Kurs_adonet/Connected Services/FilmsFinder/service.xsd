@@ -16,14 +16,22 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetCurrentUser">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="GetCurrentUserResult" nillable="true" type="q1:CurrentUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AddNewUserOnDB">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="age" type="xs:int" />
-        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="gender" type="xs:int" />
-        <xs:element minOccurs="0" name="usrImage" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="registrate" nillable="true" type="q2:RegistrateCurrentUser" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -35,7 +43,7 @@
   <xs:element name="AddNewFilm">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="content" nillable="true" type="q1:FilmContent" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="content" nillable="true" type="q3:FilmContent" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -54,7 +62,7 @@
   <xs:element name="GetFilmResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="GetFilmResult" nillable="true" type="q2:FilmContent" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="GetFilmResult" nillable="true" type="q4:FilmContent" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -66,7 +74,7 @@
   <xs:element name="GetSpecificResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="GetSpecificResult" nillable="true" type="q3:AllSpecificAddingFilm" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="GetSpecificResult" nillable="true" type="q5:AllSpecificAddingFilm" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

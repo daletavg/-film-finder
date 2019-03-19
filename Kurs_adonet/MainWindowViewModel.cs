@@ -55,7 +55,16 @@ namespace Kurs_adonet
             }
         }
 
-
+        public void OpenFilmFinderControl()
+        {
+            foreach (var o in ListUsersControl)
+            {
+                if (o.ThisControl == CurrentControl.FilmFinderControl)
+                {
+                    OpenControl = o;
+                }
+            }
+        }
 
 
 
@@ -66,7 +75,7 @@ namespace Kurs_adonet
         public void AddControls(List<IUsingControl> usersControl)
         {
             ListUsersControl = new ObservableCollection<IUsingControl>(usersControl);
-            OpenControl = ListUsersControl[2];
+            OpenControl = ListUsersControl[1];
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

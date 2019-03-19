@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Server_Films.Film_finder;
 
 namespace Server_Films
 {
@@ -12,24 +13,33 @@ namespace Server_Films
     {
         public FilmContent FilmContent { set; get; }
         public Film _film;
-        public CreateNewFilm (FilmContent filmContent)
+        private CurrentUser _currentUser;
+        public CreateNewFilm (FilmContent filmContent,CurrentUser currentUser)
         {
             FilmContent = filmContent;
             _film = CreateFilmObject();
-
+            _currentUser = currentUser;
         }
 
 
         public Film CreateFilmObject()
         {
-            var newFilm = new Film()
+            Film newFilm;
+            using (var db = new FilmFinderDB())
             {
-                Name = FilmContent.Name,
-                Description = FilmContent.Description,
-                ReleaseDate = FilmContent.ReleaseDate,
-                Image = @"./Films_images/" + FilmContent.Name.Replace(" ", "_") + "/" + FilmContent.ImageName.Replace(" ", "_")
-            };
-          
+               
+
+                newFilm = new Film()
+                {
+                    Name = FilmContent.Name,
+                    Description = FilmContent.Description,
+                    ReleaseDate = FilmContent.ReleaseDate,
+                    User = db.Users.ToList().First(i => i.Name == _currentUser.Login),
+                    Image = @"./Films_images/" + FilmContent.Name.Replace(" ", "_") + "/" +
+                                FilmContent.ImageName.Replace(" ", "_")
+                };
+            }
+
             return newFilm;
         }
 

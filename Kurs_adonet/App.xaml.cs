@@ -26,7 +26,7 @@ namespace Kurs_adonet
 
             MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
             
-            LoginViewModel loginAndRegistrate = new LoginViewModel(mainWindowViewModel.OpenRegistrateControl);
+            LoginViewModel loginAndRegistrate = new LoginViewModel(mainWindowViewModel.OpenRegistrateControl,mainWindowViewModel.OpenFilmFinderControl);
             RegistrateViewModel registrateViewModel = new RegistrateViewModel(mainWindowViewModel.OpenLoginControl);
 
             RegistrControl registrControl = new RegistrControl();

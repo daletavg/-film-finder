@@ -10,6 +10,7 @@ namespace Kurs_adonet
 {
     public class FilmsViewModel : INotifyPropertyChanged
     {
+        
         public ObservableCollection<FilmCardViewModel> FilmCards { set; get; }
         public event PropertyChangedEventHandler PropertyChanged;
     }
