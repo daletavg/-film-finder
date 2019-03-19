@@ -8,12 +8,22 @@ using OperationContracts;
 using System.Drawing;
 using System.Drawing.Imaging;
 using Server_Films.Film_finder;
+using System.ServiceModel;
 
 namespace Server_Films
 {
-    public class FilmsFinderServer:ILoginRegisterUser, IAddLoadFilm
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession,ConcurrencyMode = ConcurrencyMode.Single)]
+    public class FilmsFinderServer: IFilmFinderServer,IAddLoadFilm,ILoginRegisterUser
     {
-        private CurrentUser _currentUser;
+        
+        private CurrentUser _currentUser = new CurrentUser();
+
+        public FilmsFinderServer()
+        {
+            int a;
+            a = 10;
+        }
+
         public int CheckUserOnDB(string login, string password)
         {
             var user = new CheckUserOnApp();

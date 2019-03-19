@@ -42,7 +42,11 @@ namespace Kurs_adonet
             FilmsViewModel filmsViewModel = new FilmsViewModel();
 
 
-            AddLoadFilmClient addNewFilm = new AddLoadFilmClient();
+            IFilmFinderServer filmFinderServer = new FilmFinderServerClient();
+            
+
+            IAddLoadFilm addNewFilm = new FilmFinderServerClient();
+
             int count = addNewFilm.GetFilmsCount();
             List<FilmCardViewModel> filmCardViewModels = new List<FilmCardViewModel>();
             for (int i = 0; i < count; i++)

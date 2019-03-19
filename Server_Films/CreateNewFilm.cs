@@ -16,9 +16,10 @@ namespace Server_Films
         private CurrentUser _currentUser;
         public CreateNewFilm (FilmContent filmContent,CurrentUser currentUser)
         {
+            _currentUser = currentUser;
             FilmContent = filmContent;
             _film = CreateFilmObject();
-            _currentUser = currentUser;
+            
         }
 
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OperationContracts
 {
-    [ServiceContract]
+    [ServiceContract(SessionMode = SessionMode.Required)]
     public interface ILoginRegisterUser
     {
 

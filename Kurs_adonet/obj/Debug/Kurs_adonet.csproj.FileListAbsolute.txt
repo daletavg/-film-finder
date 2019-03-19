@@ -122,3 +122,5 @@ C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.csproj.Core
 C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.csproj.CopyComplete
 C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\LoadingControl.g.cs
 C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\LoadingControl.baml
+C:\Users\Dubrov_v\Desktop\film-finder\Kurs_adonet\obj\Debug\LoadingControl.g.cs
+C:\Users\Dubrov_v\Desktop\film-finder\Kurs_adonet\obj\Debug\LoadingControl.baml

@@ -4,7 +4,8 @@ using System.ServiceModel;
 
 namespace OperationContracts
 {
-    [ServiceContract]
+    
+    [ServiceContract(SessionMode=SessionMode.Required)]
     public interface IAddLoadFilm
     {   
         [OperationContract]

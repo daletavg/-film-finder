@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AllSpecificAddingFilm.cs" />
     <Compile Include="CurrentUser.cs" />
+    <Compile Include="IFilmFinderServer.cs" />
     <Compile Include="RegistrateCurrentUser.cs" />
     <Compile Include="UResult.cs" />
     <Compile Include="Class1.cs" />
