@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Kurs_adonet.FilmsFinder;
 using OperationContracts;
-using IAddLoadFilm = Kurs_adonet.FilmsFinder.IAddLoadFilm;
+
 
 //using Kurs_adonet.LoginAndRegistrate;
 
@@ -21,7 +21,18 @@ namespace Kurs_adonet
 {
     class AddFilmViewModel : INotifyPropertyChanged
     {
-        IAddLoadFilm addNewFilm = new AddLoadFilmClient();
+        OperationContracts.IAddLoadFilm _addNewFilm;
+
+        public AddFilmViewModel(OperationContracts.IAddLoadFilm addNewFilm)
+        {
+            _addNewFilm = addNewFilm;
+            var tmp = _addNewFilm.GetSpecific();
+            _listProdusser = new ObservableCollection<string>(tmp.Produsers);
+            _listActor = new ObservableCollection<string>(tmp.Actors);
+            _listGenre = new ObservableCollection<string>(tmp.Geners);
+
+        }
+
         private ImageSource _posterImage;
         public ImageSource PosterFilm
         {
@@ -109,14 +120,7 @@ namespace Kurs_adonet
             get { return _pathToImage; }
         }
 
-        public AddFilmViewModel()
-        {
-           var tmp = addNewFilm.GetSpecific();
-           _listProdusser = new ObservableCollection<string>(tmp.Produsers);
-           _listActor = new ObservableCollection<string>(tmp.Actors);
-           _listGenre = new ObservableCollection<string>(tmp.Geners);
-
-        }
+       
 
         private DelegateCommand _addProdusser;
 
@@ -213,7 +217,7 @@ namespace Kurs_adonet
             content.Name = FilmName;
             content.Produsers = _produssersAtFilm.ToArray();
             content.ReleaseDate = Date.ToString();
-            addNewFilm.AddNewFilm(content);
+            _addNewFilm.AddNewFilm(content);
         }
 
         

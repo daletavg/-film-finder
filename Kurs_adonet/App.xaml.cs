@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
-using System.Text;
 using System.Windows;
-using System.Windows.Interop;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using Kurs_adonet.FilmsFinder;
+using OperationContracts;
 
 
 
@@ -22,12 +17,17 @@ namespace Kurs_adonet
     {
         private void App_OnStartup(object sender, StartupEventArgs e)
         {
+
+
+
+            IFilmFinderServer serverFilmFinder = new FilmFinderServer();
+            LoadingFilms.AddLoadFilm = serverFilmFinder;
+
             MainWindow main = new MainWindow();
 
             MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
-            
-            LoginViewModel loginAndRegistrate = new LoginViewModel(mainWindowViewModel.OpenRegistrateControl,mainWindowViewModel.OpenFilmFinderControl);
-            RegistrateViewModel registrateViewModel = new RegistrateViewModel(mainWindowViewModel.OpenLoginControl);
+            LoginViewModel loginAndRegistrate = new LoginViewModel(mainWindowViewModel.OpenRegistrateControl,mainWindowViewModel.OpenFilmFinderControl,serverFilmFinder);
+            RegistrateViewModel registrateViewModel = new RegistrateViewModel(mainWindowViewModel.OpenLoginControl,serverFilmFinder);
 
             RegistrControl registrControl = new RegistrControl();
             LoginControl loginControl = new LoginControl();
@@ -38,45 +38,8 @@ namespace Kurs_adonet
 
             //main.MyFrame.Navigate(loginControl);
             
-            AddFilmViewModel addFilmViewModel = new AddFilmViewModel();
+            AddFilmViewModel addFilmViewModel = new AddFilmViewModel(serverFilmFinder);
             FilmsViewModel filmsViewModel = new FilmsViewModel();
-
-
-            IFilmFinderServer filmFinderServer = new FilmFinderServerClient();
-            
-
-            IAddLoadFilm addNewFilm = new FilmFinderServerClient();
-
-            int count = addNewFilm.GetFilmsCount();
-            List<FilmCardViewModel> filmCardViewModels = new List<FilmCardViewModel>();
-            for (int i = 0; i < count; i++)
-            {
-                var film = addNewFilm.GetFilm(i);
-                FilmCardViewModel card = new FilmCardViewModel() { FilmName = film.Name, Date = film.ReleaseDate, DescriptionFilm = film.Description };
-                if (film.Image != null)
-                {
-                    byte[] myByte = film.Image;
-                    using (MemoryStream ms = new MemoryStream(myByte))
-                    {
-                        var bmp = Bitmap.FromStream(ms);
-
-
-
-                        
-                        ms.Seek(0, System.IO.SeekOrigin.Begin);
-
-                        var bitmap = new System.Windows.Media.Imaging.BitmapImage();
-                        bitmap.BeginInit();
-                        bitmap.CacheOption = BitmapCacheOption.OnLoad;
-                        bitmap.StreamSource = ms;
-                        bitmap.EndInit();
-                        card.PosterFilm = bitmap;
-                    }
-                }
-                filmCardViewModels.Add(card);
-            }
-
-            filmsViewModel.FilmCards = new ObservableCollection<FilmCardViewModel>(filmCardViewModels);
 
             filmFinderControl.AllFilms.NewFilm.DataContext = addFilmViewModel;
             filmFinderControl.AllFilms.DataContext = filmsViewModel;

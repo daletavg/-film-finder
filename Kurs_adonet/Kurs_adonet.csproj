@@ -77,13 +77,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BitmapConverter.cs" />
     <Compile Include="Connected Services\FilmsFinder\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="AccountValidation.cs" />
+    <Compile Include="FilmFinderServer.cs" />
+    <Compile Include="LoadingFilms.cs" />
     <Compile Include="View Models\FilmFinderViewModel.cs" />
     <Compile Include="IUsingControl.cs" />
     <Compile Include="LoadingControl.xaml.cs">

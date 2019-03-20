@@ -77,7 +77,7 @@
 
                     <Grid Name="ContentGrid">
 
-                        <local:FilmsControl Visibility="Hidden" x:Name="AllFilms"/>
+                        <local:FilmsControl IsVisibleChanged="AllFilms_IsVisibleChanged" Visibility="Hidden" x:Name="AllFilms"/>
                         
 
 

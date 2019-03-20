@@ -10,16 +10,17 @@ using System.Windows.Input;
 using Kurs_adonet.Annotations;
 using Kurs_adonet.FilmsFinder;
 using OperationContracts;
-using ILoginRegisterUser = Kurs_adonet.FilmsFinder.ILoginRegisterUser;
+using OperationContracts;
 
 namespace Kurs_adonet
 {
     class RegistrateViewModel:INotifyPropertyChanged
     {
-        
-        public RegistrateViewModel(Action openRegistrate)
+        OperationContracts.ILoginRegisterUser _loginRegister;
+        public RegistrateViewModel(Action openRegistrate, OperationContracts.ILoginRegisterUser loginRegister)
         {
             OpenLogin=new DelegateCommand(param=>openRegistrate(),null);
+            _loginRegister = loginRegister;
         }
 
         public ICommand OpenLogin { set; get; }
@@ -36,7 +37,7 @@ namespace Kurs_adonet
         public string Password { set; get; } = "";
         public string NewPassword { set; get; } = "";
 
-        ILoginRegisterUser _loginRegister = new LoginRegisterUserClient();
+        
 
         private DelegateCommand _registrate;
 

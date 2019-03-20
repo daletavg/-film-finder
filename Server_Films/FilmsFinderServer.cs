@@ -18,6 +18,7 @@ namespace Server_Films
         
         private CurrentUser _currentUser = new CurrentUser();
 
+
         public FilmsFinderServer()
         {
             int a;

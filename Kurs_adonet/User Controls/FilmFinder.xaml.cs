@@ -59,5 +59,13 @@ namespace Kurs_adonet
         {
             get { return CurrentControl.FilmFinderControl; }
         }
+
+        private void AllFilms_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if ((bool)e.NewValue == true)
+            {
+                ((FilmsViewModel)AllFilms.DataContext).ShowAllFilms();
+            }
+        }
     }
 }

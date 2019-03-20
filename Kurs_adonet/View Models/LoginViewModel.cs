@@ -10,17 +10,19 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using Kurs_adonet.FilmsFinder;
 using OperationContracts;
-using ILoginRegisterUser = Kurs_adonet.FilmsFinder.ILoginRegisterUser;
+
 
 namespace Kurs_adonet
 {
     class LoginViewModel : INotifyPropertyChanged
     {
         public Action _openFilmFinder;
-        public LoginViewModel(Action openRegistrate,Action openFilmFinder)
+        OperationContracts.ILoginRegisterUser loginRegister;
+        public LoginViewModel(Action openRegistrate,Action openFilmFinder, OperationContracts.ILoginRegisterUser loginRegisterUser)
         {
             OpenRegistrate = new DelegateCommand(param=>openRegistrate(),null);
             _openFilmFinder = openFilmFinder;
+            loginRegister = loginRegisterUser;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -36,7 +38,7 @@ namespace Kurs_adonet
             get { return _errorMessage; }
         }
 
-        ILoginRegisterUser loginRegister = new LoginRegisterUserClient();
+        
 
         public string Login { set; get; } = "";
         public string Password { set; get; } = "";

@@ -10,8 +10,22 @@ namespace Kurs_adonet
 {
     public class FilmsViewModel : INotifyPropertyChanged
     {
-        
-        public ObservableCollection<FilmCardViewModel> FilmCards { set; get; }
+        private ObservableCollection<FilmCardViewModel> _filmsCards;
+        public ObservableCollection<FilmCardViewModel> FilmCards
+        {
+            set { _filmsCards = value; OnPropertyChanged(nameof(FilmCards)); }
+            get { return _filmsCards; }
+        }
         public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void ShowAllFilms()
+        {
+            LoadingFilms loading = new LoadingFilms();
+            FilmCards = new ObservableCollection<FilmCardViewModel>(loading.LoadFilmsAtClient());
+        }
     }
 }
