@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Kurs_adonet"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:user_controls="clr-namespace:Kurs_adonet.User_Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -78,7 +79,7 @@
                     <Grid Name="ContentGrid">
 
                         <local:FilmsControl IsVisibleChanged="AllFilms_IsVisibleChanged" Visibility="Hidden" x:Name="AllFilms"/>
-                        
+                        <user_controls:ChatControl x:Name="ChatControl" Margin="0,10,30,10"/>
 
 
                     </Grid>

@@ -13,7 +13,7 @@ using System.ServiceModel;
 namespace Server_Films
 {
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession,ConcurrencyMode = ConcurrencyMode.Single)]
-    public class FilmsFinderServer: IFilmFinderServer,IAddLoadFilm,ILoginRegisterUser
+    public class FilmsFinderServer: IFilmFinderServer,IAddLoadFilm,ILoginRegisterUser, IChatService
     {
         
         private CurrentUser _currentUser = new CurrentUser();
@@ -21,9 +21,9 @@ namespace Server_Films
 
         public FilmsFinderServer()
         {
-            int a;
-            a = 10;
+            //AddNewUserChatService();
         }
+
 
         public int CheckUserOnDB(string login, string password)
         {
@@ -163,5 +163,41 @@ namespace Server_Films
         {
             return _currentUser;
         }
+
+
+
+
+        static List<IChatCallback> Chats = new List<IChatCallback>();
+        static List<CurrentUser> Users = new List<CurrentUser>();
+        private IChatCallback Current
+        {
+            get
+            {
+                return OperationContext.Current.GetCallbackChannel<IChatCallback>();
+            }
+        }
+
+        public void AddNewUserChatService()
+        {
+            Chats.Add(Current);
+        }
+
+        public void SendMessage(MessageData msg)
+        {
+            //Current.SetMessage(msg);
+            foreach (var i in Chats)
+            {
+                i.SetMessage(msg);
+            }
+        }
+
+        public void CloseConnection()
+        {
+            Chats.Remove(Current);
+        }
+
+       
+
+        
     }
 }

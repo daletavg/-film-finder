@@ -77,17 +77,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Connected Services\FilmsFinder\Reference.cs">
+    <Compile Include="ChatViewModel.cs" />
+    <Compile Include="AccountValidation.cs" />
+    <Compile Include="Connected Services\ServiceFF\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="AccountValidation.cs" />
     <Compile Include="FilmFinderServer.cs" />
     <Compile Include="LoadingFilms.cs" />
+    <Compile Include="MessageViewModel.cs" />
+    <Compile Include="User Controls\ChatControl.xaml.cs">
+      <DependentUpon>ChatControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ChatMessage.xaml.cs">
+      <DependentUpon>ChatMessage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View Models\FilmFinderViewModel.cs" />
     <Compile Include="IUsingControl.cs" />
-    <Compile Include="LoadingControl.xaml.cs">
+    <Compile Include="User Controls\LoadingControl.xaml.cs">
       <DependentUpon>LoadingControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindowViewModel.cs" />
@@ -117,7 +125,15 @@
     <Compile Include="User Controls\RegistrControl.xaml.cs">
       <DependentUpon>RegistrControl.xaml</DependentUpon>
     </Compile>
-    <Page Include="LoadingControl.xaml">
+    <Page Include="User Controls\LoadingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User Controls\ChatControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User Controls\ChatMessage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -176,17 +192,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\FilmsFinder\Arrays.xsd">
+    <None Include="Connected Services\ServiceFF\FilmsFinderServer.wsdl" />
+    <None Include="Connected Services\ServiceFF\item.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\FilmsFinder\OperationContracts.xsd">
+    <None Include="Connected Services\ServiceFF\item1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\FilmsFinder\service.wsdl" />
-    <None Include="Connected Services\FilmsFinder\service.xsd">
+    <None Include="Connected Services\ServiceFF\item2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\FilmsFinder\service1.xsd">
+    <None Include="Connected Services\ServiceFF\item3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
@@ -208,28 +224,31 @@
     <Resource Include="usericon.png" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\OperationContracts\OperationContracts.csproj">
       <Project>{541c8a67-2fbc-452f-9aad-b11b0ac75a0e}</Project>
       <Name>OperationContracts</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\FilmsFinder\" />
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\FilmsFinder\configuration91.svcinfo" />
+    <WCFMetadataStorage Include="Connected Services\ServiceFF\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\FilmsFinder\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceFF\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\FilmsFinder\Reference.svcmap">
+    <None Include="Connected Services\ServiceFF\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceFF\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceFF\item.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

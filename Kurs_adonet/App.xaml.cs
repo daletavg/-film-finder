@@ -43,6 +43,9 @@ namespace Kurs_adonet
 
             filmFinderControl.AllFilms.NewFilm.DataContext = addFilmViewModel;
             filmFinderControl.AllFilms.DataContext = filmsViewModel;
+            //filmFinderControl.ChatControl.
+            ChatViewModel  chatViewModel = new ChatViewModel(serverFilmFinder);
+            filmFinderControl.ChatControl.DataContext = chatViewModel;
             loginControl.DataContext = loginAndRegistrate;
             registrControl.DataContext = registrateViewModel;
 

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace OperationContracts
 {
     [ServiceContract(SessionMode=SessionMode.Required)]
+    
     public interface IFilmFinderServer:IAddLoadFilm,ILoginRegisterUser
     {
     }

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OperationContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OperationContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8787/FilmFinder/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="FilmContent">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Actors" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Geners" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="ImageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Produsers" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="ReleaseDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FilmContent" nillable="true" type="tns:FilmContent" />
+  <xs:complexType name="AllSpecificAddingFilm">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Actors" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Geners" nillable="true" type="q5:ArrayOfstring" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Produsers" nillable="true" type="q6:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AllSpecificAddingFilm" nillable="true" type="tns:AllSpecificAddingFilm" />
+  <xs:complexType name="CurrentUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateBirthday" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" type="xs:int" />
+      <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserImage" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CurrentUser" nillable="true" type="tns:CurrentUser" />
+  <xs:complexType name="RegistrateCurrentUser">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CurrentUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RegistrateCurrentUser" nillable="true" type="tns:RegistrateCurrentUser" />
+  <xs:complexType name="MessageData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NickName" nillable="true" type="tns:CurrentUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MessageData" nillable="true" type="tns:MessageData" />
+</xs:schema>

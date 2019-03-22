@@ -45,7 +45,9 @@
   <ItemGroup>
     <Compile Include="AllSpecificAddingFilm.cs" />
     <Compile Include="CurrentUser.cs" />
+    <Compile Include="IChatService.cs" />
     <Compile Include="IFilmFinderServer.cs" />
+    <Compile Include="MessageData.cs" />
     <Compile Include="RegistrateCurrentUser.cs" />
     <Compile Include="UResult.cs" />
     <Compile Include="Class1.cs" />

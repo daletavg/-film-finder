@@ -10,7 +10,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using Kurs_adonet.FilmsFinder;
+
 using OperationContracts;
 
 

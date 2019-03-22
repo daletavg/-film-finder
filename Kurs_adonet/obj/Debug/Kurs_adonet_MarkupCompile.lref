@@ -1,6 +1,8 @@
 ﻿
 FC:\Users\Dubrov_v\Desktop\film-finder\Kurs_adonet\App.xaml;;
-FC:\Users\Dubrov_v\Desktop\film-finder\Kurs_adonet\LoadingControl.xaml;;
+FC:\Users\Dubrov_v\Desktop\film-finder\Kurs_adonet\User Controls\LoadingControl.xaml;;
+FC:\Users\Dubrov_v\Desktop\film-finder\Kurs_adonet\User Controls\ChatControl.xaml;;
+FC:\Users\Dubrov_v\Desktop\film-finder\Kurs_adonet\User Controls\ChatMessage.xaml;;
 FC:\Users\Dubrov_v\Desktop\film-finder\Kurs_adonet\User Controls\FilmFinder.xaml;;
 FC:\Users\Dubrov_v\Desktop\film-finder\Kurs_adonet\User Controls\AddFilm.xaml;;
 FC:\Users\Dubrov_v\Desktop\film-finder\Kurs_adonet\User Controls\FilmsControl.xaml;;

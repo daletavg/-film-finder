@@ -1,22 +1,21 @@
 ﻿
-using OperationContracts;
-using Kurs_adonet.FilmsFinder;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OperationContracts;
 
 namespace Kurs_adonet
 {
     class FilmFinderServer : OperationContracts.IFilmFinderServer
     {
 
-        private Kurs_adonet.FilmsFinder.IFilmFinderServer _server;
+        ServiceFF.IFilmFinderServer _server;
 
         public FilmFinderServer()
         {
-            _server = new Kurs_adonet.FilmsFinder.FilmFinderServerClient();
+            _server = new ServiceFF.FilmFinderServerClient();
         }
 
         public void AddNewFilm(FilmContent content)
@@ -33,6 +32,8 @@ namespace Kurs_adonet
         {
             return _server.CheckUserOnDB(login, password);
         }
+
+        
 
         public CurrentUser GetCurrentUser()
         {
@@ -53,5 +54,11 @@ namespace Kurs_adonet
         {
             return _server.GetSpecific();
         }
+
+     
+
+        
+
+        
     }
 }

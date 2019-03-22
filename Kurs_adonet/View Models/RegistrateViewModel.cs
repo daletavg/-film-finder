@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Kurs_adonet.Annotations;
-using Kurs_adonet.FilmsFinder;
 using OperationContracts;
-using OperationContracts;
+
 
 namespace Kurs_adonet
 {

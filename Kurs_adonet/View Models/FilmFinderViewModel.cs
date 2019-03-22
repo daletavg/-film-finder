@@ -1,4 +1,4 @@
-﻿using Kurs_adonet.FilmsFinder;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ namespace Kurs_adonet
 {
     public class FilmFinderViewModel : INotifyPropertyChanged
     {
-        ILoginRegisterUser loginRegister = new LoginRegisterUserClient();
+        //ILoginRegisterUser loginRegister = new LoginRegisterUserClient();
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }
