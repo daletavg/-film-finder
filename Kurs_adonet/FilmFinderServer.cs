@@ -55,10 +55,15 @@ namespace Kurs_adonet
             return _server.GetSpecific();
         }
 
-     
 
-        
+        public void SetRaiting(int raiting, string nameOfFilm)
+        {
+           _server.SetRaiting(raiting,nameOfFilm);
+        }
 
-        
+        public float GetRaitingOfFilm(string nameOfFilm)
+        {
+            return _server.GetRaitingOfFilm(nameOfFilm);
+        }
     }
 }

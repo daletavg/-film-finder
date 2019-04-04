@@ -26,7 +26,7 @@ namespace Server_Films
         public Film CreateFilmObject()
         {
             Film newFilm;
-            using (var db = new FilmFinderDB())
+            using (var db = new FilmFinderDb())
             {
                
 
@@ -63,7 +63,7 @@ namespace Server_Films
         public void Create()
         {
             CreateFolderToImageFilm();
-            using (var db = new FilmFinderDB())
+            using (var db = new FilmFinderDb())
             {
                 db.Films.Add(_film);
                 CreateActorsObject(db);
@@ -74,7 +74,7 @@ namespace Server_Films
         }
 
 
-        public void CreateActorsObject(FilmFinderDB db)
+        public void CreateActorsObject(FilmFinderDb db)
         {
             
             for (int i = 0; i < FilmContent.Actors.Length; i++)
@@ -97,7 +97,7 @@ namespace Server_Films
                 db.ActorToFilms.Add(actorToFilm);
             }
         }
-        public void CreateGenersObject(FilmFinderDB db)
+        public void CreateGenersObject(FilmFinderDb db)
         {
             for (int i = 0; i < FilmContent.Geners.Length; i++)
             {
@@ -119,7 +119,7 @@ namespace Server_Films
             }
         }
 
-        public void CreateProdussersObject(FilmFinderDB db)
+        public void CreateProdussersObject(FilmFinderDb db)
         {
             for (int i = 0; i < FilmContent.Produsers.Length; i++)
             {

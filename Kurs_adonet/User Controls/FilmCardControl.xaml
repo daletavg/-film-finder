@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Kurs_adonet"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:userControls="clr-namespace:Kurs_adonet.User_Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Margin="5">
@@ -37,7 +38,7 @@
                                           
                     </TextBlock>
                     <Viewbox Margin="0 4 0 8" Height="16" HorizontalAlignment="Left">
-                        <materialDesign:RatingBar Value="0" Orientation="Horizontal" Foreground="Gold" Margin="0" />
+                        <materialDesign:RatingBar Value="{Binding Raiting}" Orientation="Horizontal" Foreground="Gold" Margin="0" />
                     </Viewbox>
                     <Label>Описание:</Label>
                     <TextBlock Style="{StaticResource MaterialDesignBody1TextBlock}" TextWrapping="Wrap" VerticalAlignment="Center"  Height="70" Text="{Binding DescriptionFilm,Mode=TwoWay}">
@@ -57,7 +58,11 @@
                     <TextBlock Grid.Column="1" Text="{Binding Path=Date,Mode=TwoWay}"></TextBlock>
                 </Grid>
                 <StackPanel Grid.Row="5">
-                    <Button Style="{StaticResource MaterialDesignFlatButton}" HorizontalAlignment="Left" Margin="8 4 8 8">
+                    <Button Style="{StaticResource MaterialDesignFlatButton}" HorizontalAlignment="Left" Margin="8 4 8 8"
+                            Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" >
+                        <Button.CommandParameter>
+                            <userControls:ViewFilmControl/>
+                        </Button.CommandParameter>
                         ПРОСМОТР
                     </Button>
                 </StackPanel>

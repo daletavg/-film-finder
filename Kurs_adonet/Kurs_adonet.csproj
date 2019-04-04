@@ -93,6 +93,9 @@
     <Compile Include="User Controls\ChatMessage.xaml.cs">
       <DependentUpon>ChatMessage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\ViewFilmControl.xaml.cs">
+      <DependentUpon>ViewFilmControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View Models\FilmFinderViewModel.cs" />
     <Compile Include="IUsingControl.cs" />
     <Compile Include="User Controls\LoadingControl.xaml.cs">
@@ -173,6 +176,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="User Controls\ViewFilmControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -236,6 +243,9 @@
     <WCFMetadataStorage Include="Connected Services\ServiceFF\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\ServiceFF\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Connected Services\ServiceFF\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -246,9 +256,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceFF\item.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

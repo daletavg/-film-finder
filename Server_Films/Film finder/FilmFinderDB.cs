@@ -5,10 +5,10 @@ namespace Server_Films.Film_finder
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class FilmFinderDB : DbContext
+    public partial class FilmFinderDb : DbContext
     {
-        public FilmFinderDB()
-            : base("name=FilmFinderDB")
+        public FilmFinderDb()
+            : base("name=FilmFinderDb")
         {
         }
 

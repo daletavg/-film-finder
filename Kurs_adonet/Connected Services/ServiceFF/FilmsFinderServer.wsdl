@@ -362,6 +362,82 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="filmfinder_SetRaiting_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="filmfinder_SetRaiting_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="filmfinder_GetRaitingOfFilm_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="filmfinder_GetRaitingOfFilm_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="chat_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -607,6 +683,18 @@
   <wsdl:message name="IFilmFinderServer_AddNewUserOnDB_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddNewUserOnDBResponse" />
   </wsdl:message>
+  <wsdl:message name="IFilmFinderServer_SetRaiting_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetRaiting" />
+  </wsdl:message>
+  <wsdl:message name="IFilmFinderServer_SetRaiting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetRaitingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFilmFinderServer_GetRaitingOfFilm_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRaitingOfFilm" />
+  </wsdl:message>
+  <wsdl:message name="IFilmFinderServer_GetRaitingOfFilm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRaitingOfFilmResponse" />
+  </wsdl:message>
   <wsdl:message name="IChatService_SendMessage_InputMessage">
     <wsdl:part name="parameters" element="tns:SendMessage" />
   </wsdl:message>
@@ -647,6 +735,14 @@
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="AddNewUserOnDB">
       <wsdl:input wsaw:Action="http://tempuri.org/ILoginRegisterUser/AddNewUserOnDB" message="tns:IFilmFinderServer_AddNewUserOnDB_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILoginRegisterUser/AddNewUserOnDBResponse" message="tns:IFilmFinderServer_AddNewUserOnDB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetRaiting">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISetRaiting/SetRaiting" message="tns:IFilmFinderServer_SetRaiting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISetRaiting/SetRaitingResponse" message="tns:IFilmFinderServer_SetRaiting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetRaitingOfFilm">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISetRaiting/GetRaitingOfFilm" message="tns:IFilmFinderServer_GetRaitingOfFilm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISetRaiting/GetRaitingOfFilmResponse" message="tns:IFilmFinderServer_GetRaitingOfFilm_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IChatService">
@@ -743,6 +839,28 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SetRaiting">
+      <soap12:operation soapAction="http://tempuri.org/ISetRaiting/SetRaiting" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#filmfinder_SetRaiting_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#filmfinder_SetRaiting_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRaitingOfFilm">
+      <soap12:operation soapAction="http://tempuri.org/ISetRaiting/GetRaitingOfFilm" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#filmfinder_GetRaitingOfFilm_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#filmfinder_GetRaitingOfFilm_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="chat" type="tns:IChatService">
     <wsp:PolicyReference URI="#chat_policy" />
@@ -782,7 +900,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>http://localhost:8787/FilmFinder/filmfinder</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>Dubrov_v@od.itstep.local</Upn>
+          <Upn>AKERZ-ПК\akerz</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
@@ -791,7 +909,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>http://localhost:8787/FilmFinder/chat</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>Dubrov_v@od.itstep.local</Upn>
+          <Upn>AKERZ-ПК\akerz</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

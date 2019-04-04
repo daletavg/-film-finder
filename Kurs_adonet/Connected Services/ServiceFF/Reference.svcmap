@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d84f4109-bdc4-4a61-af8d-47427600e88c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="311863a0-10b7-4a77-ab3e-fb0eefbe930e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,12 +22,12 @@
     <MetadataSource Address="http://localhost:8787/FilmFinder/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="9682fdaa-822e-4213-8418-d492819fc84f" SourceId="1" SourceUrl="http://localhost:8787/FilmFinder/?xsd=xsd0" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="986b9716-ad7f-4994-8c7e-16f9430cc8c1" SourceId="1" SourceUrl="http://localhost:8787/FilmFinder/?xsd=xsd1" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="47a28979-1f60-4887-b816-6aff7026ff8e" SourceId="1" SourceUrl="http://localhost:8787/FilmFinder/?xsd=xsd2" />
-    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="d8b7cd9d-00a2-4f7d-b1f4-2c62bc5dfcfa" SourceId="1" SourceUrl="http://localhost:8787/FilmFinder/?xsd=xsd3" />
-    <MetadataFile FileName="FilmsFinderServer.wsdl" MetadataType="Wsdl" ID="24192b47-7ae8-4547-9fe3-f947a1035379" SourceId="1" SourceUrl="http://localhost:8787/FilmFinder/?wsdl" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="cf140b21-020b-4bd4-b354-91babb239694" SourceId="1" SourceUrl="http://localhost:8787/FilmFinder/?disco" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="043cac48-7c01-4022-8d4c-370bcd3666b2" SourceId="1" SourceUrl="http://localhost:8787/FilmFinder/?xsd=xsd0" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="6937468f-e190-4003-a1bf-f52e93e0fafb" SourceId="1" SourceUrl="http://localhost:8787/FilmFinder/?xsd=xsd1" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="1bc1d26c-51ed-424b-b9a7-66d26123c112" SourceId="1" SourceUrl="http://localhost:8787/FilmFinder/?xsd=xsd2" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="72bee591-db45-4ce5-aeba-d3b82e1981d1" SourceId="1" SourceUrl="http://localhost:8787/FilmFinder/?xsd=xsd3" />
+    <MetadataFile FileName="FilmsFinderServer.wsdl" MetadataType="Wsdl" ID="6afe339c-b4fd-4be8-a546-5d6223d8df74" SourceId="1" SourceUrl="http://localhost:8787/FilmFinder/?wsdl" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="88e5634e-33af-428b-a480-c2014c9ce2f7" SourceId="1" SourceUrl="http://localhost:8787/FilmFinder/?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

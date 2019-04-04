@@ -64,7 +64,7 @@
     <Compile Include="Film finder\Coment.cs" />
     <Compile Include="Film finder\FavoritList.cs" />
     <Compile Include="Film finder\Film.cs" />
-    <Compile Include="Film finder\FilmFinderDB.cs" />
+    <Compile Include="Film finder\FilmFinderDb.cs" />
     <Compile Include="Film finder\Genre.cs" />
     <Compile Include="Film finder\GenreToFilm.cs" />
     <Compile Include="Film finder\Mark.cs" />
@@ -75,7 +75,6 @@
     <Compile Include="Film finder\WaitingList.cs" />
     <Compile Include="GetMD5Hash.cs" />
     <Compile Include="FilmsFinderServer.cs" />
-    <Compile Include="Mark.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

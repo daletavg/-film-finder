@@ -14,7 +14,7 @@ namespace Server_Films
 
         public UResult CheckUser(string login, string password)
         {
-            using (var db = new FilmFinderDB())
+            using (var db = new FilmFinderDb())
             {
                 
                 GetHeshMd5 getHesh = new GetHeshMd5();

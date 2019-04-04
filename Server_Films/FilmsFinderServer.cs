@@ -13,7 +13,7 @@ using System.ServiceModel;
 namespace Server_Films
 {
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession,ConcurrencyMode = ConcurrencyMode.Single)]
-    public class FilmsFinderServer: IFilmFinderServer,IAddLoadFilm,ILoginRegisterUser, IChatService
+    public class FilmsFinderServer: IFilmFinderServer,IAddLoadFilm,ILoginRegisterUser,ISetRaiting, IChatService
     {
         
         private CurrentUser _currentUser = new CurrentUser();
@@ -40,7 +40,7 @@ namespace Server_Films
 
         public void AddNewUserOnDB(RegistrateCurrentUser registrate)
         {
-            using (var db = new FilmFinderDB())
+            using (var db = new FilmFinderDb())
             {
                 bool tmpGender = true;
                 switch (registrate.Gender)
@@ -68,7 +68,7 @@ namespace Server_Films
         public FilmContent GetFilm(int index)
         {
             FilmContent newFilm = new FilmContent();
-            using (var db = new FilmFinderDB())
+            using (var db = new FilmFinderDb())
             {
                 var film = db.Films.ToArray()[index];
                 newFilm.Name = film.Name;
@@ -120,7 +120,7 @@ namespace Server_Films
         public int GetFilmsCount()
         {
             int count;
-            using (var db = new FilmFinderDB())
+            using (var db = new FilmFinderDb())
             {
                 count=db.Films.Count();
             }
@@ -131,7 +131,7 @@ namespace Server_Films
         public AllSpecificAddingFilm GetSpecific()
         {
             AllSpecificAddingFilm tmp = new AllSpecificAddingFilm();
-            using (var db = new FilmFinderDB())
+            using (var db = new FilmFinderDb())
             {
                 var tmpActors = db.Actors.ToArray();
                 tmp.Actors = new string[tmpActors.Length];
@@ -196,8 +196,48 @@ namespace Server_Films
             Chats.Remove(Current);
         }
 
-       
 
-        
+        public void SetRaiting(int raiting, string nameOfFilm)
+        {
+            using (var db = new FilmFinderDb())
+            {
+                var tmpUser = db.Users.First(j => j.Name == _currentUser.Login);
+                if (db.Marks.Any(i =>i.Film.Name==nameOfFilm && i.User.Name == tmpUser.Name))
+                {
+                    var tmpMark = db.Marks.First(i => i.Film.Name == nameOfFilm && i.User.Name == tmpUser.Name);
+                    tmpMark.Marks = raiting;
+                    db.SaveChanges();
+                    return;
+                }
+
+                Mark mark = new Mark();
+                mark.Film = db.Films.ToList().First(i => i.Name == nameOfFilm);
+                mark.User = db.Users.ToList().First(i => i.Name == _currentUser.Login);
+                mark.Marks = raiting;
+                db.Marks.Add(mark);
+                db.SaveChanges();
+
+            }
+        }
+
+        public float GetRaitingOfFilm(string nameOfFilm)
+        {
+            float middleRaiting = 0;
+            using (var db = new FilmFinderDb())
+            {
+                int counter = 0;
+                foreach (var mark in db.Marks.ToList().Where(i=>i.Film.Name==nameOfFilm))
+                {
+                    middleRaiting += mark.Marks;
+                    counter++;
+                }
+
+                if (counter != 0)
+                    middleRaiting = middleRaiting / counter;
+            }
+
+            return (float)Math.Round(middleRaiting, 2);
+
+        }
     }
 }

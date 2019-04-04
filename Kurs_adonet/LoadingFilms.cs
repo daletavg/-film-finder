@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Kurs_adonet
 {
     public class LoadingFilms
     {
-        public static OperationContracts.IAddLoadFilm AddLoadFilm;
+        public static OperationContracts.IFilmFinderServer AddLoadFilm;
         
         public List<FilmCardViewModel> LoadFilmsAtClient()
         {
@@ -20,7 +21,11 @@ namespace Kurs_adonet
             for (int i = 0; i < count; i++)
             {
                 var film = AddLoadFilm.GetFilm(i);
-                FilmCardViewModel card = new FilmCardViewModel() { FilmName = film.Name, Date = film.ReleaseDate, DescriptionFilm = film.Description };
+                
+                FilmCardViewModel card = new FilmCardViewModel(AddLoadFilm) { FilmName = film.Name, Date = film.ReleaseDate, DescriptionFilm = film.Description };
+                card.ListActor = new ObservableCollection<string>(film.Actors);
+                card.ListProdusser = new ObservableCollection<string>(film.Produsers);
+                card.ListGenre = new ObservableCollection<string>(film.Geners);
                 if (film.Image != null)
                 {
                     byte[] myByte = film.Image;

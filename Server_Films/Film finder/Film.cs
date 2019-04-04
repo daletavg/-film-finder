@@ -31,6 +31,8 @@ namespace Server_Films.Film_finder
 
         public string ReleaseDate { get; set; }
 
+        public string TimeFilm { get; set; }
+
         public int? UserId { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

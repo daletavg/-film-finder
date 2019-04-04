@@ -120,11 +120,17 @@ C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.Properties.
 C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.csproj.GenerateResource.cache
 C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.csproj.CoreCompileInputs.cache
 C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.csproj.CopyComplete
-C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\LoadingControl.g.cs
-C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\LoadingControl.baml
 C:\Users\Dubrov_v\Desktop\film-finder\Kurs_adonet\obj\Debug\User Controls\LoadingControl.g.cs
 C:\Users\Dubrov_v\Desktop\film-finder\Kurs_adonet\obj\Debug\User Controls\ChatControl.g.cs
 C:\Users\Dubrov_v\Desktop\film-finder\Kurs_adonet\obj\Debug\User Controls\ChatMessage.g.cs
 C:\Users\Dubrov_v\Desktop\film-finder\Kurs_adonet\obj\Debug\User Controls\LoadingControl.baml
 C:\Users\Dubrov_v\Desktop\film-finder\Kurs_adonet\obj\Debug\User Controls\ChatControl.baml
 C:\Users\Dubrov_v\Desktop\film-finder\Kurs_adonet\obj\Debug\User Controls\ChatMessage.baml
+C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\User Controls\LoadingControl.g.cs
+C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\User Controls\ChatControl.g.cs
+C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\User Controls\ChatMessage.g.cs
+C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\User Controls\LoadingControl.baml
+C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\User Controls\ChatControl.baml
+C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\User Controls\ChatMessage.baml
+C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\User Controls\ViewFilmControl.g.cs
+C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\User Controls\ViewFilmControl.baml

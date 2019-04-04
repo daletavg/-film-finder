@@ -90,6 +90,33 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="SetRaiting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="raiting" type="xs:int" />
+        <xs:element minOccurs="0" name="nameOfFilm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetRaitingResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRaitingOfFilm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nameOfFilm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRaitingOfFilmResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRaitingOfFilmResult" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="SendMessage">
     <xs:complexType>
       <xs:sequence>

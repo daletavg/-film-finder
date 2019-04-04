@@ -57,6 +57,18 @@ namespace Kurs_adonet.ServiceFF {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginRegisterUser/AddNewUserOnDB", ReplyAction="http://tempuri.org/ILoginRegisterUser/AddNewUserOnDBResponse")]
         System.Threading.Tasks.Task AddNewUserOnDBAsync(OperationContracts.RegistrateCurrentUser registrate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetRaiting/SetRaiting", ReplyAction="http://tempuri.org/ISetRaiting/SetRaitingResponse")]
+        void SetRaiting(int raiting, string nameOfFilm);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetRaiting/SetRaiting", ReplyAction="http://tempuri.org/ISetRaiting/SetRaitingResponse")]
+        System.Threading.Tasks.Task SetRaitingAsync(int raiting, string nameOfFilm);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetRaiting/GetRaitingOfFilm", ReplyAction="http://tempuri.org/ISetRaiting/GetRaitingOfFilmResponse")]
+        float GetRaitingOfFilm(string nameOfFilm);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetRaiting/GetRaitingOfFilm", ReplyAction="http://tempuri.org/ISetRaiting/GetRaitingOfFilmResponse")]
+        System.Threading.Tasks.Task<float> GetRaitingOfFilmAsync(string nameOfFilm);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -140,6 +152,22 @@ namespace Kurs_adonet.ServiceFF {
         
         public System.Threading.Tasks.Task AddNewUserOnDBAsync(OperationContracts.RegistrateCurrentUser registrate) {
             return base.Channel.AddNewUserOnDBAsync(registrate);
+        }
+        
+        public void SetRaiting(int raiting, string nameOfFilm) {
+            base.Channel.SetRaiting(raiting, nameOfFilm);
+        }
+        
+        public System.Threading.Tasks.Task SetRaitingAsync(int raiting, string nameOfFilm) {
+            return base.Channel.SetRaitingAsync(raiting, nameOfFilm);
+        }
+        
+        public float GetRaitingOfFilm(string nameOfFilm) {
+            return base.Channel.GetRaitingOfFilm(nameOfFilm);
+        }
+        
+        public System.Threading.Tasks.Task<float> GetRaitingOfFilmAsync(string nameOfFilm) {
+            return base.Channel.GetRaitingOfFilmAsync(nameOfFilm);
         }
     }
     
