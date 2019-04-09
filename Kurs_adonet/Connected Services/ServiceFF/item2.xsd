@@ -8,6 +8,7 @@
       <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Geners" nillable="true" type="q2:ArrayOfstring" />
       <xs:element minOccurs="0" name="Image" nillable="true" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="ImageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsFavorit" type="xs:boolean" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Produsers" nillable="true" type="q3:ArrayOfstring" />
       <xs:element minOccurs="0" name="ReleaseDate" nillable="true" type="xs:string" />

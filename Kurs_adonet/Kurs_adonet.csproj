@@ -84,6 +84,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="FavoritFilmsViewModel.cs" />
     <Compile Include="FilmFinderServer.cs" />
     <Compile Include="LoadingFilms.cs" />
     <Compile Include="MessageViewModel.cs" />
@@ -92,6 +93,9 @@
     </Compile>
     <Compile Include="User Controls\ChatMessage.xaml.cs">
       <DependentUpon>ChatMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\FavoritFilmsControl.xaml.cs">
+      <DependentUpon>FavoritFilmsControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="User Controls\ViewFilmControl.xaml.cs">
       <DependentUpon>ViewFilmControl.xaml</DependentUpon>
@@ -128,6 +132,10 @@
     <Compile Include="User Controls\RegistrControl.xaml.cs">
       <DependentUpon>RegistrControl.xaml</DependentUpon>
     </Compile>
+    <Page Include="User Controls\FavoritFilmsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="User Controls\LoadingControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

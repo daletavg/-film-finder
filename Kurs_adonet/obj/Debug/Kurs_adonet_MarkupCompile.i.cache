@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\akerz\Desktop\film-finder\Kurs_adonet\obj\Debug\
+C:\Users\akerz\Desktop\-film-finder-master\Kurs_adonet\obj\Debug\
 Kurs_adonet
 none
 false
 DEBUG;TRACE
-C:\Users\akerz\Desktop\film-finder\Kurs_adonet\App.xaml
-111857346988
+C:\Users\akerz\Desktop\-film-finder-master\Kurs_adonet\App.xaml
+121487798995
 
-36-1662009260
-23961192213
-User Controls\LoadingControl.xaml;User Controls\ChatControl.xaml;User Controls\ChatMessage.xaml;User Controls\FilmFinder.xaml;User Controls\AddFilm.xaml;User Controls\FilmsControl.xaml;User Controls\FilmCardControl.xaml;User Controls\LoginControl.xaml;MainWindow.xaml;User Controls\RegistrControl.xaml;User Controls\ViewFilmControl.xaml;
+38-410056259
+23-189941140
+User Controls\FavoritFilmsControl.xaml;User Controls\LoadingControl.xaml;User Controls\ChatControl.xaml;User Controls\ChatMessage.xaml;User Controls\FilmFinder.xaml;User Controls\AddFilm.xaml;User Controls\FilmsControl.xaml;User Controls\FilmCardControl.xaml;User Controls\LoginControl.xaml;MainWindow.xaml;User Controls\RegistrControl.xaml;User Controls\ViewFilmControl.xaml;
 
 False
 

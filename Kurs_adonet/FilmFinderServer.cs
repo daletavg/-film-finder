@@ -45,14 +45,29 @@ namespace Kurs_adonet
             return _server.GetFilm(index);
         }
 
+        public FilmContent GetFavoritFilms(int index)
+        {
+            return _server.GetFavoritFilms(index);
+        }
+
         public int GetFilmsCount()
         {
             return _server.GetFilmsCount();
         }
 
+        public int GetFavoritFilmsCount()
+        {
+            return _server.GetFavoritFilmsCount();
+        }
+
         public AllSpecificAddingFilm GetSpecific()
         {
             return _server.GetSpecific();
+        }
+
+        public void SetFavorit(string filmName, bool isFavorit)
+        {
+            _server.SetFavorit(filmName,isFavorit);
         }
 
 

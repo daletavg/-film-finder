@@ -4,10 +4,10 @@ using System.ServiceModel;
 
 namespace OperationContracts
 {
-    
-    [ServiceContract(SessionMode=SessionMode.Required)]
+
+    [ServiceContract(SessionMode = SessionMode.Required)]
     public interface IAddLoadFilm
-    {   
+    {
         [OperationContract]
         void AddNewFilm(FilmContent content);
         [OperationContract]
@@ -17,6 +17,14 @@ namespace OperationContracts
         AllSpecificAddingFilm GetSpecific();
 
         [OperationContract]
+        void SetFavorit(string filmName, bool isFavorit);
+
+        [OperationContract]
+        FilmContent GetFavoritFilms(int index);
+
+        [OperationContract]
         int GetFilmsCount();
+        [OperationContract]
+        int GetFavoritFilmsCount();
     }
 }

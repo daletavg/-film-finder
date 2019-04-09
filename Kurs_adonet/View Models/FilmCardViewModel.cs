@@ -14,6 +14,7 @@ namespace Kurs_adonet
 {
     public class FilmCardViewModel : INotifyPropertyChanged
     {
+        public OperationContracts.IAddLoadFilm AddLoadFilm;
         public ObservableCollection<string> ListProdusser { set; get; }
 
         public ObservableCollection<string> ListActor { set; get; }
@@ -26,10 +27,9 @@ namespace Kurs_adonet
         public FilmCardViewModel(ISetRaiting setRaiting)
         {
             _setRaiting = setRaiting;
-           
         }
 
-        public string _middleRaiting="0";
+        public string _middleRaiting = "0";
 
         public string MiddleRaiting
         {
@@ -41,7 +41,7 @@ namespace Kurs_adonet
         {
             get
             {
-                string tmpActors="";
+                string tmpActors = "";
                 foreach (var i in ListActor)
                 {
                     tmpActors += i + ",";
@@ -80,7 +80,9 @@ namespace Kurs_adonet
         private int _raiting;
         public int Raiting
         {
-            set { _raiting = value;_setRaiting.SetRaiting(value,FilmName);
+            set
+            {
+                _raiting = value; _setRaiting.SetRaiting(value, FilmName);
                 MiddleRaiting = _setRaiting.GetRaitingOfFilm(FilmName).ToString();
             }
             get { return _raiting; }
@@ -90,7 +92,8 @@ namespace Kurs_adonet
         public string FilmName
         {
             set { _filmName = value; MiddleRaiting = _setRaiting.GetRaitingOfFilm(FilmName).ToString(); }
-            get { return _filmName; } }
+            get { return _filmName; }
+        }
         public string DescriptionFilm { set; get; }
         public string Date { set; get; }
         private ImageSource _posterImage;
@@ -103,6 +106,17 @@ namespace Kurs_adonet
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        private bool _isFavorit;
+        public bool IsFavorit
+        {
+            get { return _isFavorit; }
+            set
+            {
+                _isFavorit = value;
+                AddLoadFilm.SetFavorit(FilmName, value);
+                OnPropertyChanged(nameof(IsFavorit));
+            }
         }
     }
 }

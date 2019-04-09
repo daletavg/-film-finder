@@ -16,6 +16,8 @@ namespace OperationContracts
         [DataMember]
         public string Description { get; set; }
         [DataMember]
+        public bool IsFavorit { get; set; }
+        [DataMember]
         public byte[] Image { get; set; }
         [DataMember]
         public string ImageName { get; set; }

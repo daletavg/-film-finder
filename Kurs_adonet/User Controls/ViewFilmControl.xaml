@@ -10,7 +10,7 @@
              Width="650" Background="White" Height="700">
     <StackPanel Margin="30">
 
-        <Grid Height="583" Margin="10,0,0,0" >
+        <Grid Height="641"  >
             <Grid.RowDefinitions>
                 <RowDefinition Height="343*"/>
                 <RowDefinition Height="196*"/>
@@ -21,23 +21,23 @@
                 <ColumnDefinition Width="403*"/>
             </Grid.ColumnDefinitions>
             <StackPanel  Grid.Row="0" Grid.Column="0" Margin="5">
-                
-                    <Image Source="{Binding PosterFilm, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Name="FilmPoster" Width="200" Height="250" >
 
-                    </Image>
+                <Image Source="{Binding PosterFilm, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Name="FilmPoster" Width="200" Height="250" >
+
+                </Image>
 
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="1" Margin="15,0,0,0">
-                <TextBlock Style="{StaticResource MaterialDesignSubheadingTextBlock}" Margin="0,0,0,20" FontWeight="Bold" FontSize="22" Text="{Binding FilmName}"></TextBlock>
-                <TextBlock>Дата выхода:</TextBlock>
+                <TextBlock Style="{StaticResource MaterialDesignSubheadingTextBlock}" Margin="0,0,0,20" FontWeight="Bold" FontSize="24" Text="{Binding FilmName}"></TextBlock>
+                <TextBlock Text="Дата выхода:" FontFamily="Tahoma" FontSize="14"/>
                 <TextBlock Text="{Binding Path=Date,Mode=TwoWay}" Margin="0,0,0,10"></TextBlock>
-                <TextBlock>Продюссеры:</TextBlock>
+                <TextBlock FontSize="14" FontFamily="Tahoma">Продюссеры:</TextBlock>
                 <TextBlock Text="{Binding Produssers}" Margin="0,0,0,10"></TextBlock>
-                <TextBlock>Актеры:</TextBlock>
+                <TextBlock  FontFamily="Tahoma" FontSize="14">Актеры:</TextBlock>
                 <TextBlock Text="{Binding Actors}" Margin="0,0,0,10"></TextBlock>
-                <TextBlock>Жанры:</TextBlock>
+                <TextBlock  FontFamily="Tahoma" FontSize="14">Жанры:</TextBlock>
                 <TextBlock Text="{Binding Geners}" Margin="0,0,0,10"></TextBlock>
-                <TextBlock>Продолжительность фильма:</TextBlock>
+                <TextBlock  FontFamily="Tahoma" FontSize="14">Продолжительность фильма:</TextBlock>
                 <TextBlock Margin="0,0,0,10"></TextBlock>
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:RatingBar Value="{Binding Raiting,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Orientation="Horizontal" Foreground="Gold" Margin="0" />
@@ -51,19 +51,16 @@
 
 
             <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0">
-                <TextBlock>Описание: </TextBlock>
+                <TextBlock  FontFamily="Tahoma" FontSize="14">Описание:</TextBlock>
                 <TextBlock Style="{StaticResource MaterialDesignBody1TextBlock}" Text="{Binding DescriptionFilm,Mode=TwoWay}"></TextBlock>
             </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Orientation="Horizontal" Width="230" Margin="199,0,151,0">
-                <Button Style="{StaticResource MaterialDesignFlatButton}"   IsDefault="True" Margin="0 8 8 0" Command="{Binding NewFilm}">
+            <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Orientation="Horizontal">
 
-                    ДОБАВИТЬ
-                </Button>
-                <Button Style="{StaticResource MaterialDesignFlatButton}" IsCancel="True" Margin="0 8 8 0" Command="materialDesign:DialogHost.CloseDialogCommand" >
+                <Button Style="{StaticResource MaterialDesignFlatButton}" IsCancel="True" Command="materialDesign:DialogHost.CloseDialogCommand" >
                     <Button.CommandParameter>
                         <system:Boolean>False</system:Boolean>
                     </Button.CommandParameter>
-                    ОТМЕНА
+                    OK
                 </Button>
             </StackPanel>
         </Grid>

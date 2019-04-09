@@ -39,6 +39,33 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="SetFavorit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filmName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isFavorit" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetFavoritResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFavoritFilms">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="index" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFavoritFilmsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="GetFavoritFilmsResult" nillable="true" type="q4:FilmContent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetFilmsCount">
     <xs:complexType>
       <xs:sequence />
@@ -48,6 +75,18 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="GetFilmsCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFavoritFilmsCount">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFavoritFilmsCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetFavoritFilmsCountResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -74,14 +113,14 @@
   <xs:element name="GetCurrentUserResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="GetCurrentUserResult" nillable="true" type="q4:CurrentUser" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="GetCurrentUserResult" nillable="true" type="q5:CurrentUser" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddNewUserOnDB">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="registrate" nillable="true" type="q5:RegistrateCurrentUser" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="registrate" nillable="true" type="q6:RegistrateCurrentUser" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -120,7 +159,7 @@
   <xs:element name="SendMessage">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="msg" nillable="true" type="q6:MessageData" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="msg" nillable="true" type="q7:MessageData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -137,7 +176,7 @@
   <xs:element name="SetMessage">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="msg" nillable="true" type="q7:MessageData" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="msg" nillable="true" type="q8:MessageData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

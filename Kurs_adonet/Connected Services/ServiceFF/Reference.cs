@@ -33,11 +33,29 @@ namespace Kurs_adonet.ServiceFF {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/GetSpecific", ReplyAction="http://tempuri.org/IAddLoadFilm/GetSpecificResponse")]
         System.Threading.Tasks.Task<OperationContracts.AllSpecificAddingFilm> GetSpecificAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/SetFavorit", ReplyAction="http://tempuri.org/IAddLoadFilm/SetFavoritResponse")]
+        void SetFavorit(string filmName, bool isFavorit);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/SetFavorit", ReplyAction="http://tempuri.org/IAddLoadFilm/SetFavoritResponse")]
+        System.Threading.Tasks.Task SetFavoritAsync(string filmName, bool isFavorit);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/GetFavoritFilms", ReplyAction="http://tempuri.org/IAddLoadFilm/GetFavoritFilmsResponse")]
+        OperationContracts.FilmContent GetFavoritFilms(int index);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/GetFavoritFilms", ReplyAction="http://tempuri.org/IAddLoadFilm/GetFavoritFilmsResponse")]
+        System.Threading.Tasks.Task<OperationContracts.FilmContent> GetFavoritFilmsAsync(int index);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/GetFilmsCount", ReplyAction="http://tempuri.org/IAddLoadFilm/GetFilmsCountResponse")]
         int GetFilmsCount();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/GetFilmsCount", ReplyAction="http://tempuri.org/IAddLoadFilm/GetFilmsCountResponse")]
         System.Threading.Tasks.Task<int> GetFilmsCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/GetFavoritFilmsCount", ReplyAction="http://tempuri.org/IAddLoadFilm/GetFavoritFilmsCountResponse")]
+        int GetFavoritFilmsCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/GetFavoritFilmsCount", ReplyAction="http://tempuri.org/IAddLoadFilm/GetFavoritFilmsCountResponse")]
+        System.Threading.Tasks.Task<int> GetFavoritFilmsCountAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginRegisterUser/CheckUserOnDB", ReplyAction="http://tempuri.org/ILoginRegisterUser/CheckUserOnDBResponse")]
         int CheckUserOnDB(string login, string password);
@@ -122,12 +140,36 @@ namespace Kurs_adonet.ServiceFF {
             return base.Channel.GetSpecificAsync();
         }
         
+        public void SetFavorit(string filmName, bool isFavorit) {
+            base.Channel.SetFavorit(filmName, isFavorit);
+        }
+        
+        public System.Threading.Tasks.Task SetFavoritAsync(string filmName, bool isFavorit) {
+            return base.Channel.SetFavoritAsync(filmName, isFavorit);
+        }
+        
+        public OperationContracts.FilmContent GetFavoritFilms(int index) {
+            return base.Channel.GetFavoritFilms(index);
+        }
+        
+        public System.Threading.Tasks.Task<OperationContracts.FilmContent> GetFavoritFilmsAsync(int index) {
+            return base.Channel.GetFavoritFilmsAsync(index);
+        }
+        
         public int GetFilmsCount() {
             return base.Channel.GetFilmsCount();
         }
         
         public System.Threading.Tasks.Task<int> GetFilmsCountAsync() {
             return base.Channel.GetFilmsCountAsync();
+        }
+        
+        public int GetFavoritFilmsCount() {
+            return base.Channel.GetFavoritFilmsCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetFavoritFilmsCountAsync() {
+            return base.Channel.GetFavoritFilmsCountAsync();
         }
         
         public int CheckUserOnDB(string login, string password) {

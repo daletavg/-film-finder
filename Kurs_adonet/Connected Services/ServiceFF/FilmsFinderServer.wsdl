@@ -210,6 +210,82 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="filmfinder_SetFavorit_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="filmfinder_SetFavorit_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="filmfinder_GetFavoritFilms_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="filmfinder_GetFavoritFilms_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="filmfinder_GetFilmsCount_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -230,6 +306,44 @@
     </wsp:ExactlyOne>
   </wsp:Policy>
   <wsp:Policy wsu:Id="filmfinder_GetFilmsCount_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="filmfinder_GetFavoritFilmsCount_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="filmfinder_GetFavoritFilmsCount_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -659,11 +773,29 @@
   <wsdl:message name="IFilmFinderServer_GetSpecific_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSpecificResponse" />
   </wsdl:message>
+  <wsdl:message name="IFilmFinderServer_SetFavorit_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetFavorit" />
+  </wsdl:message>
+  <wsdl:message name="IFilmFinderServer_SetFavorit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetFavoritResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFilmFinderServer_GetFavoritFilms_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFavoritFilms" />
+  </wsdl:message>
+  <wsdl:message name="IFilmFinderServer_GetFavoritFilms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFavoritFilmsResponse" />
+  </wsdl:message>
   <wsdl:message name="IFilmFinderServer_GetFilmsCount_InputMessage">
     <wsdl:part name="parameters" element="tns:GetFilmsCount" />
   </wsdl:message>
   <wsdl:message name="IFilmFinderServer_GetFilmsCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetFilmsCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFilmFinderServer_GetFavoritFilmsCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFavoritFilmsCount" />
+  </wsdl:message>
+  <wsdl:message name="IFilmFinderServer_GetFavoritFilmsCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFavoritFilmsCountResponse" />
   </wsdl:message>
   <wsdl:message name="IFilmFinderServer_CheckUserOnDB_InputMessage">
     <wsdl:part name="parameters" element="tns:CheckUserOnDB" />
@@ -720,9 +852,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IAddLoadFilm/GetSpecific" message="tns:IFilmFinderServer_GetSpecific_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAddLoadFilm/GetSpecificResponse" message="tns:IFilmFinderServer_GetSpecific_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SetFavorit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAddLoadFilm/SetFavorit" message="tns:IFilmFinderServer_SetFavorit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAddLoadFilm/SetFavoritResponse" message="tns:IFilmFinderServer_SetFavorit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetFavoritFilms">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAddLoadFilm/GetFavoritFilms" message="tns:IFilmFinderServer_GetFavoritFilms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAddLoadFilm/GetFavoritFilmsResponse" message="tns:IFilmFinderServer_GetFavoritFilms_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetFilmsCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IAddLoadFilm/GetFilmsCount" message="tns:IFilmFinderServer_GetFilmsCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAddLoadFilm/GetFilmsCountResponse" message="tns:IFilmFinderServer_GetFilmsCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetFavoritFilmsCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAddLoadFilm/GetFavoritFilmsCount" message="tns:IFilmFinderServer_GetFavoritFilmsCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAddLoadFilm/GetFavoritFilmsCountResponse" message="tns:IFilmFinderServer_GetFavoritFilmsCount_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="CheckUserOnDB">
       <wsdl:input wsaw:Action="http://tempuri.org/ILoginRegisterUser/CheckUserOnDB" message="tns:IFilmFinderServer_CheckUserOnDB_InputMessage" />
@@ -795,6 +939,28 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SetFavorit">
+      <soap12:operation soapAction="http://tempuri.org/IAddLoadFilm/SetFavorit" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#filmfinder_SetFavorit_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#filmfinder_SetFavorit_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFavoritFilms">
+      <soap12:operation soapAction="http://tempuri.org/IAddLoadFilm/GetFavoritFilms" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#filmfinder_GetFavoritFilms_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#filmfinder_GetFavoritFilms_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetFilmsCount">
       <soap12:operation soapAction="http://tempuri.org/IAddLoadFilm/GetFilmsCount" style="document" />
       <wsdl:input>
@@ -803,6 +969,17 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#filmfinder_GetFilmsCount_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFavoritFilmsCount">
+      <soap12:operation soapAction="http://tempuri.org/IAddLoadFilm/GetFavoritFilmsCount" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#filmfinder_GetFavoritFilmsCount_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#filmfinder_GetFavoritFilmsCount_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
