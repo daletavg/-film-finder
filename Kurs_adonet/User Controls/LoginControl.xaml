@@ -52,7 +52,7 @@
                 </Grid>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Content="Вход" Command="{Binding Path=LoginCommand}"  CommandParameter="{Binding ElementName=passwordBox}" IsDefault="True" Margin="3"/>
+                <Button Click="LoginClick" Content="Вход" Command="{Binding Path=LoginCommand}"  CommandParameter="{Binding ElementName=passwordBox}" IsDefault="True" Margin="3"/>
                 <Button Name="RegistrButton" Content="Регистрация" Margin="3" Command="{Binding Path=OpenRegistrate}"/>
             </StackPanel>
 

@@ -333,5 +333,21 @@ namespace Server_Films
 
             return count;
         }
+
+        public void UploadUserImage(byte[] image)
+        {
+            using (var db = new FilmFinderDb())
+            {
+                var user = db.Users.ToList().First(i => i.Name == _currentUser.Login);
+                user.UserImage = image;
+                _currentUser.UserImage = image;
+                db.SaveChanges();
+            }
+        }
+
+        public void ChangeUserProfile(CurrentUser user)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

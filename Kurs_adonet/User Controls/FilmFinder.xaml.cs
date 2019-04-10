@@ -49,13 +49,21 @@ namespace Kurs_adonet
                 case 0:
                     this.AllFilms.Visibility = Visibility.Visible;
                     this.ChatControl.Visibility = Visibility.Hidden;
+                    this.SettingControl.Visibility = Visibility.Hidden;
                     break;
+                case 2:
+                    this.SettingControl.Visibility = Visibility.Visible;
+                    this.SettingControl.LoadUser();
+                    this.AllFilms.Visibility = Visibility.Hidden;
+                    this.ChatControl.Visibility = Visibility.Hidden;
+                    break;;
                 case 3:
                     this.ChatControl.Visibility = Visibility.Visible;
                     this.AllFilms.Visibility = Visibility.Hidden;
+                    this.SettingControl.Visibility = Visibility.Hidden;
                     break;
                 default:
-                    this.AllFilms.Visibility = Visibility.Hidden;
+                    
                     break;
             }
         }

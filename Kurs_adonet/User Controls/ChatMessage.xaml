@@ -12,19 +12,18 @@
 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="60"/>
-            <ColumnDefinition Width="79*"/>
+            <ColumnDefinition Width="66"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Ellipse Width="60" Height="60" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" >
+        <Ellipse Width="60" Height="60" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Margin="1,0,1,4" >
             <Ellipse.Fill>
-                <ImageBrush/>
+                <ImageBrush ImageSource="{Binding UserImage,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
             </Ellipse.Fill>
         </Ellipse>
 
         <TextBlock Grid.Row="0" Grid.Column="1" FontWeight="Bold" Grid.RowSpan="2" Text="{Binding NickName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
         </TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Text="{Binding Message,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap">
-        </TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Message,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap"/>
 
     </Grid>
 </UserControl>

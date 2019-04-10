@@ -31,7 +31,7 @@ namespace Kurs_adonet
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        public DateTime DateBirthday { set; get; }
+        public DateTime DateBirthday { set; get; } = DateTime.Now;
         public string Name { set; get; } = "";
         public string Password { set; get; } = "";
         public string NewPassword { set; get; } = "";

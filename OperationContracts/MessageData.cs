@@ -10,6 +10,7 @@ namespace OperationContracts
     [DataContract]
     public class MessageData
     {
+        
         [DataMember]
         public CurrentUser NickName { set; get; }
         [DataMember]

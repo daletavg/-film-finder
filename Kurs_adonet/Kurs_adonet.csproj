@@ -84,10 +84,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="FavoritFilmsViewModel.cs" />
+    <Compile Include="ImageConverter.cs" />
+    <Compile Include="View Models\FavoritFilmsViewModel.cs" />
     <Compile Include="FilmFinderServer.cs" />
     <Compile Include="LoadingFilms.cs" />
     <Compile Include="MessageViewModel.cs" />
+    <Compile Include="View Models\SettingViewModel.cs" />
     <Compile Include="User Controls\ChatControl.xaml.cs">
       <DependentUpon>ChatControl.xaml</DependentUpon>
     </Compile>
@@ -97,6 +99,9 @@
     <Compile Include="User Controls\FavoritFilmsControl.xaml.cs">
       <DependentUpon>FavoritFilmsControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\SettingControl.xaml.cs">
+      <DependentUpon>SettingControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\ViewFilmControl.xaml.cs">
       <DependentUpon>ViewFilmControl.xaml</DependentUpon>
     </Compile>
@@ -105,7 +110,7 @@
     <Compile Include="User Controls\LoadingControl.xaml.cs">
       <DependentUpon>LoadingControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindowViewModel.cs" />
+    <Compile Include="View Models\MainWindowViewModel.cs" />
     <Compile Include="User.cs" />
     <Compile Include="View Models\AddFilmViewModel.cs" />
     <Compile Include="User Controls\FilmFinder.xaml.cs">
@@ -181,6 +186,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="User Controls\RegistrControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User Controls\SettingControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Kurs_adonet.User_Controls"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d"  >
-    <Grid>
+    <Grid Margin="5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="540*"/>
             <ColumnDefinition Width="50"/>

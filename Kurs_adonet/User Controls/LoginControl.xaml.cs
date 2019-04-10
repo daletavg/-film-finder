@@ -15,24 +15,22 @@ using System.Windows.Shapes;
 
 namespace Kurs_adonet
 {
-    public delegate void OpenRegisterWindow(); 
+    public delegate void OpenRegisterWindow();
+
     /// <summary>
     /// Interaction logic for LoginControl.xaml
     /// </summary>
+    public delegate void LoadUser();
     public partial class LoginControl : UserControl,IUsingControl
     {
+     
         public LoginControl()
         {
             InitializeComponent();
            
         }
 
-        public event OpenRegisterWindow Registration;
-
-        void OpenRegister(object o, EventArgs e)
-        {
-            Registration();
-        }
+        
 
         public CurrentControl ThisControl
         {
@@ -42,6 +40,11 @@ namespace Kurs_adonet
         private void loginBox_Error(object sender, ValidationErrorEventArgs e)
         {
 
+        }
+
+        private void LoginClick(object sender, RoutedEventArgs e)
+        {
+           
         }
     }
 }

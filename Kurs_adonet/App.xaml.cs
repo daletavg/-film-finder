@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
 using System.IO;
@@ -28,15 +29,20 @@ namespace Kurs_adonet
             MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
             LoginViewModel loginAndRegistrate = new LoginViewModel(mainWindowViewModel.OpenRegistrateControl,mainWindowViewModel.OpenFilmFinderControl,serverFilmFinder);
             RegistrateViewModel registrateViewModel = new RegistrateViewModel(mainWindowViewModel.OpenLoginControl,serverFilmFinder);
+            FilmFinderViewModel filmFinderViewModel = new FilmFinderViewModel(serverFilmFinder);
+            SettingViewModel settingViewModel = new SettingViewModel(serverFilmFinder);
 
             RegistrControl registrControl = new RegistrControl();
             LoginControl loginControl = new LoginControl();
             FilmFinder filmFinderControl = new FilmFinder();
 
+            loginAndRegistrate.LoadUser += filmFinderViewModel.LoadUser;
+            settingViewModel.LoadUser += filmFinderViewModel.LoadUser;
+            filmFinderControl.SettingControl.DataContext = settingViewModel;
             loginControl.DataContext = loginAndRegistrate;
             registrControl.DataContext = registrateViewModel;
-
-            //main.MyFrame.Navigate(loginControl);
+            filmFinderControl.DataContext = filmFinderViewModel;
+            
             
             AddFilmViewModel addFilmViewModel = new AddFilmViewModel(serverFilmFinder);
             FilmsViewModel filmsViewModel = new FilmsViewModel();

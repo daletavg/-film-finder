@@ -80,5 +80,15 @@ namespace Kurs_adonet
         {
             return _server.GetRaitingOfFilm(nameOfFilm);
         }
+
+        public void UploadUserImage(byte[] image)
+        {
+            _server.UploadUserImage(image);
+        }
+
+        public void ChangeUserProfile(CurrentUser user)
+        {
+            _server.ChangeUserProfile(user);
+        }
     }
 }

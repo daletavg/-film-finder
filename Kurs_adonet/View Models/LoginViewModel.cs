@@ -16,6 +16,7 @@ namespace Kurs_adonet
     class LoginViewModel : INotifyPropertyChanged
     {
         public Action _openFilmFinder;
+        public event Action LoadUser;
         OperationContracts.ILoginRegisterUser loginRegister;
         public LoginViewModel(Action openRegistrate,Action openFilmFinder, OperationContracts.ILoginRegisterUser loginRegisterUser)
         {
@@ -67,6 +68,8 @@ namespace Kurs_adonet
             UResult result = (UResult)loginRegister.CheckUserOnDB(Login, password);
             if (result == UResult.Access)
             {
+        
+                LoadUser?.Invoke();
                 _openFilmFinder();
             }
             else if(result == UResult.PasswordFailed)

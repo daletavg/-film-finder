@@ -236,3 +236,5 @@ C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.csproj.Cor
 C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.csproj.CopyComplete
 C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.exe
 C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.pdb
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\SettingControl.g.cs
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\SettingControl.baml

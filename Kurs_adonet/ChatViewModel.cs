@@ -54,7 +54,8 @@ namespace Kurs_adonet
 
         public void SetMessage(MessageData msg)
         {
-            Messages.Add(new MessageViewModel() { NickName = msg.NickName.Login, Message = msg.Message });
+            
+            Messages.Add(new MessageViewModel() { NickName = msg.NickName.Login,UserImage = new ImageConverter().ByteToBitmapImage(msg.NickName.UserImage), Message = msg.Message });
         }
     }
 }

@@ -87,6 +87,19 @@ namespace Kurs_adonet.ServiceFF {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetRaiting/GetRaitingOfFilm", ReplyAction="http://tempuri.org/ISetRaiting/GetRaitingOfFilmResponse")]
         System.Threading.Tasks.Task<float> GetRaitingOfFilmAsync(string nameOfFilm);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISettings/UploadUserImage", ReplyAction="http://tempuri.org/ISettings/UploadUserImageResponse")]
+        void UploadUserImage(byte[] image);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISettings/UploadUserImage", ReplyAction="http://tempuri.org/ISettings/UploadUserImageResponse")]
+        System.Threading.Tasks.Task UploadUserImageAsync(byte[] image);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISettings/ChangeUserProfile", ReplyAction="http://tempuri.org/ISettings/ChangeUserProfileResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(OperationContracts.RegistrateCurrentUser))]
+        void ChangeUserProfile(OperationContracts.CurrentUser user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISettings/ChangeUserProfile", ReplyAction="http://tempuri.org/ISettings/ChangeUserProfileResponse")]
+        System.Threading.Tasks.Task ChangeUserProfileAsync(OperationContracts.CurrentUser user);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -210,6 +223,22 @@ namespace Kurs_adonet.ServiceFF {
         
         public System.Threading.Tasks.Task<float> GetRaitingOfFilmAsync(string nameOfFilm) {
             return base.Channel.GetRaitingOfFilmAsync(nameOfFilm);
+        }
+        
+        public void UploadUserImage(byte[] image) {
+            base.Channel.UploadUserImage(image);
+        }
+        
+        public System.Threading.Tasks.Task UploadUserImageAsync(byte[] image) {
+            return base.Channel.UploadUserImageAsync(image);
+        }
+        
+        public void ChangeUserProfile(OperationContracts.CurrentUser user) {
+            base.Channel.ChangeUserProfile(user);
+        }
+        
+        public System.Threading.Tasks.Task ChangeUserProfileAsync(OperationContracts.CurrentUser user) {
+            return base.Channel.ChangeUserProfileAsync(user);
         }
     }
     

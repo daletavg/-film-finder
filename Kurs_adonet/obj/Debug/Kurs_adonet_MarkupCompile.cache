@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\App.xaml
-121487798995
+13-2115139154
 
-341217931220
+37-1712960416
 2394236698
-User Controls\FavoritFilmsControl.xaml;User Controls\LoadingControl.xaml;User Controls\ChatControl.xaml;User Controls\ChatMessage.xaml;User Controls\FilmFinder.xaml;User Controls\AddFilm.xaml;User Controls\FilmsControl.xaml;User Controls\FilmCardControl.xaml;User Controls\LoginControl.xaml;MainWindow.xaml;User Controls\RegistrControl.xaml;User Controls\ViewFilmControl.xaml;
+User Controls\FavoritFilmsControl.xaml;User Controls\LoadingControl.xaml;User Controls\ChatControl.xaml;User Controls\ChatMessage.xaml;User Controls\FilmFinder.xaml;User Controls\AddFilm.xaml;User Controls\FilmsControl.xaml;User Controls\FilmCardControl.xaml;User Controls\LoginControl.xaml;MainWindow.xaml;User Controls\RegistrControl.xaml;User Controls\SettingControl.xaml;User Controls\ViewFilmControl.xaml;
 
 False
 

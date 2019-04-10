@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace Kurs_adonet
 {
@@ -24,7 +25,19 @@ namespace Kurs_adonet
             get { return _message; }
         }
 
-        
+        private ImageSource _userImage;
+
+        public ImageSource UserImage
+        {
+            set
+            {
+                _userImage = value;
+                OnPropertyChanged(nameof(UserImage));
+            }
+            get { return _userImage; }
+        }
+
+
         protected virtual void OnPropertyChanged(string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

@@ -156,10 +156,34 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="UploadUserImage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="image" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadUserImageResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeUserProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="user" nillable="true" type="q7:CurrentUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeUserProfileResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="SendMessage">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="msg" nillable="true" type="q7:MessageData" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="msg" nillable="true" type="q8:MessageData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -176,7 +200,7 @@
   <xs:element name="SetMessage">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="msg" nillable="true" type="q8:MessageData" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="msg" nillable="true" type="q9:MessageData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
