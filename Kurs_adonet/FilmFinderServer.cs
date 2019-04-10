@@ -18,14 +18,14 @@ namespace Kurs_adonet
             _server = new ServiceFF.FilmFinderServerClient();
         }
 
-        public void AddNewFilm(FilmContent content)
+        public int AddNewFilm(FilmContent content)
         {
-            _server.AddNewFilm(content);
+            return _server.AddNewFilm(content);
         }
 
-        public void AddNewUserOnDB(RegistrateCurrentUser registrate)
+        public int AddNewUserOnDB(RegistrateCurrentUser registrate)
         {
-            _server.AddNewUserOnDB(registrate);
+            return _server.AddNewUserOnDB(registrate);
         }
 
         public int CheckUserOnDB(string login, string password)
@@ -81,6 +81,11 @@ namespace Kurs_adonet
             return _server.GetRaitingOfFilm(nameOfFilm);
         }
 
+        public int GetCurrentRaiting(string nameOfFilm)
+        {
+            return _server.GetCurrentRaiting(nameOfFilm);
+        }
+
         public void UploadUserImage(byte[] image)
         {
             _server.UploadUserImage(image);
@@ -89,6 +94,21 @@ namespace Kurs_adonet
         public void ChangeUserProfile(CurrentUser user)
         {
             _server.ChangeUserProfile(user);
+        }
+
+        public void AddComment(string filmName, string comment)
+        {
+            _server.AddComment(filmName,comment);
+        }
+
+        public MessageData GetComments(int index, string filmName)
+        {
+            return _server.GetComments(index, filmName);
+        }
+
+        public int GetCountComments(string filmName)
+        {
+            return _server.GetCountComments(filmName);
         }
     }
 }

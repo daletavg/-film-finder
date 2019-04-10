@@ -26,6 +26,7 @@ namespace Kurs_adonet
                 card.AddLoadFilm = AddLoadFilm;
                 card.IsFavorit = film.IsFavorit;
                 card.FilmTime = film.FilmTime;
+                card.InitRaiting(AddLoadFilm.GetCurrentRaiting(film.Name));
                 card.ListActor = new ObservableCollection<string>(film.Actors);
                 card.ListProdusser = new ObservableCollection<string>(film.Produsers);
                 card.ListGenre = new ObservableCollection<string>(film.Geners);

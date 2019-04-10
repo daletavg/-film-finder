@@ -38,10 +38,14 @@ namespace Server_Films
 
         }
 
-        public void AddNewUserOnDB(RegistrateCurrentUser registrate)
+        public int AddNewUserOnDB(RegistrateCurrentUser registrate)
         {
             using (var db = new FilmFinderDb())
             {
+                if (db.Users.Any(i=>i.Name==registrate.Login))
+                {
+                    return (int)UResult.UserFailed;
+                }
                 bool tmpGender = true;
                 switch (registrate.Gender)
                 {
@@ -54,15 +58,24 @@ namespace Server_Films
                 }
                 GetHeshMd5 getHesh = new GetHeshMd5();
 
-                db.Users.Add(new User() { Name = registrate.Login, Password = getHesh.GetHesh(registrate.Password), Gender = tmpGender });
+                db.Users.Add(new User() { Name = registrate.Login, Password = getHesh.GetHesh(registrate.Password), Gender = tmpGender,UserImage = File.ReadAllBytes("./usericon.png")});
                 db.SaveChanges();
             }
+            return (int)UResult.Access;
         }
 
-        public void AddNewFilm(FilmContent content)
+        public int AddNewFilm(FilmContent content)
         {
+            using (var db = new FilmFinderDb())
+            {
+                if (db.Films.Any(i=>i.Name==content.Name))
+                {
+                    return (int) UResult.FilmFailed;
+                }
+            }
             CreateNewFilm createNewFilm = new CreateNewFilm(content, _currentUser);
             createNewFilm.Create();
+            return (int) UResult.Access;
         }
 
         public FilmContent GetFilm(int index)
@@ -241,6 +254,17 @@ namespace Server_Films
 
         }
 
+        public int GetCurrentRaiting(string nameOfFilm)
+        {
+            using (var db = new FilmFinderDb())
+            {
+                if (db.Marks.Any(i => i.Film.Name == nameOfFilm && i.User.Name == _currentUser.Login))
+                    return db.Marks.First(i => i.Film.Name == nameOfFilm && i.User.Name == _currentUser.Login).Marks;
+                else
+                    return 0;
+            }
+        }
+
         public void SetFavorit(string filmName, bool isFavorit)
         {
             using (var db = new FilmFinderDb())
@@ -348,6 +372,41 @@ namespace Server_Films
         public void ChangeUserProfile(CurrentUser user)
         {
             throw new NotImplementedException();
+        }
+
+        public void AddComment(string filmName,string comment)
+        {
+            using (var db = new FilmFinderDb())
+            {
+                Coment coment = new Coment();
+                var user = db.Users.First(i => i.Name == _currentUser.Login);
+                var film = db.Films.First(i => i.Name == filmName);
+                coment.Film = film;
+                coment.User = user;
+                coment.Сommentary = comment;
+                db.Coments.Add(coment);
+                db.SaveChanges();
+            }
+        }
+
+        public MessageData GetComments(int index, string filmName)
+        {
+            using (var db = new FilmFinderDb())
+            {
+                var comment = db.Coments.Where(i => i.Film.Name == filmName).ToArray()[index];
+                MessageData msg = new MessageData();
+                msg .NickName = new CurrentUser(){Login = comment.User.Name,DateBirthday = comment.User.DateBirthday,UserImage = comment.User.UserImage};
+                msg.Message = comment.Сommentary;
+                return msg;
+            }
+        }
+
+        public int GetCountComments(string filmName)
+        {
+            using (var db = new FilmFinderDb())
+            {
+                return db.Coments.Where(i => i.Film.Name == filmName).ToArray().Length;
+            }
         }
     }
 }

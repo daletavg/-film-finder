@@ -10,7 +10,7 @@
     <StackPanel Margin="30">
 
         <Label FontWeight="Bold" FontFamily="Arial" FontSize="20">Новый фильм</Label>
-        <Label HorizontalAlignment="Right"  Foreground="Red">Неверно заполнена форма</Label>
+        <TextBlock HorizontalAlignment="Right" Text="{Binding ErrorMessage,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  Foreground="Red"></TextBlock>
 
         <Grid Height="583" Margin="10,0,0,0" >
             <Grid.RowDefinitions>
@@ -135,7 +135,7 @@
                                    MaxWidth="40"
                                     Name="Minutes"
                                    SelectedValue="{Binding Minutes,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                                   RenderTransformOrigin="0.573,-0.929" Text="{Binding ProdusserText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                   RenderTransformOrigin="0.573,-0.929" >
 
                         </ComboBox>
                         <TextBlock  Margin="0 0 10 0" VerticalAlignment="Center">М.</TextBlock>
@@ -144,7 +144,7 @@
                                    MaxWidth="40"
                                    Name="Seconds"
                                    SelectedValue="{Binding Seconds,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                                   RenderTransformOrigin="0.573,-0.929" Text="{Binding ProdusserText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                   RenderTransformOrigin="0.573,-0.929">
 
                         </ComboBox>
                         <TextBlock VerticalAlignment="Center">C.</TextBlock>
@@ -160,7 +160,7 @@
                 <TextBox Text="{Binding DescriptionFilm, Mode=TwoWay}" Style="{StaticResource MaterialDesignTextAreaTextBox}" VerticalAlignment="Top" Height="112" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" materialDesign:HintAssist.Hint="Описание фильма:" IsEnabled="{Binding IsChecked, ElementName=MaterialDesignTextAreaTextBoxEnabledComboBox}" Margin="40,0,40,0"  />
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Orientation="Horizontal" Width="230" Margin="199,0,151,0">
-                <Button  Click="AcceptClick" Style="{StaticResource MaterialDesignFlatButton}"   IsDefault="True" Margin="0 8 8 0" Command="{Binding NewFilm}">
+                <Button  Click="AcceptClick" Style="{StaticResource MaterialDesignFlatButton}"   IsDefault="True" Margin="0 8 8 0" >
 
                     ДОБАВИТЬ
                 </Button>

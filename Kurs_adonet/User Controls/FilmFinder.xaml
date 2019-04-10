@@ -22,18 +22,21 @@
                             </TransformGroup>
                         </DockPanel.RenderTransform>
                         <StackPanel DockPanel.Dock="Top"  Background="#FF7345C3" Height="150"  >
-                            <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
+                            <StackPanel>
+                                <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
                                     DockPanel.Dock="Top"
                                     HorizontalAlignment="Right" Margin="16"
                                     IsChecked="{Binding ElementName=MenuToggleButton, Path=IsChecked, Mode=TwoWay}" x:Name="BackButton"/>
 
-                            <StackPanel Orientation="Horizontal">
-                                <Ellipse Height="60" Width="60" HorizontalAlignment="Left" Margin="5">
-                                    <Ellipse.Fill>
-                                        <ImageBrush ImageSource="{Binding UserImage,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
-                                    </Ellipse.Fill>
-                                </Ellipse>
-                                <TextBlock Text="{Binding UserName}" VerticalAlignment="Center" Margin="5" FontWeight="Bold" FontSize="16"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <Ellipse Height="60" Width="60" HorizontalAlignment="Left" Margin="5">
+                                        <Ellipse.Fill>
+                                            <ImageBrush ImageSource="{Binding UserImage,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                    <TextBlock Text="{Binding UserName}" VerticalAlignment="Center" Margin="5" FontWeight="Bold" FontSize="16"/>
+                                </StackPanel>
+
                             </StackPanel>
                         </StackPanel>
                         <ListBox x:Name="DemoItemsListBox" Margin="0 16 0 16" SelectedIndex="0"                         

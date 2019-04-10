@@ -33,7 +33,7 @@ namespace Kurs_adonet
         }
         public DateTime DateBirthday { set; get; } = DateTime.Now;
         public string Name { set; get; } = "";
-        public string Password { set; get; } = "";
+       
         public string NewPassword { set; get; } = "";
 
         
@@ -53,9 +53,17 @@ namespace Kurs_adonet
             }
         }
 
+        private string _errorMessage=null;
+
+        public string ErrorMessage
+        {
+            set { _errorMessage = value;OnPropertyChanged(nameof(ErrorMessage)); }
+            get { return _errorMessage; }
+        }
+
         #region Gender
 
-        
+
 
 
         int _gender;
@@ -87,22 +95,47 @@ namespace Kurs_adonet
 
         #endregion
 
+        public string Password { set; get; } = "";
+        public string PasswordSecond { set; get; } = "";
+
         public void RegistrateOnApp(object param)
         {
-            var passwordBox = param as PasswordBox;
-            if (passwordBox == null)
+            RegistrateCurrentUser user = new RegistrateCurrentUser();
+            if (Name =="" || Password==""||PasswordSecond=="")
+            {
+                ErrorMessage = "*Все поля должны быть заполнены";
                 return;
-            var password = passwordBox.Password;
+            }
+            else if (DateBirthday > DateTime.Now)
+            {
+                ErrorMessage = "*Возраст не может быть больше текущей даты";
+                return;
+            }
+            else if (Password!=PasswordSecond)
+            {
+                ErrorMessage = "*Пароли не совпадают";
+                return;
+            }
+            
 
             byte[] tmp = { };
-            RegistrateCurrentUser user = new RegistrateCurrentUser();
+            
             user.Login = Name;
-            user.Password = password;
+            user.Password = Password;
             user.Gender = Gender;
             user.UserImage = tmp;
+            
             user.DateBirthday = DateBirthday.ToString();
-            _loginRegister.AddNewUserOnDB(user);
-            OpenLogin.Execute(null);
+            UResult result = (UResult) _loginRegister.AddNewUserOnDB(user);
+            if (result==UResult.Access)
+            {
+                OpenLogin.Execute(null);
+            }
+            else if(result == UResult.UserFailed)
+            {
+                ErrorMessage = "*Такой пользователь уже существует";
+            }
+            
         }
 
         public bool CanExecuteRegistrate()

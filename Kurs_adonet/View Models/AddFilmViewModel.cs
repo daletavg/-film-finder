@@ -222,9 +222,28 @@ namespace Kurs_adonet
             }
         }
 
-        private void AddNewFilm()
+        private string _errorMessage;
+
+        public string ErrorMessage
         {
-            
+            set { _errorMessage = value; OnPropertyChanged(nameof(ErrorMessage));}
+            get { return _errorMessage; }
+        }
+
+        public RoutedCommand CloseWindow;
+
+        public bool AddNewFilm()
+        {
+            if (PathToimage ==null || PathToimage=="")
+            {
+                ErrorMessage = "*Не указано изображение";
+                return false;
+            }
+            else if(FilmName==""||AllActors==""||AllGeners==""||AllProdussers=="" || AllActors == null || AllGeners == null || AllProdussers == null)
+            {
+                ErrorMessage = "*Не заполнены все поля";
+                return false;
+            }
             
             
             FilmContent content = new FilmContent();
@@ -237,7 +256,17 @@ namespace Kurs_adonet
             content.Produsers = _produssersAtFilm.ToArray();
             content.ReleaseDate = Date.ToString();
             content.FilmTime = _hours + ":" + _minutes + ":" + _seconds;
-            _addNewFilm.AddNewFilm(content);
+            if (((UResult) _addNewFilm.AddNewFilm(content)) == UResult.FilmFailed)
+            {
+                ErrorMessage = "*Данный фильм уже существует";
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+            
+            
         }
 
         

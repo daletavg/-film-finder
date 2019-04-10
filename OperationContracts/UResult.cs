@@ -10,7 +10,7 @@ namespace OperationContracts
     [DataContract]
     public enum UResult
     {
-        UserFailed,PasswordFailed,Access
+        UserFailed,PasswordFailed,Access,FilmFailed
     }
     
 }

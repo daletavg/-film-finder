@@ -77,7 +77,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ChatViewModel.cs" />
+    <Compile Include="View Models\ChatViewModel.cs" />
     <Compile Include="AccountValidation.cs" />
     <Compile Include="Connected Services\ServiceFF\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -88,7 +88,7 @@
     <Compile Include="View Models\FavoritFilmsViewModel.cs" />
     <Compile Include="FilmFinderServer.cs" />
     <Compile Include="LoadingFilms.cs" />
-    <Compile Include="MessageViewModel.cs" />
+    <Compile Include="View Models\MessageViewModel.cs" />
     <Compile Include="View Models\SettingViewModel.cs" />
     <Compile Include="User Controls\ChatControl.xaml.cs">
       <DependentUpon>ChatControl.xaml</DependentUpon>
@@ -233,6 +233,7 @@
     <None Include="Properties\DataSources\OperationContracts.AllSpecificAddingFilm.datasource" />
     <None Include="Properties\DataSources\OperationContracts.CurrentUser.datasource" />
     <None Include="Properties\DataSources\OperationContracts.FilmContent.datasource" />
+    <None Include="Properties\DataSources\OperationContracts.MessageData.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

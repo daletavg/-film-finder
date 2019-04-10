@@ -9,7 +9,7 @@ namespace OperationContracts
     public interface IAddLoadFilm
     {
         [OperationContract]
-        void AddNewFilm(FilmContent content);
+        int AddNewFilm(FilmContent content);
         [OperationContract]
         FilmContent GetFilm(int index);
 

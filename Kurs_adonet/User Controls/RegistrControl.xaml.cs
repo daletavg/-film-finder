@@ -35,5 +35,12 @@ namespace Kurs_adonet
         {
             get { return CurrentControl.RegistrateControl; }
         }
+
+        private void Registrate(object sender, RoutedEventArgs e)
+        {
+            ((RegistrateViewModel) DataContext).Password = passwordBox.Password;
+            ((RegistrateViewModel) DataContext).PasswordSecond = currentPasswordBox.Password;
+            ((RegistrateViewModel)DataContext).Registrate.Execute(null);
+        }
     }
 }

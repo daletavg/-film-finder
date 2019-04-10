@@ -24,5 +24,10 @@ namespace Kurs_adonet
         {
             InitializeComponent();
         }
+
+        private void LookClick(object sender, RoutedEventArgs e)
+        {
+            ((FilmCardViewModel) DataContext).LookComment();
+        }
     }
 }

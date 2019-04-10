@@ -46,6 +46,7 @@
     <Compile Include="AllSpecificAddingFilm.cs" />
     <Compile Include="CurrentUser.cs" />
     <Compile Include="IChatService.cs" />
+    <Compile Include="IComments.cs" />
     <Compile Include="IFilmFinderServer.cs" />
     <Compile Include="ISetRaiting.cs" />
     <Compile Include="ISettings.cs" />

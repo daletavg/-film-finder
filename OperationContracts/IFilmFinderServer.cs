@@ -9,7 +9,7 @@ namespace OperationContracts
 {
     [ServiceContract(SessionMode=SessionMode.Required)]
     
-    public interface IFilmFinderServer:IAddLoadFilm,ILoginRegisterUser, ISetRaiting,ISettings
+    public interface IFilmFinderServer:IAddLoadFilm,ILoginRegisterUser, ISetRaiting,ISettings,IComments
     {
     }
 }

@@ -16,10 +16,10 @@ namespace Kurs_adonet.ServiceFF {
     public interface IFilmFinderServer {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/AddNewFilm", ReplyAction="http://tempuri.org/IAddLoadFilm/AddNewFilmResponse")]
-        void AddNewFilm(OperationContracts.FilmContent content);
+        int AddNewFilm(OperationContracts.FilmContent content);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/AddNewFilm", ReplyAction="http://tempuri.org/IAddLoadFilm/AddNewFilmResponse")]
-        System.Threading.Tasks.Task AddNewFilmAsync(OperationContracts.FilmContent content);
+        System.Threading.Tasks.Task<int> AddNewFilmAsync(OperationContracts.FilmContent content);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddLoadFilm/GetFilm", ReplyAction="http://tempuri.org/IAddLoadFilm/GetFilmResponse")]
         OperationContracts.FilmContent GetFilm(int index);
@@ -71,10 +71,10 @@ namespace Kurs_adonet.ServiceFF {
         System.Threading.Tasks.Task<OperationContracts.CurrentUser> GetCurrentUserAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginRegisterUser/AddNewUserOnDB", ReplyAction="http://tempuri.org/ILoginRegisterUser/AddNewUserOnDBResponse")]
-        void AddNewUserOnDB(OperationContracts.RegistrateCurrentUser registrate);
+        int AddNewUserOnDB(OperationContracts.RegistrateCurrentUser registrate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginRegisterUser/AddNewUserOnDB", ReplyAction="http://tempuri.org/ILoginRegisterUser/AddNewUserOnDBResponse")]
-        System.Threading.Tasks.Task AddNewUserOnDBAsync(OperationContracts.RegistrateCurrentUser registrate);
+        System.Threading.Tasks.Task<int> AddNewUserOnDBAsync(OperationContracts.RegistrateCurrentUser registrate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetRaiting/SetRaiting", ReplyAction="http://tempuri.org/ISetRaiting/SetRaitingResponse")]
         void SetRaiting(int raiting, string nameOfFilm);
@@ -88,6 +88,12 @@ namespace Kurs_adonet.ServiceFF {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetRaiting/GetRaitingOfFilm", ReplyAction="http://tempuri.org/ISetRaiting/GetRaitingOfFilmResponse")]
         System.Threading.Tasks.Task<float> GetRaitingOfFilmAsync(string nameOfFilm);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetRaiting/GetCurrentRaiting", ReplyAction="http://tempuri.org/ISetRaiting/GetCurrentRaitingResponse")]
+        int GetCurrentRaiting(string nameOfFilm);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetRaiting/GetCurrentRaiting", ReplyAction="http://tempuri.org/ISetRaiting/GetCurrentRaitingResponse")]
+        System.Threading.Tasks.Task<int> GetCurrentRaitingAsync(string nameOfFilm);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISettings/UploadUserImage", ReplyAction="http://tempuri.org/ISettings/UploadUserImageResponse")]
         void UploadUserImage(byte[] image);
         
@@ -100,6 +106,25 @@ namespace Kurs_adonet.ServiceFF {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISettings/ChangeUserProfile", ReplyAction="http://tempuri.org/ISettings/ChangeUserProfileResponse")]
         System.Threading.Tasks.Task ChangeUserProfileAsync(OperationContracts.CurrentUser user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComments/AddComment", ReplyAction="http://tempuri.org/IComments/AddCommentResponse")]
+        void AddComment(string filmName, string comment);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComments/AddComment", ReplyAction="http://tempuri.org/IComments/AddCommentResponse")]
+        System.Threading.Tasks.Task AddCommentAsync(string filmName, string comment);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComments/GetComments", ReplyAction="http://tempuri.org/IComments/GetCommentsResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(OperationContracts.RegistrateCurrentUser))]
+        OperationContracts.MessageData GetComments(int index, string filmName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComments/GetComments", ReplyAction="http://tempuri.org/IComments/GetCommentsResponse")]
+        System.Threading.Tasks.Task<OperationContracts.MessageData> GetCommentsAsync(int index, string filmName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComments/GetCountComments", ReplyAction="http://tempuri.org/IComments/GetCountCommentsResponse")]
+        int GetCountComments(string filmName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComments/GetCountComments", ReplyAction="http://tempuri.org/IComments/GetCountCommentsResponse")]
+        System.Threading.Tasks.Task<int> GetCountCommentsAsync(string filmName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -129,11 +154,11 @@ namespace Kurs_adonet.ServiceFF {
                 base(binding, remoteAddress) {
         }
         
-        public void AddNewFilm(OperationContracts.FilmContent content) {
-            base.Channel.AddNewFilm(content);
+        public int AddNewFilm(OperationContracts.FilmContent content) {
+            return base.Channel.AddNewFilm(content);
         }
         
-        public System.Threading.Tasks.Task AddNewFilmAsync(OperationContracts.FilmContent content) {
+        public System.Threading.Tasks.Task<int> AddNewFilmAsync(OperationContracts.FilmContent content) {
             return base.Channel.AddNewFilmAsync(content);
         }
         
@@ -201,11 +226,11 @@ namespace Kurs_adonet.ServiceFF {
             return base.Channel.GetCurrentUserAsync();
         }
         
-        public void AddNewUserOnDB(OperationContracts.RegistrateCurrentUser registrate) {
-            base.Channel.AddNewUserOnDB(registrate);
+        public int AddNewUserOnDB(OperationContracts.RegistrateCurrentUser registrate) {
+            return base.Channel.AddNewUserOnDB(registrate);
         }
         
-        public System.Threading.Tasks.Task AddNewUserOnDBAsync(OperationContracts.RegistrateCurrentUser registrate) {
+        public System.Threading.Tasks.Task<int> AddNewUserOnDBAsync(OperationContracts.RegistrateCurrentUser registrate) {
             return base.Channel.AddNewUserOnDBAsync(registrate);
         }
         
@@ -225,6 +250,14 @@ namespace Kurs_adonet.ServiceFF {
             return base.Channel.GetRaitingOfFilmAsync(nameOfFilm);
         }
         
+        public int GetCurrentRaiting(string nameOfFilm) {
+            return base.Channel.GetCurrentRaiting(nameOfFilm);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetCurrentRaitingAsync(string nameOfFilm) {
+            return base.Channel.GetCurrentRaitingAsync(nameOfFilm);
+        }
+        
         public void UploadUserImage(byte[] image) {
             base.Channel.UploadUserImage(image);
         }
@@ -239,6 +272,30 @@ namespace Kurs_adonet.ServiceFF {
         
         public System.Threading.Tasks.Task ChangeUserProfileAsync(OperationContracts.CurrentUser user) {
             return base.Channel.ChangeUserProfileAsync(user);
+        }
+        
+        public void AddComment(string filmName, string comment) {
+            base.Channel.AddComment(filmName, comment);
+        }
+        
+        public System.Threading.Tasks.Task AddCommentAsync(string filmName, string comment) {
+            return base.Channel.AddCommentAsync(filmName, comment);
+        }
+        
+        public OperationContracts.MessageData GetComments(int index, string filmName) {
+            return base.Channel.GetComments(index, filmName);
+        }
+        
+        public System.Threading.Tasks.Task<OperationContracts.MessageData> GetCommentsAsync(int index, string filmName) {
+            return base.Channel.GetCommentsAsync(index, filmName);
+        }
+        
+        public int GetCountComments(string filmName) {
+            return base.Channel.GetCountComments(filmName);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetCountCommentsAsync(string filmName) {
+            return base.Channel.GetCountCommentsAsync(filmName);
         }
     }
     

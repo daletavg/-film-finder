@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
+using System.Windows.Input;
 using System.Windows.Media;
 using OperationContracts;
 
@@ -44,7 +45,7 @@ namespace Kurs_adonet
                 string tmpActors = "";
                 foreach (var i in ListActor)
                 {
-                    tmpActors += i + ",";
+                    tmpActors += i + "/";
                 }
 
                 return tmpActors;
@@ -57,7 +58,7 @@ namespace Kurs_adonet
                 string tmpGeners = "";
                 foreach (var i in ListGenre)
                 {
-                    tmpGeners += i + ",";
+                    tmpGeners += i + "/";
                 }
 
                 return tmpGeners;
@@ -70,7 +71,7 @@ namespace Kurs_adonet
                 string tmpProdussers = "";
                 foreach (var i in ListProdusser)
                 {
-                    tmpProdussers += i + ",";
+                    tmpProdussers += i + "/";
                 }
 
                 return tmpProdussers;
@@ -78,6 +79,11 @@ namespace Kurs_adonet
         }
 
         private int _raiting;
+
+        public void InitRaiting(int r)
+        {
+            _raiting = r;
+        }
         public int Raiting
         {
             set
@@ -95,7 +101,14 @@ namespace Kurs_adonet
             get { return _filmName; }
         }
         public string DescriptionFilm { set; get; }
-        public string Date { set; get; }
+        public string _date;
+
+        public string Date
+        {
+            set { _date = DateTime.Parse(value).ToShortDateString(); OnPropertyChanged(nameof(Date)); }
+            get { return _date; }
+        }
+
         private ImageSource _posterImage;
         public ImageSource PosterFilm
         {
@@ -129,6 +142,69 @@ namespace Kurs_adonet
                 OnPropertyChanged(nameof(FilmTime));
             }
             get { return _filmTime; }
+        }
+
+        private string _message="";
+
+        public string Message
+        {
+            set
+            {
+                _message = value; OnPropertyChanged(nameof(Message));
+
+            }
+            get { return _message; }
+        }
+
+        private DelegateCommand _send;
+
+        public ICommand SendMessage
+        {
+            get
+            {
+                if (_send == null)
+                {
+                    _send = new DelegateCommand(param=> SendMessageToServer(),null);
+                }
+
+                return _send;
+            }
+        }
+
+        void SendMessageToServer()
+        {
+            if (Message == "")
+            {
+                return;
+            }
+            ((IComments)AddLoadFilm).AddComment(FilmName,Message);
+            LookComment();
+        }
+
+        private ObservableCollection<MessageViewModel> _comments;
+        public ObservableCollection<MessageViewModel> Comments
+        {
+            set { _comments = value;OnPropertyChanged(nameof(Comments));}
+            get { return _comments; }
+        }
+
+        public void LookComment()
+        {
+            int count = ((IComments) AddLoadFilm).GetCountComments(FilmName);
+            if (count == 0)
+            {
+                _comments = new ObservableCollection<MessageViewModel>();
+                return; 
+            }
+            ObservableCollection < MessageViewModel > newComments = new ObservableCollection<MessageViewModel>();
+            for (int i = 0; i < count; i++)
+            {
+                var comment = ((IComments) AddLoadFilm).GetComments(i, FilmName);
+                MessageViewModel msg = new MessageViewModel(){Message = comment.Message,NickName = comment.NickName.Login,UserImage = new ImageConverter().ByteToBitmapImage(comment.NickName.UserImage) };
+                newComments.Add(msg);
+            }
+
+            Comments = newComments;
         }
     }
 }

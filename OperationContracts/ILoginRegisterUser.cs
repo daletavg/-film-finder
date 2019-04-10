@@ -17,6 +17,6 @@ namespace OperationContracts
         [OperationContract]
         CurrentUser GetCurrentUser();
         [OperationContract]
-        void AddNewUserOnDB(RegistrateCurrentUser registrate);
+        int AddNewUserOnDB(RegistrateCurrentUser registrate);
     }
 }

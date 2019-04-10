@@ -10,7 +10,9 @@
   </xs:element>
   <xs:element name="AddNewFilmResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewFilmResult" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetFilm">
@@ -126,7 +128,9 @@
   </xs:element>
   <xs:element name="AddNewUserOnDBResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewUserOnDBResult" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SetRaiting">
@@ -156,6 +160,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetCurrentRaiting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nameOfFilm" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentRaitingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCurrentRaitingResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="UploadUserImage">
     <xs:complexType>
       <xs:sequence>
@@ -180,10 +198,52 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="AddComment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filmName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddCommentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="index" type="xs:int" />
+        <xs:element minOccurs="0" name="filmName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCommentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="GetCommentsResult" nillable="true" type="q8:MessageData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountComments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filmName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountCommentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCountCommentsResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="SendMessage">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="msg" nillable="true" type="q8:MessageData" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="msg" nillable="true" type="q9:MessageData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -200,7 +260,7 @@
   <xs:element name="SetMessage">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="msg" nillable="true" type="q9:MessageData" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/OperationContracts" minOccurs="0" name="msg" nillable="true" type="q10:MessageData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

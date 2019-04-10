@@ -39,7 +39,7 @@
 
                     </TextBlock>
                     <Viewbox Margin="0 4 0 8" Height="16" HorizontalAlignment="Left">
-                        <materialDesign:RatingBar Value="{Binding Raiting}" Orientation="Horizontal" Foreground="Gold" Margin="0" />
+                        <materialDesign:RatingBar Value="{Binding Raiting,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Orientation="Horizontal" Foreground="Gold" Margin="0" />
                     </Viewbox>
                     <Label>Описание:</Label>
                     <TextBlock Style="{StaticResource MaterialDesignBody1TextBlock}" TextWrapping="Wrap" VerticalAlignment="Center"  Height="70" Text="{Binding DescriptionFilm,Mode=TwoWay}">
@@ -59,7 +59,7 @@
                     <TextBlock VerticalAlignment="Center" Grid.Column="1" Text="{Binding Path=Date,Mode=TwoWay}"></TextBlock>
                 </Grid>
                 <StackPanel Grid.Row="5">
-                    <Button Style="{StaticResource MaterialDesignFlatButton}" HorizontalAlignment="Left" Margin="8 4 8 8"
+                    <Button  Click="LookClick" Style="{StaticResource MaterialDesignFlatButton}" HorizontalAlignment="Left" Margin="8 4 8 8"
                             Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" >
                         <Button.CommandParameter>
                             <userControls:ViewFilmControl/>

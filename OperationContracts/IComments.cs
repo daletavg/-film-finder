@@ -8,14 +8,15 @@ using System.Threading.Tasks;
 namespace OperationContracts
 {
     [ServiceContract(SessionMode = SessionMode.Required)]
-    public interface ISetRaiting
+    public interface IComments
     {
         [OperationContract]
-        void SetRaiting(int raiting, string nameOfFilm);
-        [OperationContract]
-        float GetRaitingOfFilm(string nameOfFilm);
+        void AddComment(string filmName,string comment);
 
         [OperationContract]
-        int GetCurrentRaiting(string nameOfFilm);
+        MessageData GetComments(int index, string filmName);
+
+        [OperationContract]
+        int GetCountComments(string filmName);
     }
 }
