@@ -10,10 +10,11 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <DockPanel>
-            <DockPanel DockPanel.Dock="Top" Background="#FFCFCFCF" Height="30"  materialDesign:ShadowAssist.ShadowDepth="Depth3" materialDesign:ShadowAssist.ShadowEdges="Bottom">
-                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="SearchWeb" VerticalAlignment="Center" Width="20" Height="20" />
-                    <TextBox HorizontalAlignment="Right"  Width="200" Margin="0,0,10,0"></TextBox>
+            <DockPanel DockPanel.Dock="Top" Background="#FFCFCFCF" Height="40"  materialDesign:ShadowAssist.ShadowDepth="Depth3" materialDesign:ShadowAssist.ShadowEdges="Bottom">
+                <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
+                    <Button Command="{Binding Upload}">Обновить</Button>
+                    <!--<materialDesign:PackIcon Kind="SearchWeb" VerticalAlignment="Center" Width="20" Height="20" />
+                <TextBox HorizontalAlignment="Right"  Width="200" Margin="0,0,10,0"></TextBox>-->
                 </StackPanel>
             </DockPanel>
             <ScrollViewer Width="720" >

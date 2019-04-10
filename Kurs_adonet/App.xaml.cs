@@ -31,6 +31,8 @@ namespace Kurs_adonet
             RegistrateViewModel registrateViewModel = new RegistrateViewModel(mainWindowViewModel.OpenLoginControl,serverFilmFinder);
             FilmFinderViewModel filmFinderViewModel = new FilmFinderViewModel(serverFilmFinder);
             SettingViewModel settingViewModel = new SettingViewModel(serverFilmFinder);
+            FavoritFilmsViewModel favoritFilmsViewModel = new FavoritFilmsViewModel();
+            
 
             RegistrControl registrControl = new RegistrControl();
             LoginControl loginControl = new LoginControl();
@@ -42,7 +44,7 @@ namespace Kurs_adonet
             loginControl.DataContext = loginAndRegistrate;
             registrControl.DataContext = registrateViewModel;
             filmFinderControl.DataContext = filmFinderViewModel;
-            
+            filmFinderControl.FavoritFilmsControl.DataContext = favoritFilmsViewModel;
             
             AddFilmViewModel addFilmViewModel = new AddFilmViewModel(serverFilmFinder);
             FilmsViewModel filmsViewModel = new FilmsViewModel();

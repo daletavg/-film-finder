@@ -50,17 +50,27 @@ namespace Kurs_adonet
                     this.AllFilms.Visibility = Visibility.Visible;
                     this.ChatControl.Visibility = Visibility.Hidden;
                     this.SettingControl.Visibility = Visibility.Hidden;
+                    this.FavoritFilmsControl.Visibility = Visibility.Hidden;
+                    break;
+                case 1:
+                    this.FavoritFilmsControl.Visibility = Visibility.Visible;
+                    this.AllFilms.Visibility = Visibility.Hidden;
+                    this.ChatControl.Visibility = Visibility.Hidden;
+                    this.SettingControl.Visibility = Visibility.Hidden;
+                    
                     break;
                 case 2:
                     this.SettingControl.Visibility = Visibility.Visible;
                     this.SettingControl.LoadUser();
                     this.AllFilms.Visibility = Visibility.Hidden;
                     this.ChatControl.Visibility = Visibility.Hidden;
+                    this.FavoritFilmsControl.Visibility = Visibility.Hidden;
                     break;;
                 case 3:
                     this.ChatControl.Visibility = Visibility.Visible;
                     this.AllFilms.Visibility = Visibility.Hidden;
                     this.SettingControl.Visibility = Visibility.Hidden;
+                    this.FavoritFilmsControl.Visibility = Visibility.Hidden;
                     break;
                 default:
                     
@@ -78,6 +88,14 @@ namespace Kurs_adonet
             if ((bool)e.NewValue == true)
             {
                 ((FilmsViewModel)AllFilms.DataContext).ShowAllFilms();
+            }
+        }
+
+        private void FavoritFilmsControl_OnIsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if ((bool) e.NewValue == true)
+            {
+                ((FavoritFilmsViewModel)FavoritFilmsControl.DataContext).ShowAllFilms();
             }
         }
     }

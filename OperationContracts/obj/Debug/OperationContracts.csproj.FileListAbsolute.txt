@@ -27,3 +27,9 @@ C:\Users\akerz\Desktop\-film-finder\OperationContracts\obj\Debug\OperationContra
 C:\Users\akerz\Desktop\-film-finder\OperationContracts\obj\Debug\OperationContracts.csproj.CoreCompileInputs.cache
 C:\Users\akerz\Desktop\-film-finder\OperationContracts\obj\Debug\OperationContracts.dll
 C:\Users\akerz\Desktop\-film-finder\OperationContracts\obj\Debug\OperationContracts.pdb
+C:\Users\akerz\Desktop\Project\-film-finder\OperationContracts\bin\Debug\OperationContracts.dll
+C:\Users\akerz\Desktop\Project\-film-finder\OperationContracts\bin\Debug\OperationContracts.pdb
+C:\Users\akerz\Desktop\Project\-film-finder\OperationContracts\obj\Debug\OperationContracts.csprojAssemblyReference.cache
+C:\Users\akerz\Desktop\Project\-film-finder\OperationContracts\obj\Debug\OperationContracts.csproj.CoreCompileInputs.cache
+C:\Users\akerz\Desktop\Project\-film-finder\OperationContracts\obj\Debug\OperationContracts.dll
+C:\Users\akerz\Desktop\Project\-film-finder\OperationContracts\obj\Debug\OperationContracts.pdb

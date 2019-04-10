@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Kurs_adonet
 {
@@ -26,6 +27,20 @@ namespace Kurs_adonet
         {
             LoadingFilms loading = new LoadingFilms();
             FilmCards = new ObservableCollection<FilmCardViewModel>(loading.LoadFilmsAtClient());
+        }
+        private DelegateCommand _upload;
+
+        public ICommand Upload
+        {
+            get
+            {
+                if (_upload == null)
+                {
+                    _upload = new DelegateCommand(param => ShowAllFilms(), null);
+                }
+
+                return _upload;
+            }
         }
     }
 }

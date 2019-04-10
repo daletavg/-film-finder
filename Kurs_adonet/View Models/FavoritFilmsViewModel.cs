@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Kurs_adonet.Annotations;
 
 namespace Kurs_adonet
@@ -32,6 +33,20 @@ namespace Kurs_adonet
         {
             LoadingFilms loading = new LoadingFilms();
             FilmCards = new ObservableCollection<FilmCardViewModel>(loading.LoadFavoritFilms());
+        }
+        private DelegateCommand _upload;
+
+        public ICommand Upload
+        {
+            get
+            {
+                if (_upload == null)
+                {
+                    _upload = new DelegateCommand(param => ShowAllFilms(), null);
+                }
+
+                return _upload;
+            }
         }
     }
 }

@@ -6,33 +6,41 @@
              xmlns:local="clr-namespace:Kurs_adonet"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="450" Width="761.328">
+             d:DesignHeight="450" >
     <Grid>
-        
-        <ScrollViewer Width="720" >
-            <Grid>
-                <WrapPanel>
-                    <ItemsControl ItemsSource="{Binding FilmCards,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  Width="760">
+        <DockPanel>
+            <DockPanel DockPanel.Dock="Top" Background="#FFCFCFCF" Height="40"  materialDesign:ShadowAssist.ShadowDepth="Depth3" materialDesign:ShadowAssist.ShadowEdges="Bottom">
+                <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
+                    <Button Command="{Binding Upload}">Обновить</Button>
+                    <!--<materialDesign:PackIcon Kind="SearchWeb" VerticalAlignment="Center" Width="20" Height="20" />
+                <TextBox HorizontalAlignment="Right"  Width="200" Margin="0,0,10,0"></TextBox>-->
+                </StackPanel>
+            </DockPanel>
+            <ScrollViewer Width="720" >
+                <Grid>
+                    <WrapPanel>
+                        <ItemsControl ItemsSource="{Binding FilmCards,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  Width="760">
 
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate > 
-                            
-                                
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate >
+
+
                                     <local:FilmCardControl/>
-                               
-                            
 
-                       </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
-                </WrapPanel>
-            </Grid>
-        </ScrollViewer>
+
+
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </WrapPanel>
+                </Grid>
+            </ScrollViewer>
+        </DockPanel>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="325*"/>
