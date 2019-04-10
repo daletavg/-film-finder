@@ -118,7 +118,38 @@
                         materialDesign:HintAssist.Hint="Дата выхода" />
                     </StackPanel>
                 </Grid>
+                <StackPanel Margin="10,0,0,0">
+                    <TextBlock>Продолжительность:</TextBlock>
+                    <StackPanel Orientation="Horizontal" >
+                        <ComboBox  Width="100" materialDesign:HintAssist.Hint="(editable)"
+                                   MinWidth="40" Margin="0 0 0 7" VerticalAlignment="Bottom"
+                                   MaxWidth="40"
+                                   Name="Hours"
+                                   SelectedValue="{Binding Hours,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                   RenderTransformOrigin="0.573,-0.929" >
 
+                        </ComboBox>
+                        <TextBlock Margin="0 0 10 0" VerticalAlignment="Center">Ч.</TextBlock>
+                        <ComboBox  Width="100" materialDesign:HintAssist.Hint="(editable)"
+                                   MinWidth="40" Margin="0 0 0 7" VerticalAlignment="Bottom"
+                                   MaxWidth="40"
+                                    Name="Minutes"
+                                   SelectedValue="{Binding Minutes,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                   RenderTransformOrigin="0.573,-0.929" Text="{Binding ProdusserText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+
+                        </ComboBox>
+                        <TextBlock  Margin="0 0 10 0" VerticalAlignment="Center">М.</TextBlock>
+                        <ComboBox  Width="100" materialDesign:HintAssist.Hint="(editable)"
+                                   MinWidth="40" Margin="0 0 0 7" VerticalAlignment="Bottom"
+                                   MaxWidth="40"
+                                   Name="Seconds"
+                                   SelectedValue="{Binding Seconds,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                   RenderTransformOrigin="0.573,-0.929" Text="{Binding ProdusserText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+
+                        </ComboBox>
+                        <TextBlock VerticalAlignment="Center">C.</TextBlock>
+                    </StackPanel>
+                </StackPanel>
 
             </StackPanel>
 

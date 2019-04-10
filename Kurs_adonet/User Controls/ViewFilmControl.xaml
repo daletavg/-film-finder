@@ -38,7 +38,7 @@
                 <TextBlock  FontFamily="Tahoma" FontSize="14">Жанры:</TextBlock>
                 <TextBlock Text="{Binding Geners}" Margin="0,0,0,10"></TextBlock>
                 <TextBlock  FontFamily="Tahoma" FontSize="14">Продолжительность фильма:</TextBlock>
-                <TextBlock Margin="0,0,0,10"></TextBlock>
+                <TextBlock Margin="0,0,0,10" Text="{Binding FilmTime,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBlock>
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:RatingBar Value="{Binding Raiting,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Orientation="Horizontal" Foreground="Gold" Margin="0" />
                     <StackPanel Orientation="Horizontal" Margin="10,0,0,0">

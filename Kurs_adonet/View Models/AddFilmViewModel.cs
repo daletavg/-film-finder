@@ -33,6 +33,25 @@ namespace Kurs_adonet
 
         }
 
+        private int _hours = 0;
+        public int Hours
+        {
+            set { _hours = value;OnPropertyChanged(nameof(Hours));}
+            get { return _hours; }
+        }
+        private int _minutes = 0;
+        public int Minutes
+        {
+            set { _minutes = value;OnPropertyChanged(nameof(Minutes));}
+            get { return _minutes; }
+        }
+
+        private int _seconds = 0;
+        public int Seconds
+        {
+            set { _seconds = value;OnPropertyChanged(nameof(Seconds));}
+            get { return _seconds; }
+        }
         private ImageSource _posterImage;
         public ImageSource PosterFilm
         {
@@ -217,6 +236,7 @@ namespace Kurs_adonet
             content.Name = FilmName;
             content.Produsers = _produssersAtFilm.ToArray();
             content.ReleaseDate = Date.ToString();
+            content.FilmTime = _hours + ":" + _minutes + ":" + _seconds;
             _addNewFilm.AddNewFilm(content);
         }
 

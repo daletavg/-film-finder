@@ -118,5 +118,17 @@ namespace Kurs_adonet
                 OnPropertyChanged(nameof(IsFavorit));
             }
         }
+
+        private string _filmTime;
+
+        public string FilmTime
+        {
+            set
+            {
+                _filmTime = value;
+                OnPropertyChanged(nameof(FilmTime));
+            }
+            get { return _filmTime; }
+        }
     }
 }

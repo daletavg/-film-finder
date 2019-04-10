@@ -27,6 +27,22 @@ namespace Kurs_adonet
         {
             InitializeComponent();
            
+            for (int i = 0; i <= 24; i++)
+            {
+                Hours.Items.Add(i);
+            }
+
+            for (int i = 0; i <= 59; i++)
+            {
+                Minutes.Items.Add(i);
+            }
+
+
+            for (int i = 0; i <=59; i++)
+            {
+                Seconds.Items.Add(i);
+            }
+
         }
 
         private void AddImage(object sender, RoutedEventArgs e)

@@ -22,6 +22,8 @@ namespace OperationContracts
         [DataMember]
         public string ImageName { get; set; }
         [DataMember]
+        public string FilmTime { get; set; }
+        [DataMember]
         public string ReleaseDate { get; set; }
         [DataMember]
         public string[] Actors { set; get; }

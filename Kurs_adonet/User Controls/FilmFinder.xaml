@@ -79,7 +79,7 @@
                     <Grid Name="ContentGrid">
 
                         <local:FilmsControl IsVisibleChanged="AllFilms_IsVisibleChanged" Visibility="Hidden" x:Name="AllFilms"/>
-                        <user_controls:ChatControl x:Name="ChatControl" Margin="0,10,30,10"/>
+                        <user_controls:ChatControl x:Name="ChatControl" Visibility="Hidden" Margin="0,10,30,10"/>
 
 
                     </Grid>

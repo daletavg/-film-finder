@@ -87,7 +87,7 @@ namespace Server_Films
 
                 newFilm.IsFavorit = db.FavoritLists.ToList().Any(i => i.Film.Name == film.Name && i.User.Name == _currentUser.Login);
                 //newFilm.Image = File.ReadAllBytes(film.Image);
-
+                newFilm.FilmTime = film.TimeFilm;
 
                 /////////////////
                 Bitmap btm = new Bitmap(film.Image);
@@ -292,7 +292,7 @@ namespace Server_Films
 
                 newFilm.IsFavorit = db.FavoritLists.ToList().Any(i => i.Film.Name == film.Name && i.User.Name == _currentUser.Login);
                 //newFilm.Image = File.ReadAllBytes(film.Image);
-
+                newFilm.FilmTime = film.TimeFilm;
 
                 /////////////////
                 Bitmap btm = new Bitmap(film.Image);

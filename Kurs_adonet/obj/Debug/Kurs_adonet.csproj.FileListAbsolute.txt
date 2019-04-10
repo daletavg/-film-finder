@@ -185,3 +185,54 @@ C:\Users\akerz\Desktop\-film-finder-master\Kurs_adonet\obj\Debug\Kurs_adonet.csp
 C:\Users\akerz\Desktop\-film-finder-master\Kurs_adonet\obj\Debug\Kurs_adonet.csproj.CopyComplete
 C:\Users\akerz\Desktop\-film-finder-master\Kurs_adonet\obj\Debug\Kurs_adonet.exe
 C:\Users\akerz\Desktop\-film-finder-master\Kurs_adonet\obj\Debug\Kurs_adonet.pdb
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\bin\Debug\Kurs_adonet.exe.config
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\bin\Debug\Kurs_adonet.exe
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\bin\Debug\Kurs_adonet.pdb
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\bin\Debug\EntityFramework.dll
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\bin\Debug\HamburgerMenu.dll
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\bin\Debug\MaterialDesignColors.dll
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\bin\Debug\OperationContracts.dll
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\bin\Debug\OperationContracts.pdb
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\bin\Debug\EntityFramework.xml
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.csprojAssemblyReference.cache
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\FavoritFilmsControl.g.cs
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\LoadingControl.g.cs
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\ChatControl.g.cs
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\ChatMessage.g.cs
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\FilmFinder.g.cs
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\AddFilm.g.cs
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\FilmsControl.g.cs
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\FilmCardControl.g.cs
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\LoginControl.g.cs
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\MainWindow.g.cs
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\RegistrControl.g.cs
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\ViewFilmControl.g.cs
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\App.g.cs
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\Kurs_adonet_MarkupCompile.cache
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\Kurs_adonet_MarkupCompile.lref
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\App.baml
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\FavoritFilmsControl.baml
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\LoadingControl.baml
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\ChatControl.baml
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\ChatMessage.baml
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\FilmFinder.baml
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\AddFilm.baml
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\FilmsControl.baml
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\FilmCardControl.baml
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\LoginControl.baml
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\MainWindow.baml
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\RegistrControl.baml
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\User Controls\ViewFilmControl.baml
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.g.resources
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.Properties.Resources.resources
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.csproj.GenerateResource.cache
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.csproj.CoreCompileInputs.cache
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.csproj.CopyComplete
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.exe
+C:\Users\akerz\Desktop\-film-finder\Kurs_adonet\obj\Debug\Kurs_adonet.pdb

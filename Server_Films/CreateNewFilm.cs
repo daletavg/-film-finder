@@ -39,6 +39,7 @@ namespace Server_Films
                     Image = @"./Films_images/" + FilmContent.Name.Replace(" ", "_") + "/" +
                                 FilmContent.ImageName.Replace(" ", "_")
                 };
+                newFilm.TimeFilm = FilmContent.FilmTime;
             }
 
             return newFilm;

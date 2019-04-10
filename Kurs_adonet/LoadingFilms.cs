@@ -25,6 +25,7 @@ namespace Kurs_adonet
                 FilmCardViewModel card = new FilmCardViewModel(AddLoadFilm) { FilmName = film.Name, Date = film.ReleaseDate, DescriptionFilm = film.Description };
                 card.AddLoadFilm = AddLoadFilm;
                 card.IsFavorit = film.IsFavorit;
+                card.FilmTime = film.FilmTime;
                 card.ListActor = new ObservableCollection<string>(film.Actors);
                 card.ListProdusser = new ObservableCollection<string>(film.Produsers);
                 card.ListGenre = new ObservableCollection<string>(film.Geners);
