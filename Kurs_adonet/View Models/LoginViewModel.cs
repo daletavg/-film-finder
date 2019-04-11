@@ -65,6 +65,11 @@ namespace Kurs_adonet
             if (passwordBox == null)
                 return;
             var password = passwordBox.Password;
+            if (password==null||password==""||Login==""||Login==null)
+            {
+                ErrorMessage = "*Для входа необходимо указать логин и пароль";
+                return;
+            }
             UResult result = (UResult)loginRegister.CheckUserOnDB(Login, password);
             if (result == UResult.Access)
             {
