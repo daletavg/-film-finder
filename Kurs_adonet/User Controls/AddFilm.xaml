@@ -164,7 +164,7 @@
 
                     ДОБАВИТЬ
                 </Button>
-                <Button Style="{StaticResource MaterialDesignFlatButton}" IsCancel="True" Margin="0 8 8 0" Command="materialDesign:DialogHost.CloseDialogCommand" >
+                <Button Click="CancelClick" Style="{StaticResource MaterialDesignFlatButton}" IsCancel="True" Margin="0 8 8 0" Command="materialDesign:DialogHost.CloseDialogCommand" >
                     <Button.CommandParameter>
                         <system:Boolean>False</system:Boolean>
                     </Button.CommandParameter>

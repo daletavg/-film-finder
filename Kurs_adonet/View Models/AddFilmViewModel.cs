@@ -230,7 +230,7 @@ namespace Kurs_adonet
             get { return _errorMessage; }
         }
 
-        public RoutedCommand CloseWindow;
+        
 
         public bool AddNewFilm()
         {
@@ -269,6 +269,18 @@ namespace Kurs_adonet
             
         }
 
+        public void CloseWindow()
+        {
+            AllProdussers = "";
+            AllActors = "";
+            AllGeners = "";
+            FilmName = "";
+            PathToimage = "";
+            PosterFilm = null;
+            _produssersAtFilm = new List<string>();
+            _actorsAtFilm = new List<string>();
+            _genersAtFilm = new List<string>();
+        }
         
 
 

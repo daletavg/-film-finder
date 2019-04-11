@@ -71,8 +71,17 @@ namespace Kurs_adonet
 
         private void AcceptClick(object sender, RoutedEventArgs e)
         {
-            if (((AddFilmViewModel)DataContext).AddNewFilm())
-                DialogHost.CloseDialogCommand.Execute(null,null);
+            if (((AddFilmViewModel) DataContext).AddNewFilm())
+            {
+                ((AddFilmViewModel)DataContext).CloseWindow();
+                DialogHost.CloseDialogCommand.Execute(null, null);
+            }
+        }
+
+        private void CancelClick(object sender, RoutedEventArgs e)
+        {
+            ((AddFilmViewModel) DataContext).CloseWindow();
+            DialogHost.CloseDialogCommand.Execute(null, null);
         }
     }
 }
