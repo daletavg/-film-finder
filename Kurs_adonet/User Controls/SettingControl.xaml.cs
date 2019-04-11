@@ -55,5 +55,13 @@ namespace Kurs_adonet.User_Controls
         {
             ((SettingViewModel) this.DataContext).LoadUserToSetting();
         }
+
+        private void ChangeClick(object sender, RoutedEventArgs e)
+        {
+            ((SettingViewModel) this.DataContext).Password = PasswordBox.Password;
+            ((SettingViewModel) this.DataContext).SecondPassword = SecondPasswordBox.Password;
+
+          ((SettingViewModel)this.DataContext).ChangeUser();
+        }
     }
 }

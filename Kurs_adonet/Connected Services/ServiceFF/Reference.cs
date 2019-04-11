@@ -101,11 +101,10 @@ namespace Kurs_adonet.ServiceFF {
         System.Threading.Tasks.Task UploadUserImageAsync(byte[] image);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISettings/ChangeUserProfile", ReplyAction="http://tempuri.org/ISettings/ChangeUserProfileResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(OperationContracts.RegistrateCurrentUser))]
-        void ChangeUserProfile(OperationContracts.CurrentUser user);
+        void ChangeUserProfile(OperationContracts.RegistrateCurrentUser user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISettings/ChangeUserProfile", ReplyAction="http://tempuri.org/ISettings/ChangeUserProfileResponse")]
-        System.Threading.Tasks.Task ChangeUserProfileAsync(OperationContracts.CurrentUser user);
+        System.Threading.Tasks.Task ChangeUserProfileAsync(OperationContracts.RegistrateCurrentUser user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComments/AddComment", ReplyAction="http://tempuri.org/IComments/AddCommentResponse")]
         void AddComment(string filmName, string comment);
@@ -266,11 +265,11 @@ namespace Kurs_adonet.ServiceFF {
             return base.Channel.UploadUserImageAsync(image);
         }
         
-        public void ChangeUserProfile(OperationContracts.CurrentUser user) {
+        public void ChangeUserProfile(OperationContracts.RegistrateCurrentUser user) {
             base.Channel.ChangeUserProfile(user);
         }
         
-        public System.Threading.Tasks.Task ChangeUserProfileAsync(OperationContracts.CurrentUser user) {
+        public System.Threading.Tasks.Task ChangeUserProfileAsync(OperationContracts.RegistrateCurrentUser user) {
             return base.Channel.ChangeUserProfileAsync(user);
         }
         

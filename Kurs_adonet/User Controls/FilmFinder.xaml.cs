@@ -98,5 +98,12 @@ namespace Kurs_adonet
                 ((FavoritFilmsViewModel)FavoritFilmsControl.DataContext).ShowAllFilms();
             }
         }
+
+        private void SettingControl_OnIsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if ((bool) e.NewValue == true)
+            {
+            }
+        }
     }
 }

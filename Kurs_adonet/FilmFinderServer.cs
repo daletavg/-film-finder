@@ -91,7 +91,7 @@ namespace Kurs_adonet
             _server.UploadUserImage(image);
         }
 
-        public void ChangeUserProfile(CurrentUser user)
+        public void ChangeUserProfile(RegistrateCurrentUser user)
         {
             _server.ChangeUserProfile(user);
         }

@@ -14,6 +14,6 @@ namespace OperationContracts
         void UploadUserImage(byte[] image);
 
         [OperationContract]
-        void ChangeUserProfile(CurrentUser user);
+        void ChangeUserProfile(RegistrateCurrentUser user);
     }
 }

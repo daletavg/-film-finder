@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Kurs_adonet.User_Controls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Margin="10">
@@ -23,5 +24,52 @@
         </Ellipse>
             <Button Margin="10,10,10,0" Click="AddImage">Загрузить</Button>
         </StackPanel>
+        <materialDesign:Card Grid.Column="1" Grid.RowSpan="2"
+            Background="{DynamicResource MaterialDesignBackground}">
+            <StackPanel>
+        <Expander 
+            HorizontalAlignment="Stretch"
+            Header="Настройки пользователя">
+            <StackPanel
+                Orientation="Vertical"
+                TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+                Margin="24,8,24,16">
+                <TextBlock Foreground="Red" Text="{Binding ErrorMessage,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        <StackPanel Margin="10" Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="0,0,10,0">Новый пароль:</TextBlock>
+                    <PasswordBox Name="PasswordBox" Width="200"></PasswordBox>
+                </StackPanel>
+                <StackPanel Margin="10" Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="0,0,10,0">Повторить пароль:</TextBlock>
+                    <PasswordBox Name="SecondPasswordBox" Width="200"></PasswordBox>
+                </StackPanel>
+                <StackPanel Margin="10" Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="0,0,10,0">Дата рождения:</TextBlock>
+                    <DatePicker  SelectedDate="{Binding Path=DateBirthday ,Mode=TwoWay}"  Width="200"
+                                 Name="LocaleDatePicker"
+                           
+                                 materialDesign:HintAssist.Hint="Дата рождения" />
+                </StackPanel>
+                <StackPanel Margin="10" Orientation="Horizontal">
+                    <RadioButton IsChecked="{Binding Male, UpdateSourceTrigger=PropertyChanged}" Content="Мужской"/>
+                    <RadioButton IsChecked="{Binding Female, UpdateSourceTrigger=PropertyChanged}" Content="Женский"/>
+                </StackPanel>
+                <Button Click="ChangeClick"> Изменить</Button>
+            </StackPanel>
+        </Expander>
+                <Expander
+                    HorizontalAlignment="Stretch"
+                    Header="Настройки приложения">
+                    <StackPanel
+                        Orientation="Vertical"
+                        TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+                        Margin="24,8,24,16">
+                        <TextBlock
+                            Text="Comming soon" />
+
+                    </StackPanel>
+                </Expander>
+            </StackPanel>
+        </materialDesign:Card>
     </Grid>
 </UserControl>

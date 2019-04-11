@@ -58,7 +58,7 @@ namespace Server_Films
                 }
                 GetHeshMd5 getHesh = new GetHeshMd5();
 
-                db.Users.Add(new User() { Name = registrate.Login, Password = getHesh.GetHesh(registrate.Password), Gender = tmpGender,UserImage = File.ReadAllBytes("./usericon.png")});
+                db.Users.Add(new User() {DateBirthday = registrate.DateBirthday,Name = registrate.Login, Password = getHesh.GetHesh(registrate.Password), Gender = tmpGender,UserImage = File.ReadAllBytes("./usericon.png")});
                 db.SaveChanges();
             }
             return (int)UResult.Access;
@@ -369,9 +369,30 @@ namespace Server_Films
             }
         }
 
-        public void ChangeUserProfile(CurrentUser user)
+        public void ChangeUserProfile(RegistrateCurrentUser user)
         {
-            throw new NotImplementedException();
+            using (var db = new FilmFinderDb())
+            {
+                var usr = db.Users.First(i => i.Name == _currentUser.Login);
+                if (user.Password!=null)
+                {
+                    usr.Password = new GetHeshMd5().GetHesh(user.Password);
+                }
+                bool tmpGender = true;
+                switch (user.Gender)
+                {
+                    case 0:
+                        tmpGender = false;
+                        break;
+                    case 1:
+                        tmpGender = true;
+                        break;
+                }
+
+                usr.Gender = tmpGender;
+                usr.DateBirthday = usr.DateBirthday;
+                db.SaveChanges();
+            }
         }
 
         public void AddComment(string filmName,string comment)
