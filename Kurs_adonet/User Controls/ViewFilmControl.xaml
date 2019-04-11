@@ -9,17 +9,17 @@
              mc:Ignorable="d" 
              Width="650" Background="White" Height="700">
     <StackPanel Margin="30">
-        
-            <Grid Height="641"  >
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="343*"/>
-                    <RowDefinition Height="196*"/>
-                    <RowDefinition Height="44*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="241*"/>
-                    <ColumnDefinition Width="403*"/>
-                </Grid.ColumnDefinitions>
+
+        <Grid Height="641"  >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="343*"/>
+                <RowDefinition Height="196*"/>
+                <RowDefinition Height="44*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="241*"/>
+                <ColumnDefinition Width="403*"/>
+            </Grid.ColumnDefinitions>
             <ScrollViewer Grid.ColumnSpan="3" Grid.RowSpan="2">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -33,31 +33,31 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel  Grid.Row="0" Grid.Column="0" Margin="5">
 
-                    <Image Source="{Binding PosterFilm, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Name="FilmPoster" Width="200" Height="250" >
+                        <Image Source="{Binding PosterFilm, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Name="FilmPoster" Width="200" Height="250" >
 
-                    </Image>
+                        </Image>
 
-                </StackPanel>
-                <StackPanel Grid.Row="0" Grid.Column="1" Margin="15,0,0,0">
-                    <TextBlock Style="{StaticResource MaterialDesignSubheadingTextBlock}" Margin="0,0,0,20" FontWeight="Bold" FontSize="24" Text="{Binding FilmName}"></TextBlock>
-                    <TextBlock Text="Дата выхода:" FontFamily="Tahoma" FontSize="14"/>
-                    <TextBlock Text="{Binding Path=Date,Mode=TwoWay}" Margin="0,0,0,10"></TextBlock>
-                    <TextBlock FontSize="14" FontFamily="Tahoma">Продюссеры:</TextBlock>
-                    <TextBlock Text="{Binding Produssers}" Margin="0,0,0,10"></TextBlock>
-                    <TextBlock  FontFamily="Tahoma" FontSize="14">Актеры:</TextBlock>
-                    <TextBlock Text="{Binding Actors}" Margin="0,0,0,10"></TextBlock>
-                    <TextBlock  FontFamily="Tahoma" FontSize="14">Жанры:</TextBlock>
-                    <TextBlock Text="{Binding Geners}" Margin="0,0,0,10"></TextBlock>
-                    <TextBlock  FontFamily="Tahoma" FontSize="14">Продолжительность фильма:</TextBlock>
-                    <TextBlock Margin="0,0,0,10" Text="{Binding FilmTime,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBlock>
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:RatingBar Value="{Binding Raiting,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Orientation="Horizontal" Foreground="Gold" Margin="0" />
-                        <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
-                            <TextBlock FontSize="18" Text="{Binding MiddleRaiting,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">3.5</TextBlock>
-                            <TextBlock FontSize="18">/5</TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="1" Margin="15,0,0,0">
+                        <TextBlock Style="{StaticResource MaterialDesignSubheadingTextBlock}" Margin="0,0,0,20" FontWeight="Bold" FontSize="24" Text="{Binding FilmName}"></TextBlock>
+                        <TextBlock Text="Дата выхода:" FontFamily="Tahoma" FontSize="14"/>
+                        <TextBlock Text="{Binding Path=Date,Mode=TwoWay}" Margin="0,0,0,10"></TextBlock>
+                        <TextBlock FontSize="14" FontFamily="Tahoma">Продюссеры:</TextBlock>
+                        <TextBlock Text="{Binding Produssers}" Margin="0,0,0,10"></TextBlock>
+                        <TextBlock  FontFamily="Tahoma" FontSize="14">Актеры:</TextBlock>
+                        <TextBlock Text="{Binding Actors}" Margin="0,0,0,10"></TextBlock>
+                        <TextBlock  FontFamily="Tahoma" FontSize="14">Жанры:</TextBlock>
+                        <TextBlock Text="{Binding Geners}" Margin="0,0,0,10"></TextBlock>
+                        <TextBlock  FontFamily="Tahoma" FontSize="14">Продолжительность фильма:</TextBlock>
+                        <TextBlock Margin="0,0,0,10" Text="{Binding FilmTime,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:RatingBar Value="{Binding Raiting,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Orientation="Horizontal" Foreground="Gold" Margin="0" />
+                            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                                <TextBlock FontSize="18" Text="{Binding MiddleRaiting,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">3.5</TextBlock>
+                                <TextBlock FontSize="18">/5</TextBlock>
+                            </StackPanel>
                         </StackPanel>
                     </StackPanel>
-                </StackPanel>
 
 
 
@@ -68,7 +68,9 @@
                     Margin="16"
                     materialDesign:ShadowAssist.ShadowDepth="Depth3"
                     BorderThickness="0">
-                            <TextBlock Style="{StaticResource MaterialDesignBody1TextBlock}" Text="{Binding DescriptionFilm,Mode=TwoWay}" Margin="6"></TextBlock>
+                            <ScrollViewer Width="500" Height="120"  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible"  Name="Scroller">
+                                <TextBlock  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinWidth="400"  Style="{StaticResource MaterialDesignBody1TextBlock}" Width="456" TextWrapping="Wrap" Text="{Binding DescriptionFilm,Mode=TwoWay}" Margin="0,6"></TextBlock>
+                            </ScrollViewer>
                         </GroupBox>
                         <StackPanel Orientation="Horizontal">
                             <TextBox
@@ -103,14 +105,14 @@
             </ScrollViewer>
             <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Orientation="Horizontal">
 
-                    <Button Style="{StaticResource MaterialDesignFlatButton}" IsCancel="True" Command="materialDesign:DialogHost.CloseDialogCommand" >
-                        <Button.CommandParameter>
-                            <system:Boolean>False</system:Boolean>
-                        </Button.CommandParameter>
-                        OK
-                    </Button>
-                </StackPanel>
-            </Grid>
-       
+                <Button Style="{StaticResource MaterialDesignFlatButton}" IsCancel="True" Command="materialDesign:DialogHost.CloseDialogCommand" >
+                    <Button.CommandParameter>
+                        <system:Boolean>False</system:Boolean>
+                    </Button.CommandParameter>
+                    OK
+                </Button>
+            </StackPanel>
+        </Grid>
+
     </StackPanel>
 </UserControl>

@@ -61,10 +61,10 @@
                                 <materialDesign:PackIcon Kind="Wechat" />
                                 <Label Content="Чат"/>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal">
+                            <!--<StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="Information" />
                                 <Label Content="О проекте"/>
-                            </StackPanel>
+                            </StackPanel>-->
 
                         </ListBox>
                     </DockPanel>
